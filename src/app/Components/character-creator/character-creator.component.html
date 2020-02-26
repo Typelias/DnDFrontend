@@ -1,52 +1,133 @@
-<form style="display: flex">
-  <mat-form-field>
+<form class="container">
+  <mat-form-field class="row">
     <mat-label>Character Name</mat-label>
     <input matInput>
   </mat-form-field>
-  <div id="small-infoi">
-    <mat-form-field>
-      <mat-label>Class</mat-label>
-      <mat-select>
-        <mat-option value="barbarian">Barbarian</mat-option>
-        <mat-option value="bard">Bard</mat-option>
-        <mat-option value="cleric">Cleric</mat-option>
-        <mat-option value="druid">Druid</mat-option>
-        <mat-option value="fighter">Fighter</mat-option>
-        <mat-option value="monk">Monk</mat-option>
-        <mat-option value="paladin">Paladin</mat-option>
-        <mat-option value="ranger">Ranger</mat-option>
-        <mat-option value="rogue">Rogue</mat-option>
-        <mat-option value="sorcerer">Sorcerer</mat-option>
-        <mat-option value="warlock">warlock</mat-option>
-        <mat-option value="wizard">Wizard</mat-option>
-        <mat-option value="artificer">Artificer</mat-option>
-        <mat-option value="bloodHunter">Blood Hunter</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field style="width: 60px">
-      <mat-label>Level</mat-label>
-      <input matInput type="number" min="1" max="20">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Background</mat-label>
-      <input matInput>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Player Name</mat-label>
-      <input matInput>
-    </mat-form-field>
-    <br/>
-    <mat-form-field>
-      <mat-label>Race</mat-label>
-      <input matInput>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Alignment</mat-label>
-      <input matInput>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Experience points</mat-label>
-      <input matInput type="number" min="0" max="355000">
-    </mat-form-field>
+  <div id="small-info" class="row">
+    <div class="container">
+      <p class="row">Basic Info</p>
+      <div class="row">
+        <mat-form-field>
+          <mat-label>Class</mat-label>
+          <mat-select>
+            <mat-option value="barbarian">Barbarian</mat-option>
+            <mat-option value="bard">Bard</mat-option>
+            <mat-option value="cleric">Cleric</mat-option>
+            <mat-option value="druid">Druid</mat-option>
+            <mat-option value="fighter">Fighter</mat-option>
+            <mat-option value="monk">Monk</mat-option>
+            <mat-option value="paladin">Paladin</mat-option>
+            <mat-option value="ranger">Ranger</mat-option>
+            <mat-option value="rogue">Rogue</mat-option>
+            <mat-option value="sorcerer">Sorcerer</mat-option>
+            <mat-option value="warlock">warlock</mat-option>
+            <mat-option value="wizard">Wizard</mat-option>
+            <mat-option value="artificer">Artificer</mat-option>
+            <mat-option value="bloodHunter">Blood Hunter</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field style="width: 60px">
+          <mat-label>Level</mat-label>
+          <input matInput type="number" min="1" max="20">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Background</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Player Name</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field>
+          <mat-label>Race</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Alignment</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Experience points</mat-label>
+          <input matInput type="number" min="0" max="355000">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <p class="row">Stats</p>
+      <div class="row">
+        <mat-form-field>
+          <mat-label>Strength</mat-label>
+          <input matInput type="number">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Dexterity</mat-label>
+          <input matInput type="number">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Constitution</mat-label>
+          <input matInput type="number">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Intelligence</mat-label>
+          <input matInput type="number">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Wisdom</mat-label>
+          <input matInput type="number">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Charisma</mat-label>
+          <input matInput type="number">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col" style="display: flex; flex-direction: column">
+      <p>Saving Throws</p>
+      <mat-checkbox>Strength</mat-checkbox>
+      <mat-checkbox>Dexterity</mat-checkbox>
+      <mat-checkbox>Constitution</mat-checkbox>
+      <mat-checkbox>Intelligence</mat-checkbox>
+      <mat-checkbox>Wisdom</mat-checkbox>
+      <mat-checkbox>Charisma</mat-checkbox>
+    </div>
+    <div class="col">
+      <div class="container">
+        <p>Skills</p>
+        <div class="row">
+          <div class="col" style="display: flex; flex-direction: column">
+            <mat-checkbox>Acrobatics</mat-checkbox>
+            <mat-checkbox>Animal Handling</mat-checkbox>
+            <mat-checkbox>Arcana</mat-checkbox>
+            <mat-checkbox>Athletics</mat-checkbox>
+            <mat-checkbox>Deception</mat-checkbox>
+            <mat-checkbox>History</mat-checkbox>
+          </div>
+          <div class="col" style="display: flex; flex-direction: column">
+            <mat-checkbox>Insight</mat-checkbox>
+            <mat-checkbox>Intimidation</mat-checkbox>
+            <mat-checkbox>Investigation</mat-checkbox>
+            <mat-checkbox>Medicine</mat-checkbox>
+            <mat-checkbox>Nature</mat-checkbox>
+            <mat-checkbox>Perception</mat-checkbox>
+          </div>
+          <div class="col" style="display: flex; flex-direction: column">
+            <mat-checkbox>Performance</mat-checkbox>
+            <mat-checkbox>Persuasion</mat-checkbox>
+            <mat-checkbox>Religion</mat-checkbox>
+            <mat-checkbox>Sleight of Hand</mat-checkbox>
+            <mat-checkbox>Stealth</mat-checkbox>
+            <mat-checkbox>Survival</mat-checkbox>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </form>
+

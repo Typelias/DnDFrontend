@@ -37,5 +37,15 @@ export class Character {
   spellSaveDC: number;
   spellAttackBonus: number;
   spellList: SpellList;
+  sorcPoints ? = 0;
+  usedSorcPoints ? = 0;
+
+  useSorcPoint() {
+    this.usedSorcPoints++;
+  }
+
+  resetSorcPoints() {
+    this.usedSorcPoints = 0;
+  }
 
 }

@@ -6,9 +6,8 @@ import { AppComponent } from './app.component';
 import { CharacterSheetComponent } from './Components/character-sheet/character-sheet.component';
 import { CharacterCreatorComponent } from './Components/character-creator/character-creator.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
+import {MaterialModule} from './material-module';
+
 
 @NgModule({
   declarations: [
@@ -16,14 +15,12 @@ import {MatSelectModule} from '@angular/material/select';
     CharacterSheetComponent,
     CharacterCreatorComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MaterialModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
