@@ -2,7 +2,7 @@ import {CategoryItem} from './category-item';
 
 export class Category {
   name: string;
-  items: Array<CategoryItem>;
+  items: Array<CategoryItem> = [];
 
   addItem(item: CategoryItem) {
     this.items.push(item);

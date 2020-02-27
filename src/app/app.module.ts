@@ -7,6 +7,7 @@ import { CharacterSheetComponent } from './Components/character-sheet/character-
 import { CharacterCreatorComponent } from './Components/character-creator/character-creator.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from './material-module';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {MaterialModule} from './material-module';
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        MaterialModule
+        MaterialModule,
+        FormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

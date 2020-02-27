@@ -1,7 +1,8 @@
+<button mat-button (click)="printCharacter()">Print Character</button>
 <form class="container">
   <mat-form-field class="row">
     <mat-label>Character Name</mat-label>
-    <input matInput>
+    <input matInput [(ngModel)]="character.characterName" name="characterName">
   </mat-form-field>
   <div id="small-info" class="row">
     <div class="container">
@@ -9,7 +10,7 @@
       <div class="row">
         <mat-form-field>
           <mat-label>Class</mat-label>
-          <mat-select>
+          <mat-select [(ngModel)]="character.characterClass" name="characterClass">
             <mat-option value="barbarian">Barbarian</mat-option>
             <mat-option value="bard">Bard</mat-option>
             <mat-option value="cleric">Cleric</mat-option>
@@ -28,25 +29,35 @@
         </mat-form-field>
         <mat-form-field style="width: 60px">
           <mat-label>Level</mat-label>
-          <input matInput type="number" min="1" max="20">
+          <input [(ngModel)]="character.level" name="level" matInput type="number" min="1" max="20">
         </mat-form-field>
         <mat-form-field>
           <mat-label>Background</mat-label>
-          <input matInput>
+          <input [(ngModel)]="character.background" name="background" matInput>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Player Name</mat-label>
-          <input matInput>
+          <input [ngClass]="character.playerName" name="playerName" matInput>
         </mat-form-field>
       </div>
       <div class="row">
         <mat-form-field>
           <mat-label>Race</mat-label>
-          <input matInput>
+          <input [(ngModel)]="character.race" name="race" matInput>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Alignment</mat-label>
-          <input matInput>
+          <mat-select [(ngModel)]="character.alignment" name="alignment">
+            <mat-option value="Lawful Good">Lawful Good</mat-option>
+            <mat-option value="Neutral Good">Neutral Good</mat-option>
+            <mat-option value="Chaotic Good">Chaotic Good</mat-option>
+            <mat-option value="Lawful Neutral">Lawful Neutral</mat-option>
+            <mat-option value="True Neutral">True Neutral</mat-option>
+            <mat-option value="Chaotic Neutral">Chaotic Neutral</mat-option>
+            <mat-option value="Lawful Evil">Lawful Evil</mat-option>
+            <mat-option value="Neutral Evil">Neutral Evil</mat-option>
+            <mat-option value="Chaotic Evil">Chaotic Evil</mat-option>
+          </mat-select>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Experience points</mat-label>
@@ -61,27 +72,27 @@
       <div class="row">
         <mat-form-field>
           <mat-label>Strength</mat-label>
-          <input matInput type="number">
+          <input [(ngModel)]="character.stats.strength" name="strength" matInput type="number">
         </mat-form-field>
         <mat-form-field>
           <mat-label>Dexterity</mat-label>
-          <input matInput type="number">
+          <input [(ngModel)]="character.stats.dexterity" name="dexterity" matInput type="number">
         </mat-form-field>
         <mat-form-field>
           <mat-label>Constitution</mat-label>
-          <input matInput type="number">
+          <input [(ngModel)]="character.stats.constitution" name="constitution" matInput type="number">
         </mat-form-field>
         <mat-form-field>
           <mat-label>Intelligence</mat-label>
-          <input matInput type="number">
+          <input [(ngModel)]="character.stats.intelligence" name="intelligence" matInput type="number">
         </mat-form-field>
         <mat-form-field>
           <mat-label>Wisdom</mat-label>
-          <input matInput type="number">
+          <input [(ngModel)]="character.stats.wisdom" name="wisdom" matInput type="number">
         </mat-form-field>
         <mat-form-field>
           <mat-label>Charisma</mat-label>
-          <input matInput type="number">
+          <input [(ngModel)]="character.stats.charisma" name="charisma" matInput type="number">
         </mat-form-field>
       </div>
     </div>
@@ -89,40 +100,40 @@
   <div class="row">
     <div class="col" style="display: flex; flex-direction: column">
       <p>Saving Throws</p>
-      <mat-checkbox>Strength</mat-checkbox>
-      <mat-checkbox>Dexterity</mat-checkbox>
-      <mat-checkbox>Constitution</mat-checkbox>
-      <mat-checkbox>Intelligence</mat-checkbox>
-      <mat-checkbox>Wisdom</mat-checkbox>
-      <mat-checkbox>Charisma</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.savingThrows.strength" name="savingStrength">Strength</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.savingThrows.dexterity" name="savingDex">Dexterity</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.savingThrows.constitution" name="savingConst">Constitution</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.savingThrows.intelligence" name="savingInt">Intelligence</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.savingThrows.wisdom" name="savingWis">Wisdom</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.savingThrows.charisma" name="savingChar">Charisma</mat-checkbox>
     </div>
     <div class="col">
       <div class="container">
         <p>Skills</p>
         <div class="row">
           <div class="col" style="display: flex; flex-direction: column">
-            <mat-checkbox>Acrobatics</mat-checkbox>
-            <mat-checkbox>Animal Handling</mat-checkbox>
-            <mat-checkbox>Arcana</mat-checkbox>
-            <mat-checkbox>Athletics</mat-checkbox>
-            <mat-checkbox>Deception</mat-checkbox>
-            <mat-checkbox>History</mat-checkbox>
+            <mat-checkbox [(ngModel)]="character.skills.acrobatics" name="acrobatics">Acrobatics</mat-checkbox>
+            <mat-checkbox [(ngModel)]="character.skills.animalHandling" name="animalHandling">Animal Handling</mat-checkbox>
+            <mat-checkbox [(ngModel)]="character.skills.arcana" name="arcana">Arcana</mat-checkbox>
+            <mat-checkbox [(ngModel)]="character.skills.athletics" name="athletics">Athletics</mat-checkbox>
+            <mat-checkbox [(ngModel)]="character.skills.deception" name="deception">Deception</mat-checkbox>
+            <mat-checkbox [(ngModel)]="character.skills.history" name="history">History</mat-checkbox>
           </div>
           <div class="col" style="display: flex; flex-direction: column">
-            <mat-checkbox>Insight</mat-checkbox>
-            <mat-checkbox>Intimidation</mat-checkbox>
-            <mat-checkbox>Investigation</mat-checkbox>
-            <mat-checkbox>Medicine</mat-checkbox>
-            <mat-checkbox>Nature</mat-checkbox>
-            <mat-checkbox>Perception</mat-checkbox>
+            <mat-checkbox [(ngModel)]="character.skills.insight" name="insight">Insight</mat-checkbox>
+            <mat-checkbox [(ngModel)]="character.skills.intimidation" name="intimidation">Intimidation</mat-checkbox>
+            <mat-checkbox [(ngModel)]="character.skills.investigation" name="investigation">Investigation</mat-checkbox>
+            <mat-checkbox [(ngModel)]="character.skills.medicine" name="medicine">Medicine</mat-checkbox>
+            <mat-checkbox [(ngModel)]="character.skills.nature" name="nature">Nature</mat-checkbox>
+            <mat-checkbox [(ngModel)]="character.skills.perception" name="perception">Perception</mat-checkbox>
           </div>
           <div class="col" style="display: flex; flex-direction: column">
-            <mat-checkbox>Performance</mat-checkbox>
-            <mat-checkbox>Persuasion</mat-checkbox>
-            <mat-checkbox>Religion</mat-checkbox>
-            <mat-checkbox>Sleight of Hand</mat-checkbox>
-            <mat-checkbox>Stealth</mat-checkbox>
-            <mat-checkbox>Survival</mat-checkbox>
+            <mat-checkbox [(ngModel)]="character.skills.performance" name="performance">Performance</mat-checkbox>
+            <mat-checkbox [(ngModel)]="character.skills.persuasion" name="persuasion">Persuasion</mat-checkbox>
+            <mat-checkbox [(ngModel)]="character.skills.religion" name="religion">Religion</mat-checkbox>
+            <mat-checkbox [(ngModel)]="character.skills.slightOfHand" name="sleightOfHand">Sleight of Hand</mat-checkbox>
+            <mat-checkbox [(ngModel)]="character.skills.stealth" name="stealth">Stealth</mat-checkbox>
+            <mat-checkbox [(ngModel)]="character.skills.survival" name="survival">Survival</mat-checkbox>
           </div>
         </div>
       </div>

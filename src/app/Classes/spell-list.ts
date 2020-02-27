@@ -4,17 +4,17 @@ import {LevelSpells} from './level-spells';
 
 export class SpellList {
   // Cantrips
-  cantrips: Cantrips;
+  cantrips = new Cantrips();
 
-  lvl1Spells: LevelSpells;
-  lvl2Spells: LevelSpells;
-  lvl3Spells: LevelSpells;
-  lvl4Spells: LevelSpells;
-  lvl5Spells: LevelSpells;
-  lvl6Spells: LevelSpells;
-  lvl7Spells: LevelSpells;
-  lvl8Spells: LevelSpells;
-  lvl9Spells: LevelSpells;
+  lvl1Spells = new LevelSpells();
+  lvl2Spells = new LevelSpells();
+  lvl3Spells = new LevelSpells();
+  lvl4Spells = new LevelSpells();
+  lvl5Spells = new LevelSpells();
+  lvl6Spells = new LevelSpells();
+  lvl7Spells = new LevelSpells();
+  lvl8Spells = new LevelSpells();
+  lvl9Spells = new LevelSpells();
 
 
   // Cantrips

@@ -1,5 +1,5 @@
 export class SavingThrows {
-  streangth: boolean;
+  strength: boolean;
   dexterity: boolean;
   constitution: boolean;
   intelligence: boolean;

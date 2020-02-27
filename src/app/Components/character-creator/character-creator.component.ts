@@ -13,6 +13,10 @@ export class CharacterCreatorComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.character = new Character();
+  }
+
+  printCharacter() {
     console.log(this.character);
   }
 

@@ -1,7 +1,7 @@
 import {Spell} from './spell';
 
 export class LevelSpells {
-  spells: Array<Spell>;
+  spells: Array<Spell> = [];
 
   spellSlotTotal: number;
   spellSlotExpended = 0;

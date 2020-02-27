@@ -1,7 +1,7 @@
 import {Spell} from './spell';
 
 export class Cantrips {
-  spellList: Array<Spell>;
+  spellList: Array<Spell> = [];
 
   addSpell(spell: Spell) {
     this.spellList.push(spell);
