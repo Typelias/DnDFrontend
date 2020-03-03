@@ -6,4 +6,5 @@ export class HP {
   currHP: number;
   tempHP: number;
   hitDice: string;
+  numberOfHutDice: number;
 }
