@@ -54,6 +54,74 @@ export class CharacterCreatorComponent implements OnInit {
       return;
     }
     this.character.race = raceName;
+    switch (raceName) {
+      case 'hillDwarf':
+        this.character.hp.speed = 25;
+        break;
+      case 'mountainDwarf':
+        this.character.hp.speed = 25;
+        break;
+      case 'highElf':
+        this.character.hp.speed = 30;
+        break;
+      case 'woodElf':
+        this.character.hp.speed = 35;
+        break;
+      case 'drowElf':
+        this.character.hp.speed = 30;
+        break;
+      case 'seaElf':
+        this.character.hp.speed = 30;
+        break;
+      case 'eladrin':
+        this.character.hp.speed = 30;
+        break;
+      case 'shadarKai':
+        this.character.hp.speed = 30;
+        break;
+      case 'lightfootHalfling':
+        this.character.hp.speed = 25;
+        break;
+      case 'stoutHalfling':
+        this.character.hp.speed = 25;
+        break;
+      case 'human':
+        this.character.hp.speed = 30;
+        break;
+      case 'variantHuman':
+        this.character.hp.speed = 30;
+        break;
+      case 'dragonborn':
+        this.character.hp.speed = 30;
+        break;
+      case 'forestGnome':
+        this.character.hp.speed = 25;
+        break; 
+      case 'rockGnome':
+        this.character.hp.speed = 25;
+        break;
+      case 'deepGnome':
+        this.character.hp.speed = 25;
+        break;
+      case 'halfElf':
+        this.character.hp.speed = 30;
+        break;
+      case 'halfOrc':
+        this.character.hp.speed = 30;
+        break;
+      case 'tiefling':
+        this.character.hp.speed = 30;
+        break;
+      case 'aasimar':
+        this.character.hp.speed = 30;
+        break; 
+      case 'tabaxi':
+        this.character.hp.speed = 30;
+        break;
+      case 'triton':
+        this.character.hp.speed = 30;
+        break; 
+    }
   }
 
   levelAutoFill(lvl: any) {
