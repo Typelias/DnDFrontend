@@ -10,7 +10,6 @@ import {FeaturesAndTraits} from './features-and-traits';
 import {SpellList} from './spell-list';
 
 export class Character {
-
   characterName: string;
   characterClass: string;
   level: number;
@@ -38,19 +37,5 @@ export class Character {
   spellSaveDC: number;
   spellAttackBonus: number;
   spellList = new SpellList();
-  sorcPoints?: number;
-  usedSorcPoints?: number;
-
-  useSorcPoint() {
-    this.usedSorcPoints++;
-  }
-
-  resetSorcPoints() {
-    this.usedSorcPoints = 0;
-  }
-
-  setSorcPoints(value: number) {
-    this.sorcPoints = value;
-  }
-
+  classAttributes: Array<string> = [];
 }
