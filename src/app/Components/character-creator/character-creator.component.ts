@@ -121,8 +121,8 @@ export class CharacterCreatorComponent implements OnInit {
       case 'sorcerer':
         this.character.savingThrows.constitution = true;
         this.character.savingThrows.charisma = true;
-        this.character.sorcPoints = 0;
-        this.character.usedSorcPoints = 0;
+        this.character.classAttributes.push('SorceryPoints:0');
+        this.character.classAttributes.push('UsedSorceryPoints:0');
         this.character.spellcastingAbility = 'Charisma';
         this.character.hp.hitDice = 'd6';
         break;
