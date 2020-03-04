@@ -96,7 +96,7 @@ export class CharacterCreatorComponent implements OnInit {
         break;
       case 'forestGnome':
         this.character.hp.speed = 25;
-        break; 
+        break;
       case 'rockGnome':
         this.character.hp.speed = 25;
         break;
@@ -114,13 +114,13 @@ export class CharacterCreatorComponent implements OnInit {
         break;
       case 'aasimar':
         this.character.hp.speed = 30;
-        break; 
+        break;
       case 'tabaxi':
         this.character.hp.speed = 30;
         break;
       case 'triton':
         this.character.hp.speed = 30;
-        break; 
+        break;
     }
   }
 
@@ -222,6 +222,7 @@ export class CharacterCreatorComponent implements OnInit {
   }
 
   clearSavingThrows() {
+    // tslint:disable-next-line:forin
     for (const savingThrowsKey in this.character.savingThrows) {
       this.character.savingThrows[savingThrowsKey] = false;
     }
