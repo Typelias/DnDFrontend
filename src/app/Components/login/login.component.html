@@ -1,0 +1,13 @@
+<div id="wrapper">
+    <h1>Login</h1>
+    <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput [(ngModel)]="username">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [(ngModel)]="password">
+    </mat-form-field>
+    <p id="error" *ngIf="errorResponse != ''">{{errorResponse}}</p>
+    <button mat-raised-button (click)="login()">Login</button>
+</div>

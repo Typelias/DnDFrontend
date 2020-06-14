@@ -1,0 +1,19 @@
+#wrapper {
+    margin: auto;
+    width: 250px;
+    height: 450px;
+    padding: 50px;
+    background-color: gray;
+    border-radius: 25px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    h1 {
+        text-align: center;
+    }
+}
+
+#error {
+    color: red;
+    font-size: small;
+}

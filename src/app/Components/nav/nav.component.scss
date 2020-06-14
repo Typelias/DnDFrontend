@@ -1,0 +1,41 @@
+nav {
+    background-color: darkgray;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    p {
+        line-height: 50px;
+        display: block;
+        width: 150px;
+        text-align: center;
+        font-size: x-large;
+        margin: 0;
+    }
+    ul{
+        flex-grow: 100;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        a{
+            width: 100px;
+            line-height: 50px;
+            text-align: center;
+            display: block;
+            color: darkmagenta;
+            text-decoration: none;
+        }:hover {
+            background-color: gray;
+        }:last-child {
+            justify-self: flex-end;
+        }
+        
+        }
+    }
+
+    .loginButton{
+        margin-left: auto;
+    }

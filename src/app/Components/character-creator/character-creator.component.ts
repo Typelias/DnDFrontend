@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Character} from '../../Classes/character';
+import { Character } from '../../Classes/character';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-character-creator',
@@ -13,7 +14,8 @@ export class CharacterCreatorComponent implements OnInit {
   currentStatBonus: number;
   curentStatName: string;
 
-  constructor() { }
+  constructor(private authService: AuthService) {
+  }
 
   ngOnInit(): void {
     this.character = new Character();
@@ -44,7 +46,7 @@ export class CharacterCreatorComponent implements OnInit {
   calculateBonus(stat: number): number {
     stat -= 10;
     stat = Math.floor(stat / 2);
-    return  stat;
+    return stat;
   }
 
   raceAutoFill(raceName: string) {
