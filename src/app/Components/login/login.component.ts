@@ -22,8 +22,9 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  login() {
-    if (this.username != null && this.password != null && this.username != "" && this.password != "") {
+  login(event) {
+    event.preventDefault();
+    if (this.username != "" && this.password != "") {
       this.authService.doLogin(this.username, this.password).subscribe(res => {
         if (this.authService.isLoggedIn()) {
           this.router.navigate(['']);

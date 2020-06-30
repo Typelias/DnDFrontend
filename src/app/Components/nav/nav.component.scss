@@ -4,14 +4,20 @@ nav {
     margin: 0;
     display: flex;
     width: 100%;
-    p {
-        line-height: 50px;
-        display: block;
-        width: 150px;
-        text-align: center;
-        font-size: x-large;
-        margin: 0;
+    justify-content: space-between;
+    #links {
+        display: flex;
+        p {
+            line-height: 50px;
+            display: block;
+            width: 150px;
+            text-align: center;
+            font-size: x-large;
+            margin: 0;
+        }
+        
     }
+
     ul{
         flex-grow: 100;
         padding: 0;
@@ -29,13 +35,13 @@ nav {
             text-decoration: none;
         }:hover {
             background-color: gray;
-        }:last-child {
-            justify-self: flex-end;
-        }
-        
         }
     }
+    
 
-    .loginButton{
-        margin-left: auto;
+    #navMenu{
+        align-self: flex-end;
+        display: flex;
+        list-style: none;
     }
+}

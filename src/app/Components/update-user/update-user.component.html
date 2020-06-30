@@ -1,0 +1,30 @@
+<div *ngIf="users" id="wrapper">
+    <p>Please select user to modify</p>
+    <mat-form-field>
+        <mat-label>User</mat-label>
+        <mat-select [(ngModel)]="userToEdit">
+            <mat-option *ngFor="let user of users" [value]="user">{{user}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <form *ngIf="userToEdit" (ngSubmit)="updateUser()">
+        <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput [(ngModel)]="username" name="username">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput [(ngModel)]="password" name="password" type="password">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Role</mat-label>
+            <mat-select [(ngModel)]="role" name="role">
+                <mat-option value="User">User</mat-option>
+                <mat-option value="Admin">Admin</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div>
+            <button mat-raised-button color="primary" type="submit">Update</button>
+            <button mat-flat-button color="disabled" (click)="deleteUser()">Delete User</button>
+        </div>
+    </form>
+</div>

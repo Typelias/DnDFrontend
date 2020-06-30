@@ -19,6 +19,7 @@ export class CharacterCreatorComponent implements OnInit {
 
   ngOnInit(): void {
     this.character = new Character();
+    this.character.playerName = this.authService.getUsername()
   }
 
   printCharacter() {

@@ -32,18 +32,25 @@ export class AuthService {
     this.cookieService.delete('token');
   }
 
-  isAdmin(): boolean {
-    if (this.adminStatus != null) {
-      return this.adminStatus;
+  getUsername(): string {
+    if (!this.cookieService.check('token')) {
+      return;
     }
-    if (this.isLoggedIn()) {
+    const token = this.cookieService.get('token');
+    return this.helper.decodeToken(token)['username']
+  }
+
+  isAdmin(): boolean {
+
+    if (this.cookieService.check('token')) {
       const token = this.cookieService.get('token');
+      // console.log(this.helper.decodeToken(token));
       if (this.helper.decodeToken(token)['Type'] === 'Admin') {
         this.adminStatus = true;
         return true;
       }
     }
-    this.adminStatus = false;
-    return false;
+
+    return false
   }
 }

@@ -9,7 +9,8 @@
         </mat-form-field>
         <mat-form-field class="col-2">
           <mat-label>Class</mat-label>
-          <mat-select (selectionChange)="classAutoFill($event.value)" [(ngModel)]="character.characterClass"  name="characterClass">
+          <mat-select (selectionChange)="classAutoFill($event.value)" [(ngModel)]="character.characterClass"
+            name="characterClass">
             <mat-optgroup label="PHB">
               <mat-option value="barbarian">Barbarian</mat-option>
               <mat-option value="bard">Bard</mat-option>
@@ -34,7 +35,7 @@
         </mat-form-field>
         <mat-form-field class="col-1">
           <mat-label>Level</mat-label>
-          <input matInput (change)="levelAutoFill($event.target.value)" [(ngModel)]="character.level"  name="level" >
+          <input matInput (change)="levelAutoFill($event.target.value)" [(ngModel)]="character.level" name="level">
         </mat-form-field>
         <mat-form-field class="col">
           <mat-label>Background</mat-label>
@@ -42,7 +43,7 @@
         </mat-form-field>
         <mat-form-field class="col">
           <mat-label>Player Name</mat-label>
-          <input [ngClass]="character.playerName" name="playerName" matInput>
+          <input disabled [ngModel]="character.playerName" name="playerName" matInput>
         </mat-form-field>
       </div>
       <div class="row">
@@ -120,27 +121,39 @@
       <div class="row">
         <mat-form-field>
           <mat-label>Strength</mat-label>
-          <input [(ngModel)]="character.stats.strength" (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'strength'" name="strength" matInput type="number">
+          <input [(ngModel)]="character.stats.strength"
+            (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'strength'"
+            name="strength" matInput type="number">
         </mat-form-field>
         <mat-form-field>
           <mat-label>Dexterity</mat-label>
-          <input [(ngModel)]="character.stats.dexterity" (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'dexterity'" name="dexterity" matInput type="number">
+          <input [(ngModel)]="character.stats.dexterity"
+            (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'dexterity'"
+            name="dexterity" matInput type="number">
         </mat-form-field>
         <mat-form-field>
           <mat-label>Constitution</mat-label>
-          <input [(ngModel)]="character.stats.constitution" (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'constitution'" name="constitution" matInput type="number">
+          <input [(ngModel)]="character.stats.constitution"
+            (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'constitution'"
+            name="constitution" matInput type="number">
         </mat-form-field>
         <mat-form-field>
           <mat-label>Intelligence</mat-label>
-          <input [(ngModel)]="character.stats.intelligence" (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'intelligence'" name="intelligence" matInput type="number">
+          <input [(ngModel)]="character.stats.intelligence"
+            (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'intelligence'"
+            name="intelligence" matInput type="number">
         </mat-form-field>
         <mat-form-field>
           <mat-label>Wisdom</mat-label>
-          <input [(ngModel)]="character.stats.wisdom" (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'wisdom'" name="wisdom" matInput type="number">
+          <input [(ngModel)]="character.stats.wisdom"
+            (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'wisdom'" name="wisdom"
+            matInput type="number">
         </mat-form-field>
         <mat-form-field>
           <mat-label>Charisma</mat-label>
-          <input [(ngModel)]="character.stats.charisma" (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'charisma'" name="charisma" matInput type="number">
+          <input [(ngModel)]="character.stats.charisma"
+            (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'charisma'"
+            name="charisma" matInput type="number">
         </mat-form-field>
       </div>
       <div class="row">
@@ -151,12 +164,17 @@
   <div class="row">
     <div class="col" style="display: flex; flex-direction: column">
       <p>Saving Throws</p>
-      <mat-checkbox [(ngModel)]="character.savingThrows.strength" disabled="true" name="savingStrength">Strength</mat-checkbox>
-      <mat-checkbox [(ngModel)]="character.savingThrows.dexterity" disabled="true" name="savingDex">Dexterity</mat-checkbox>
-      <mat-checkbox [(ngModel)]="character.savingThrows.constitution" disabled="true" name="savingConst">Constitution</mat-checkbox>
-      <mat-checkbox [(ngModel)]="character.savingThrows.intelligence" disabled="true" name="savingInt">Intelligence</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.savingThrows.strength" disabled="true" name="savingStrength">Strength
+      </mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.savingThrows.dexterity" disabled="true" name="savingDex">Dexterity
+      </mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.savingThrows.constitution" disabled="true" name="savingConst">Constitution
+      </mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.savingThrows.intelligence" disabled="true" name="savingInt">Intelligence
+      </mat-checkbox>
       <mat-checkbox [(ngModel)]="character.savingThrows.wisdom" disabled="true" name="savingWis">Wisdom</mat-checkbox>
-      <mat-checkbox [(ngModel)]="character.savingThrows.charisma" disabled="true" name="savingChar">Charisma</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.savingThrows.charisma" disabled="true" name="savingChar">Charisma
+      </mat-checkbox>
     </div>
     <div class="col">
       <div class="container">
@@ -164,7 +182,8 @@
         <div class="row">
           <div class="col" style="display: flex; flex-direction: column">
             <mat-checkbox [(ngModel)]="character.skills.acrobatics" name="acrobatics">Acrobatics</mat-checkbox>
-            <mat-checkbox [(ngModel)]="character.skills.animalHandling" name="animalHandling">Animal Handling</mat-checkbox>
+            <mat-checkbox [(ngModel)]="character.skills.animalHandling" name="animalHandling">Animal Handling
+            </mat-checkbox>
             <mat-checkbox [(ngModel)]="character.skills.arcana" name="arcana">Arcana</mat-checkbox>
             <mat-checkbox [(ngModel)]="character.skills.athletics" name="athletics">Athletics</mat-checkbox>
             <mat-checkbox [(ngModel)]="character.skills.deception" name="deception">Deception</mat-checkbox>
@@ -182,7 +201,8 @@
             <mat-checkbox [(ngModel)]="character.skills.performance" name="performance">Performance</mat-checkbox>
             <mat-checkbox [(ngModel)]="character.skills.persuasion" name="persuasion">Persuasion</mat-checkbox>
             <mat-checkbox [(ngModel)]="character.skills.religion" name="religion">Religion</mat-checkbox>
-            <mat-checkbox [(ngModel)]="character.skills.slightOfHand" name="sleightOfHand">Sleight of Hand</mat-checkbox>
+            <mat-checkbox [(ngModel)]="character.skills.slightOfHand" name="sleightOfHand">Sleight of Hand
+            </mat-checkbox>
             <mat-checkbox [(ngModel)]="character.skills.stealth" name="stealth">Stealth</mat-checkbox>
             <mat-checkbox [(ngModel)]="character.skills.survival" name="survival">Survival</mat-checkbox>
           </div>
@@ -203,7 +223,8 @@
       <div class="row">
         <mat-form-field class="col">
           <mat-label>Traits</mat-label>
-          <textarea [(ngModel)]="character.personality.personalityTraits" cdkTextareaAutosize name="persTraits" matInput></textarea>
+          <textarea [(ngModel)]="character.personality.personalityTraits" cdkTextareaAutosize name="persTraits"
+            matInput></textarea>
         </mat-form-field>
         <mat-form-field class="col">
           <mat-label>Ideals</mat-label>
@@ -222,9 +243,10 @@
       </div>
       <mat-form-field class="col">
         <mat-label>Backstory</mat-label>
-        <textarea [(ngModel)]="character.personality.backstory" cdkTextareaAutosize name="backstory" matInput></textarea>
+        <textarea [(ngModel)]="character.personality.backstory" cdkTextareaAutosize name="backstory"
+          matInput></textarea>
       </mat-form-field>
     </div>
   </mat-expansion-panel>
 </form>
-
+<p>{{character | json}}</p>

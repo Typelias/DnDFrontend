@@ -14,6 +14,8 @@ import {CookieService} from 'ngx-cookie-service';
 import { HomeComponent } from './Components/home/home.component';
 import { NavComponent } from './Components/nav/nav.component';
 import { CampaignsComponent } from './Components/campaigns/campaigns.component';
+import { CreateUserComponent } from './Components/create-user/create-user.component';
+import { UpdateUserComponent } from './Components/update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CampaignsComponent } from './Components/campaigns/campaigns.component';
     LoginComponent,
     HomeComponent,
     NavComponent,
-    CampaignsComponent
+    CampaignsComponent,
+    CreateUserComponent,
+    UpdateUserComponent
   ],
     imports: [
         BrowserModule,

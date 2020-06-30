@@ -18,6 +18,10 @@ export class NavComponent implements OnInit {
     return this.authServicer.isLoggedIn();
   }
 
+  isAdmin(): boolean {
+    return this.authServicer.isAdmin();
+  }
+
   loggOut() {
     this.authServicer.loggOut();
     this.router.navigate([''])

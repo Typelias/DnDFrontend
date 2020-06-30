@@ -1,0 +1,21 @@
+<form *ngIf="users" (ngSubmit)="createUser()">
+    <h1>Create User</h1>
+    <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input (keyup)="checkUsername()" matInput name="username" [(ngModel)]="username">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" name="password" [(ngModel)]="password">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Role</mat-label>
+        <mat-select [(ngModel)]="role" name="role">
+            <mat-option value="User">User</mat-option>
+            <mat-option value="Admin">Admin</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <p id="error" *ngIf="errorText != ''">{{errorText}}</p>
+    <button mat-raised-button type="submit">Create User</button>
+</form>
