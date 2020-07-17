@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './Components/home/home.component';
 import { CharacterCreatorComponent } from './Components/character-creator/character-creator.component';
 import { LoginComponent } from './Components/login/login.component';
 import { AuthGuardService } from './Services/auth-guard.service';
@@ -11,10 +10,9 @@ import { UpdateUserComponent } from './Components/update-user/update-user.compon
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
   { path: 'creator', component: CharacterCreatorComponent, canActivate: [AuthGuardService] },
   { path: 'login', component: LoginComponent },
-  { path: 'campaigns', component: CampaignsComponent, canActivate: [AuthGuardService] },
+  { path: '', component: CampaignsComponent, canActivate: [AuthGuardService] },
   { path: 'createUser', component: CreateUserComponent, canActivate: [AuthGuardAdminService] },
   { path: 'updateUser', component: UpdateUserComponent, canActivate: [AuthGuardAdminService] }
 ];

@@ -1,19 +1,23 @@
 <nav>
-    <div id="links">
-        <p>DnD Site</p>
-        <ul>
-            <li><a routerLink="/">Home</a></li>
-            <li><a routerLink="/creator">Creator</a></li>
-            <li><a routerLink="/campaigns">Campaigns</a></li>
-
-        </ul>
-    </div>
-    <div id="navMenu">
+    <div>
         <ul>
             <li *ngIf="isAdmin()"><a routerLink="/createUser">Create User</a></li>
             <li *ngIf="isAdmin()"><a routerLink="/updateUser">Update User</a></li>
             <li *ngIf="!isLoggedIn()"><a routerLink="/login">Login</a></li>
-            <li *ngIf="isLoggedIn()"><a (click)="loggOut()">Logg Out</a></li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li *ngIf="isAdmin()">
+                <div id="addButton" (click)="openDialog()">
+                    <p>Add Campaign</p>
+                    <mat-icon>add</mat-icon>
+
+                </div>
+            </li>
+            <li *ngIf="isLoggedIn()">
+                <mat-icon id="logout" (click)="loggOut()">login</mat-icon>
+            </li>
         </ul>
     </div>
 </nav>

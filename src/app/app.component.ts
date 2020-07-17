@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from './Services/auth.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'DnDFrontend';
+
+  constructor(private auth: AuthService) { }
+
+  isLoggedIn(): boolean {
+    return this.auth.isLoggedIn();
+  }
+
+
 }

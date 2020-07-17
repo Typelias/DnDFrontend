@@ -1,25 +1,13 @@
 nav {
-    background-color: darkgray;
+    color: white;
     padding: 0;
     margin: 0;
     display: flex;
     width: 100%;
+    height: 50px;
     justify-content: space-between;
-    #links {
-        display: flex;
-        p {
-            line-height: 50px;
-            display: block;
-            width: 150px;
-            text-align: center;
-            font-size: x-large;
-            margin: 0;
-        }
-        
-    }
 
     ul{
-        flex-grow: 100;
         padding: 0;
         margin: 0;
         list-style: none;
@@ -31,17 +19,52 @@ nav {
             line-height: 50px;
             text-align: center;
             display: block;
-            color: darkmagenta;
+            color: white;
             text-decoration: none;
-        }:hover {
-            background-color: gray;
+            cursor: pointer;
+            transition: background-color 0.5s ease-in-out;
+            &:hover {
+                background-color: rgba($color: #fff, $alpha: 0.3);
+            }
+        }
+        #logout{
+            height: 50px;
+            width: 100px;
+            line-height: 50px;
+            text-align: center;
+            display: block;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.5s ease-in-out;
+            &:hover {
+                background-color: rgba($color: #fff, $alpha: 0.3);
+            }
+
         }
     }
-    
 
-    #navMenu{
-        align-self: flex-end;
+    #addButton{
+        padding: 0 5px;
+        margin: 0;
         display: flex;
-        list-style: none;
+        cursor: pointer;
+        justify-content: flex-start;
+        line-height: 50px;
+        
+        p{
+            margin: 0;
+            padding: 0;
+            margin-right: 10px;
+        }
+        mat-icon{
+            height: 50px;
+            line-height: 50px;
+        }
+        transition: background-color 0.5s ease-in-out;
+        &:hover {
+            background-color: rgba($color: #fff, $alpha: 0.3);
+        }
     }
+
 }

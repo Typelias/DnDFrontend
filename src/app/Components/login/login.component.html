@@ -1,13 +1,17 @@
-<form (ngSubmit)="login($event)">
-    <h1>Login</h1>
-    <mat-form-field>
-        <mat-label>Username</mat-label>
-        <input matInput name="username" [(ngModel)]="username">
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input matInput name="password" type="password" [(ngModel)]="password">
-    </mat-form-field>
-    <p id="error" *ngIf="errorResponse != ''">{{errorResponse}}</p>
-    <button mat-raised-button type="submit">Login</button>
-</form>
+<section>
+    <form (ngSubmit)="login($event)">
+        <div id="wrapper">
+            <p>Login</p>
+            <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input matInput name="username" [(ngModel)]="username">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput name="password" type="password" [(ngModel)]="password">
+            </mat-form-field>
+            <p id="error" *ngIf="errorResponse != ''">{{errorResponse}}</p>
+        </div>
+        <button mat-raised-button type="submit" color="primary">Login</button>
+    </form>
+</section>

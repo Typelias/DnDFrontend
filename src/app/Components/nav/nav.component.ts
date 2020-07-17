@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/Services/auth.service';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateCampaignComponent } from '../create-campaign/create-campaign.component';
 
 @Component({
   selector: 'app-nav',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class NavComponent implements OnInit {
 
-  constructor(private authServicer: AuthService, private router: Router) { }
+  constructor(private authServicer: AuthService, private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +22,15 @@ export class NavComponent implements OnInit {
 
   isAdmin(): boolean {
     return this.authServicer.isAdmin();
+  }
+
+
+  openDialog() {
+    const dialogRef = this.dialog.open(CreateCampaignComponent, { width: "80%", hasBackdrop: true });
+
+    dialogRef.afterClosed().subscribe(res => {
+      console.log("closed");
+    })
   }
 
   loggOut() {
