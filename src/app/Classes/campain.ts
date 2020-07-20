@@ -1,9 +1,9 @@
 import { Character } from './character';
 
 export class Campain {
-    name: string;
-    dm: string;
-    players: string[];
+    Name: string;
+    Dm: string;
+    Players: string[];
     Characters: Character[];
     Image: string;
 

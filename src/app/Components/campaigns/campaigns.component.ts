@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import { Campain } from 'src/app/Classes/campain';
+import { ServerRequestService } from 'src/app/Services/server-request.service';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-campaigns',
@@ -8,17 +10,16 @@ import { Campain } from 'src/app/Classes/campain';
   styleUrls: ['./campaigns.component.scss']
 })
 export class CampaignsComponent implements OnInit {
+  campaignList: Campain[];
 
-  numbers: any;
-  campain: Campain
+  constructor(private sr: ServerRequestService, private auth: AuthService) {
 
-  constructor() {
-    this.numbers = new Array(10)
-    this.campain = new Campain();
-    this.campain.name = "Wow such campain";
-    this.campain.dm = "typelias";
-    this.campain.players = ["Typelias", "Max", "Mari"]
-    this.campain.Image = "https://material.angular.io/assets/img/examples/shiba2.jpg";
+    this.sr.getUserCampaign(this.auth.getUsername()).subscribe(res => {
+      this.campaignList = res;
+      console.log(res);
+    });
+
+
   }
 
   ngOnInit(): void {

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Campain } from '../Classes/campain';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,16 @@ export class ServerRequestService {
   updateUser(updateName: string, u: string, p: string, r: string) {
     const headers = { 'Content-Type': 'application/json' };
     return this.http.post(this.baseURL + '/updateUser', { userToUpdate: updateName, user: { username: u, password: p, userrole: r } }, { headers, withCredentials: true });
+  }
+
+  addCampaign(campaign: Campain) {
+    const headers = { 'Content-Type': 'application/json' };
+    return this.http.post(this.baseURL + '/addCampaign', campaign, { headers, withCredentials: true })
+  }
+
+  getUserCampaign(username: string) {
+    const headers = { 'Content-Type': 'application/json' };
+    return this.http.post<Campain[]>(this.baseURL + '/getUserCampaign', { username: username }, { headers, withCredentials: true })
   }
 
 

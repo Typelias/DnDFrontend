@@ -15,6 +15,7 @@ export class CampaignIconComponent implements OnInit {
   constructor(private auth: AuthService, private campaignService: ActiveCampaignService) { }
 
   ngOnInit(): void {
+    console.log(this.campain);
   }
 
   setActiveCampaign() {
@@ -22,7 +23,7 @@ export class CampaignIconComponent implements OnInit {
   }
 
   isDM(): boolean {
-    if (this.campain.dm === this.auth.getUsername()) {
+    if (this.campain.Dm === this.auth.getUsername()) {
       return true;
     }
 

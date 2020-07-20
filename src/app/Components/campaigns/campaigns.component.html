@@ -1,4 +1,4 @@
 <app-nav></app-nav>
-<section>
-    <app-campaign-icon [campain]="campain" *ngFor="let i of numbers"></app-campaign-icon>
+<section *ngIf="campaignList">
+    <app-campaign-icon *ngFor="let campaign of campaignList" [campain]="campaign"></app-campaign-icon>
 </section>

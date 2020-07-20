@@ -7,7 +7,7 @@ import { CharacterSheetComponent } from './Components/character-sheet/character-
 import { CharacterCreatorComponent } from './Components/character-creator/character-creator.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material-module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './Components/login/login.component';
 import { HttpClientModule } from '@angular/common/http'
 import { CookieService } from 'ngx-cookie-service';
@@ -18,6 +18,7 @@ import { UpdateUserComponent } from './Components/update-user/update-user.compon
 import { CampaignIconComponent } from './Components/campaign-icon/campaign-icon.component';
 import { CreateCampaignComponent } from './Components/create-campaign/create-campaign.component';
 import { ActiveCampaignService } from './Services/active-campaign.service';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -38,9 +39,12 @@ import { ActiveCampaignService } from './Services/active-campaign.service';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [CookieService, ActiveCampaignService],
+  providers: [
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: "fill" } }
+    , CookieService, ActiveCampaignService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
