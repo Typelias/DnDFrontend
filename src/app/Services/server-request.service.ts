@@ -39,6 +39,17 @@ export class ServerRequestService {
     return this.http.post<Campain[]>(this.baseURL + '/getUserCampaign', { username: username }, { headers, withCredentials: true })
   }
 
+  getDMCampaign(username: string) {
+    const headers = { 'Content-Type': 'application/json' };
+    return this.http.post<Campain[]>(this.baseURL + '/getDMCampaign', { username: username }, { headers, withCredentials: true })
+  }
+
+  getAllCampaigns() {
+    const headers = { 'Content-Type': 'application/json' };
+    return this.http.get<Campain[]>(this.baseURL + '/getAllCampaigns', { headers, withCredentials: true })
+
+  }
+
 
 
 

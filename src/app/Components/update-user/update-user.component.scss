@@ -1,7 +1,13 @@
+mat-icon {
+    display: block;
+    margin-left: auto;
+}
 #wrapper {
-    width: 15%;
     margin: 0 auto;
+    text-align: center;
     form {
+        margin: 0 auto;
+        text-align: center;
         display: flex;
         flex-direction: column;
         div{

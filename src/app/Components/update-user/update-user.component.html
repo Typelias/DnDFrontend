@@ -1,3 +1,4 @@
+<mat-icon mat-dialog-close>close</mat-icon>
 <div *ngIf="users" id="wrapper">
     <p>Please select user to modify</p>
     <mat-form-field>
@@ -7,10 +8,6 @@
         </mat-select>
     </mat-form-field>
     <form *ngIf="userToEdit" (ngSubmit)="updateUser()">
-        <mat-form-field>
-            <mat-label>Username</mat-label>
-            <input matInput [(ngModel)]="username" name="username">
-        </mat-form-field>
         <mat-form-field>
             <mat-label>Password</mat-label>
             <input matInput [(ngModel)]="password" name="password" type="password">

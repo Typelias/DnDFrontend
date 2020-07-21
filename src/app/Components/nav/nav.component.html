@@ -1,22 +1,40 @@
 <nav>
     <div>
         <ul>
-            <li *ngIf="isAdmin()"><a routerLink="/createUser">Create User</a></li>
-            <li *ngIf="isAdmin()"><a routerLink="/updateUser">Update User</a></li>
-            <li *ngIf="!isLoggedIn()"><a routerLink="/login">Login</a></li>
+            <li *ngIf="isAdmin()">
+                <div class="addButton" (click)="openCreateUser()">
+                    <p>Add User</p>
+                    <mat-icon>add</mat-icon>
+                </div>
+            </li>
+            <li *ngIf="isAdmin()">
+                <div class="addButton" (click)="openUpdateUser()">
+                    <p>Update User</p>
+                    <mat-icon>settings</mat-icon>
+                </div>
+            </li>
+            <li *ngIf="isAdmin()">
+                <div class="addButton" (click)="openCreateCampain()">
+                    <p>Add Campaign</p>
+                    <mat-icon>add</mat-icon>
+                </div>
+            </li>
+            <li *ngIf="isAdmin()">
+                <div class="addButton" (click)="openEditCampaign()">
+                    <p>Edit Campaign</p>
+                    <mat-icon>settings</mat-icon>
+                </div>
+            </li>
+
         </ul>
     </div>
     <div>
         <ul>
             <li *ngIf="isAdmin()">
-                <div id="addButton" (click)="openDialog()">
-                    <p>Add Campaign</p>
-                    <mat-icon>add</mat-icon>
-
+                <div class="addButton" (click)="loggOut()">
+                    <p>Loggout</p>
+                    <mat-icon>login</mat-icon>
                 </div>
-            </li>
-            <li *ngIf="isLoggedIn()">
-                <mat-icon id="logout" (click)="loggOut()">login</mat-icon>
             </li>
         </ul>
     </div>

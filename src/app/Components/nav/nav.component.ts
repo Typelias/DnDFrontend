@@ -3,6 +3,9 @@ import { AuthService } from 'src/app/Services/auth.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateCampaignComponent } from '../create-campaign/create-campaign.component';
+import { UpdateUserComponent } from '../update-user/update-user.component';
+import { CreateUserComponent } from '../create-user/create-user.component';
+import { EditCampaignComponent } from '../edit-campaign/edit-campaign.component';
 
 @Component({
   selector: 'app-nav',
@@ -25,18 +28,42 @@ export class NavComponent implements OnInit {
   }
 
 
-  openDialog() {
-    const dialogRef = this.dialog.open(CreateCampaignComponent, { width: "80%", hasBackdrop: true });
+  openCreateCampain() {
+    const dialogRef = this.dialog.open(CreateCampaignComponent, { width: "20%", hasBackdrop: true });
+
+    dialogRef.afterClosed().subscribe(res => {
+      console.log("closed");
+      window.location.reload();
+    })
+  }
+
+  openUpdateUser() {
+    const dialogRef = this.dialog.open(UpdateUserComponent, { width: "20%", hasBackdrop: true });
 
     dialogRef.afterClosed().subscribe(res => {
       console.log("closed");
     })
   }
 
+  openCreateUser() {
+    const dialogRef = this.dialog.open(CreateUserComponent, { width: "20%", hasBackdrop: true });
+
+    dialogRef.afterClosed().subscribe(res => {
+      console.log("closed");
+    })
+  }
+
+  openEditCampaign() {
+    const dialogRef = this.dialog.open(EditCampaignComponent, { width: "20%", hasBackdrop: true });
+
+    dialogRef.afterClosed().subscribe(res => {
+      window.location.reload();
+    })
+  }
+
   loggOut() {
     this.authServicer.loggOut();
     this.router.navigate([''])
-
   }
 
 }

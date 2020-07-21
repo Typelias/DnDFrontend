@@ -19,6 +19,7 @@ import { CampaignIconComponent } from './Components/campaign-icon/campaign-icon.
 import { CreateCampaignComponent } from './Components/create-campaign/create-campaign.component';
 import { ActiveCampaignService } from './Services/active-campaign.service';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { EditCampaignComponent } from './Components/edit-campaign/edit-campaign.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
     CreateUserComponent,
     UpdateUserComponent,
     CampaignIconComponent,
-    CreateCampaignComponent
+    CreateCampaignComponent,
+    EditCampaignComponent
   ],
   imports: [
     BrowserModule,

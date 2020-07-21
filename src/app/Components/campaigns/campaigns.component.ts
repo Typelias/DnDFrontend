@@ -16,7 +16,6 @@ export class CampaignsComponent implements OnInit {
 
     this.sr.getUserCampaign(this.auth.getUsername()).subscribe(res => {
       this.campaignList = res;
-      console.log(res);
     });
 
 

@@ -44,9 +44,10 @@ nav {
         }
     }
 
-    #addButton{
+    .addButton{
         padding: 0 5px;
         margin: 0;
+        margin-right: 10px;
         display: flex;
         cursor: pointer;
         justify-content: flex-start;

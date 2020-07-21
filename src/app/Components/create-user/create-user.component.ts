@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServerRequestService } from 'src/app/Services/server-request.service';
 import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create-user',
@@ -16,7 +17,7 @@ export class CreateUserComponent implements OnInit {
   errorText: string = ""
   usernameMatch = true;
 
-  constructor(private sr: ServerRequestService, private router: Router) { }
+  constructor(private sr: ServerRequestService, private router: Router, private dialogRef: MatDialogRef<CreateUserComponent>) { }
 
   ngOnInit(): void {
 
@@ -43,9 +44,7 @@ export class CreateUserComponent implements OnInit {
     }
     if (this.username != "" && this.password != "" && this.role != "") {
       this.sr.createUser(this.username, this.password, this.role).subscribe(res => {
-        this.router.navigate([""]);
-
-
+        this.dialogRef.close();
       });
 
     } else {

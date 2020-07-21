@@ -2,10 +2,14 @@ form{
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    width: 15%;
     h1 {
         text-align: center;
     }
+}
+
+mat-icon {
+    display: block;
+    margin-left: auto;
 }
 
 #error {
