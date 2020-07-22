@@ -1,1 +1,25 @@
 <mat-icon mat-dialog-close>close</mat-icon>
+<div *ngIf="campaigns" id="wrapper">
+    <p>Please select a Campaign to edit</p>
+    <mat-form-field>
+        <mat-label>Campaigns</mat-label>
+        <mat-select [(ngModel)]="campaignToEdit" (selectionChange)="setValues()">
+            <mat-option *ngFor="let camp of campaigns" [value]="camp">{{camp.Name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <form *ngIf="campaignToEdit && playerList.length > 0" (ngSubmit)="updateCampaign()">
+        <mat-form-field>
+            <mat-label>Players</mat-label>
+            <mat-select [formControl]="newPlayers" multiple>
+                <mat-option *ngFor="let player of playerList" [value]="player">{{player}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-label>Picture</mat-label>
+        <input type="file" accept=".jpg, .png, .jpeg, .gif" (change)="convertToBase64($event)">
+        <div>
+            <button mat-raised-button color="primary" type="submit">Update</button>
+            <button mat-raised-button color="warn" (click)="deleteCampaign()">Delete</button>
+        </div>
+
+    </form>
+</div>

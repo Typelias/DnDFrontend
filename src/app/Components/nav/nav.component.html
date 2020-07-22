@@ -30,7 +30,7 @@
     </div>
     <div>
         <ul>
-            <li *ngIf="isAdmin()">
+            <li *ngIf="isLoggedIn()">
                 <div class="addButton" (click)="loggOut()">
                     <p>Loggout</p>
                     <mat-icon>login</mat-icon>

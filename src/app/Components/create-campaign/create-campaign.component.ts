@@ -13,7 +13,6 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class CreateCampaignComponent implements OnInit {
 
   players = new FormControl();
-  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
   playerList: string[];
   newCampaign: Campain = new Campain;
   nameList: string[] = [];
@@ -50,7 +49,6 @@ export class CreateCampaignComponent implements OnInit {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => {
-      console.log(reader.result);
       this.newCampaign.Image = reader.result.toString();
     }
 

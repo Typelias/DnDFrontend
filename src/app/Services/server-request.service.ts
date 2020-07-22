@@ -47,7 +47,17 @@ export class ServerRequestService {
   getAllCampaigns() {
     const headers = { 'Content-Type': 'application/json' };
     return this.http.get<Campain[]>(this.baseURL + '/getAllCampaigns', { headers, withCredentials: true })
+  }
 
+  deleteCampaign(name: string) {
+    const headers = { 'Content-Type': 'application/json' };
+    return this.http.post(this.baseURL + '/deleteCampaign', { name: name }, { headers, withCredentials: true })
+
+  }
+
+  updateCampaign(name: string, camp: Campain) {
+    const headers = { 'Content-Type': 'application/json' };
+    return this.http.post(this.baseURL + '/updateCampaign', { name: name, campaign: camp }, { headers, withCredentials: true });
   }
 
 
