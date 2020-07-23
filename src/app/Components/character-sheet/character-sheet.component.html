@@ -1,1 +1,17 @@
-<p>character-sheet works!</p>
+<nav>
+    <ul>
+        <li>
+            <div class="addButton" routerLink="">
+                <mat-icon>navigate_before</mat-icon>
+                <p>Campaign Select</p>
+            </div>
+        </li>
+    </ul>
+</nav>
+<div *ngIf="acServiceDone">
+    <app-character-creator *ngIf="status === 'create'"></app-character-creator>
+    <p *ngIf="status === 'dm'">dm</p>
+    <div *ngIf="status === 'ok'">
+        <p>{{ac.activeCharacter.characterName}}</p>
+    </div>
+</div>

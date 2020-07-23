@@ -7,14 +7,13 @@ import { CampaignsComponent } from './Components/campaigns/campaigns.component';
 import { CreateUserComponent } from './Components/create-user/create-user.component';
 import { AuthGuardAdminService } from './Services/auth-guard-admin.service';
 import { UpdateUserComponent } from './Components/update-user/update-user.component';
+import { CharacterSheetComponent } from './Components/character-sheet/character-sheet.component';
 
 
 const routes: Routes = [
-  { path: 'creator', component: CharacterCreatorComponent, canActivate: [AuthGuardService] },
   { path: 'login', component: LoginComponent },
   { path: '', component: CampaignsComponent, canActivate: [AuthGuardService] },
-  { path: 'createUser', component: CreateUserComponent, canActivate: [AuthGuardAdminService] },
-  { path: 'updateUser', component: UpdateUserComponent, canActivate: [AuthGuardAdminService] }
+  { path: 'gameScreen', component: CharacterSheetComponent, canActivate: [AuthGuardService] }
 ];
 
 @NgModule({

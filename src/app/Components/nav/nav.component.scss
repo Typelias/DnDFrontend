@@ -14,34 +14,7 @@ nav {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        a{
-            width: 100px;
-            line-height: 50px;
-            text-align: center;
-            display: block;
-            color: white;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.5s ease-in-out;
-            &:hover {
-                background-color: rgba($color: #fff, $alpha: 0.3);
-            }
-        }
-        #logout{
-            height: 50px;
-            width: 100px;
-            line-height: 50px;
-            text-align: center;
-            display: block;
-            color: white;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.5s ease-in-out;
-            &:hover {
-                background-color: rgba($color: #fff, $alpha: 0.3);
-            }
-
-        }
+        
     }
 
     .addButton{

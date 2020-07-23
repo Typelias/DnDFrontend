@@ -3,20 +3,27 @@ import { Campain } from '../Classes/campain';
 import { Character } from '../Classes/character';
 import { AuthService } from './auth.service';
 import { ServerRequestService } from './server-request.service';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ActiveCampaignService {
 
-  private activeCampaign: Campain;
+  public activeCampaign: Campain;
   private characters: Record<string, Character>;
   public activeID: string = "";
   public activeCharacter: Character;
+  public done: BehaviorSubject<boolean>;
 
-  constructor(private auth: AuthService, private sr: ServerRequestService) { }
+  constructor(private auth: AuthService, private sr: ServerRequestService, private router: Router) {
+    this.done = new BehaviorSubject<boolean>(false);
+    this.getActiveCampaign();
+  }
 
   setActiveCharacter(): boolean {
+    this.activeID = "";
     for (let key in this.characters) {
       if (this.characters[key].playerName === this.auth.getUsername()) {
         this.activeCharacter = this.characters[key];
@@ -30,17 +37,39 @@ export class ActiveCampaignService {
     return true;
   }
 
-
-
-  getCampaign(): Campain {
-    if (this.activeCampaign != null) {
-      return this.activeCampaign;
+  getActiveCampaign() {
+    const activeCampaignString = localStorage.getItem('activeCampaign');
+    if (activeCampaignString == null) {
+      this.done.next(false);
+      this.router.navigate(['']);
+      return
     }
-    return null
+    this.sr.getCampaignByName(activeCampaignString).subscribe(res => {
+      this.activeCampaign = res;
+      this.getCharacters();
+    })
+
+  }
+
+  ready(): Observable<boolean> {
+    return this.done.asObservable()
+
+  }
+
+  getCharacters() {
+    this.sr.getMultiCharacter(this.activeCampaign.Characters).subscribe(res => {
+      console.log(res);
+      this.done.next(true);
+      this.characters = res;
+    });
+
   }
 
   setActiveCampaign(campain: Campain) {
+    this.done.next(false);
     this.activeCampaign = campain;
-    console.log(this.activeCampaign);
+    localStorage.setItem('activeCampaign', campain.Name);
+    this.getCharacters();
+
   }
 }

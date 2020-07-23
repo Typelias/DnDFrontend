@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Campain } from '../Classes/campain';
+import { Character } from '../Classes/character';
 
 @Injectable({
   providedIn: 'root'
@@ -8,56 +9,62 @@ import { Campain } from '../Classes/campain';
 export class ServerRequestService {
 
   baseURL: string = "http://localhost:8080"
+  headers = { 'Content-Type': 'application/json' };
   constructor(private http: HttpClient) { }
+
+
 
   getUsers() {
     return this.http.get<string[]>(this.baseURL + "/getUserList", { withCredentials: true })
   }
 
   createUser(u: string, p: string, r: string) {
-    const headers = { 'Content-Type': 'application/json' };
-    return this.http.post(this.baseURL + '/addUser', { username: u, password: p, userrole: r }, { headers, withCredentials: true });
+    return this.http.post(this.baseURL + '/addUser', { username: u, password: p, userrole: r }, { headers: this.headers, withCredentials: true });
   }
 
   deleteUser(u: string) {
-    const headers = { 'Content-Type': 'application/json' };
-    return this.http.post(this.baseURL + '/deleteUser', { username: u }, { headers, withCredentials: true });
+    return this.http.post(this.baseURL + '/deleteUser', { username: u }, { headers: this.headers, withCredentials: true });
   }
 
   updateUser(updateName: string, u: string, p: string, r: string) {
-    const headers = { 'Content-Type': 'application/json' };
-    return this.http.post(this.baseURL + '/updateUser', { userToUpdate: updateName, user: { username: u, password: p, userrole: r } }, { headers, withCredentials: true });
+    return this.http.post(this.baseURL + '/updateUser', { userToUpdate: updateName, user: { username: u, password: p, userrole: r } }, { headers: this.headers, withCredentials: true });
   }
 
   addCampaign(campaign: Campain) {
-    const headers = { 'Content-Type': 'application/json' };
-    return this.http.post(this.baseURL + '/addCampaign', campaign, { headers, withCredentials: true })
+    return this.http.post(this.baseURL + '/addCampaign', campaign, { headers: this.headers, withCredentials: true })
   }
 
   getUserCampaign(username: string) {
-    const headers = { 'Content-Type': 'application/json' };
-    return this.http.post<Campain[]>(this.baseURL + '/getUserCampaign', { username: username }, { headers, withCredentials: true })
+    return this.http.post<Campain[]>(this.baseURL + '/getUserCampaign', { username: username }, { headers: this.headers, withCredentials: true })
   }
 
   getDMCampaign(username: string) {
-    const headers = { 'Content-Type': 'application/json' };
-    return this.http.post<Campain[]>(this.baseURL + '/getDMCampaign', { username: username }, { headers, withCredentials: true })
+    return this.http.post<Campain[]>(this.baseURL + '/getDMCampaign', { username: username }, { headers: this.headers, withCredentials: true })
+  }
+
+  getCampaignByName(name: string) {
+    return this.http.post<Campain>(this.baseURL + '/getCampaignByName', { name: name }, { headers: this.headers, withCredentials: true })
   }
 
   getAllCampaigns() {
-    const headers = { 'Content-Type': 'application/json' };
-    return this.http.get<Campain[]>(this.baseURL + '/getAllCampaigns', { headers, withCredentials: true })
+    return this.http.get<Campain[]>(this.baseURL + '/getAllCampaigns', { headers: this.headers, withCredentials: true })
   }
 
   deleteCampaign(name: string) {
-    const headers = { 'Content-Type': 'application/json' };
-    return this.http.post(this.baseURL + '/deleteCampaign', { name: name }, { headers, withCredentials: true })
+    return this.http.post(this.baseURL + '/deleteCampaign', { name: name }, { headers: this.headers, withCredentials: true })
 
   }
 
   updateCampaign(name: string, camp: Campain) {
-    const headers = { 'Content-Type': 'application/json' };
-    return this.http.post(this.baseURL + '/updateCampaign', { name: name, campaign: camp }, { headers, withCredentials: true });
+    return this.http.post(this.baseURL + '/updateCampaign', { name: name, campaign: camp }, { headers: this.headers, withCredentials: true });
+  }
+
+  getCharacter(id: string) {
+    return this.http.post<Character>(this.baseURL + "/getCharacter", { id: id }, { headers: this.headers, withCredentials: true });
+  }
+
+  getMultiCharacter(ids: string[]) {
+    return this.http.post<Record<string, Character>>(this.baseURL + "/getMultiCharacter", { ids: ids }, { headers: this.headers, withCredentials: true });
   }
 
 

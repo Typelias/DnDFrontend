@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/Services/auth.service';
 import { ActiveCampaignService } from 'src/app/Services/active-campaign.service';
 import { ServerRequestService } from 'src/app/Services/server-request.service';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-campaign-icon',
@@ -14,16 +15,14 @@ export class CampaignIconComponent implements OnInit {
   @Input()
   campain: Campain
 
-  constructor(private auth: AuthService, private campaignService: ActiveCampaignService, private dialog: MatDialog) { }
+  constructor(private auth: AuthService, private campaignService: ActiveCampaignService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   setActiveCampaign() {
     this.campaignService.setActiveCampaign(this.campain);
-  }
-
-  openDialog() {
+    this.router.navigate(['/gameScreen'])
 
   }
 

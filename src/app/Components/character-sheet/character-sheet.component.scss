@@ -1,0 +1,44 @@
+nav {
+    color: white;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: space-between;
+
+    ul{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        
+    }
+
+    .addButton{
+        padding: 0 5px;
+        margin: 0;
+        margin-right: 10px;
+        display: flex;
+        cursor: pointer;
+        justify-content: flex-start;
+        line-height: 50px;
+        
+        p{
+            margin: 0;
+            padding: 0;
+            margin-right: 10px;
+        }
+        mat-icon{
+            height: 50px;
+            line-height: 50px;
+        }
+        transition: background-color 0.5s ease-in-out;
+        &:hover {
+            background-color: rgba($color: #fff, $alpha: 0.3);
+        }
+    }
+
+}
