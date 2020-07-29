@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class ActiveCampaignService {
 
   public activeCampaign: Campain;
-  private characters: Record<string, Character>;
+  private characters: Record<string, Character> = {};
   public activeID: string = "";
   public activeCharacter: Character;
   public done: BehaviorSubject<boolean>;
@@ -56,11 +56,20 @@ export class ActiveCampaignService {
 
   }
 
+  save() {
+    this.sr.updateCharacter(this.activeCharacter, this.activeID).subscribe(res => console.log(res));
+  }
+
   getCharacters() {
     this.sr.getMultiCharacter(this.activeCampaign.Characters).subscribe(res => {
       console.log(res);
+      if (res != null) {
+        res.forEach(mulitCh => {
+          this.characters[mulitCh.id] = mulitCh.character
+        });
+      }
+      console.log(this.characters)
       this.done.next(true);
-      this.characters = res;
     });
 
   }

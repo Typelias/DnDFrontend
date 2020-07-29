@@ -1,10 +1,10 @@
 export class HP {
-  armorClass: number;
-  initiative: number;
-  speed: number;
-  maxHP: number;
-  currHP: number;
-  tempHP: number;
-  hitDice: string;
-  numberOfHutDice: number;
+  armorClass: number = 0;
+  initiative: number = 0;
+  speed: number = 0;
+  maxHP: number = 0;
+  currHP: number = 0;
+  tempHP: number = 0;
+  hitDice: string = "";
+  numberOfHutDice: number = 0;
 }

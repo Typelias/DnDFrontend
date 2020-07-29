@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Campain } from '../Classes/campain';
 import { Character } from '../Classes/character';
+import { MultiCharacterGetHelper } from '../Classes/multi-character-get-helper'
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServerRequestService {
 
-  baseURL: string = "http://localhost:8080"
+  baseURL: string = "http://172.30.225.114:8080"
   headers = { 'Content-Type': 'application/json' };
   constructor(private http: HttpClient) { }
 
@@ -64,11 +65,15 @@ export class ServerRequestService {
   }
 
   getMultiCharacter(ids: string[]) {
-    return this.http.post<Record<string, Character>>(this.baseURL + "/getMultiCharacter", { ids: ids }, { headers: this.headers, withCredentials: true });
+    return this.http.post<MultiCharacterGetHelper[]>(this.baseURL + "/getMultiCharacter", { ids: ids }, { headers: this.headers, withCredentials: true });
   }
 
+  addCharacter(character: Character, campaignName: string) {
+    return this.http.post(this.baseURL + "/addCharacter", { character: character, name: campaignName }, { headers: this.headers, withCredentials: true })
+  }
 
-
-
+  updateCharacter(character: Character, id: string) {
+    return this.http.post(this.baseURL + "/updateCharacter", { character: character, id: id }, { headers: this.headers, withCredentials: true })
+  }
 
 }

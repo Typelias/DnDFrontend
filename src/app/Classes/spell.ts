@@ -1,9 +1,9 @@
 export class Spell {
-  namne: string;
+  name: string;
   description: string;
   dice: string;
   damageType: string;
-  range: number;
+  spellRange: number;
   component: string;
   duration: string;
   castingTime: string;

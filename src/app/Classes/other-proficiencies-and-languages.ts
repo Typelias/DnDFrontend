@@ -1,5 +1,5 @@
-import {Category} from './category';
-import {CategoryItem} from './category-item';
+import { Category } from './category';
+import { CategoryItem } from './category-item';
 
 export class OtherProficienciesAndLanguages {
   categories: Array<Category> = [];
@@ -12,7 +12,7 @@ export class OtherProficienciesAndLanguages {
     delete this.categories[this.categories.indexOf(category)];
   }
 
-  addToCategory(category: Category , item: CategoryItem) {
+  addToCategory(category: Category, item: CategoryItem) {
     this.categories[this.categories.indexOf(category)].addItem(item);
   }
 

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Character } from '../../Classes/character';
 import { AuthService } from 'src/app/Services/auth.service';
+import { ActiveCampaignService } from 'src/app/Services/active-campaign.service';
+import { ServerRequestService } from 'src/app/Services/server-request.service';
 
 @Component({
   selector: 'app-character-creator',
@@ -14,7 +16,7 @@ export class CharacterCreatorComponent implements OnInit {
   currentStatBonus: number;
   curentStatName: string;
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private ac: ActiveCampaignService, private sr: ServerRequestService) {
   }
 
   ngOnInit(): void {
@@ -22,9 +24,24 @@ export class CharacterCreatorComponent implements OnInit {
     this.character.playerName = this.authService.getUsername()
   }
 
-  printCharacter() {
+  addCharacter() {
     this.calculateStatBonus();
+    this.raceAutoFill(this.character.race);
+    this.classAutoFill(this.character.characterClass);
     console.log(this.character);
+
+    if (this.character.characterName != ""
+      && this.character.characterClass != ""
+      && this.character.background != ""
+      && this.character.race != ""
+      && this.character.alignment != ""
+      && this.character.hp.armorClass != 0) {
+      this.sr.addCharacter(this.character, this.ac.activeCampaign.Name).subscribe(res => {
+        window.location.reload();
+      });
+
+    }
+
   }
 
   formatBonusPrint(name: string, amount: number): string {
@@ -42,6 +59,8 @@ export class CharacterCreatorComponent implements OnInit {
         this.character.stats[key] = this.calculateBonus(this.character.stats[attribute]);
       }
     });
+
+    this.character.hp.initiative = this.character.stats.dexterityModifier;
   }
 
   calculateBonus(stat: number): number {

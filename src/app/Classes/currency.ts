@@ -1,9 +1,9 @@
 export class Currency {
-  cp: number;
-  sp: number;
-  ep: number;
-  gp: number;
-  pp: number;
+  cp: number = 0;
+  sp: number = 0;
+  ep: number = 0;
+  gp: number = 0;
+  pp: number = 0;
 
 
   addMoney(amount: number, currency: string) {

@@ -1,8 +1,8 @@
 export class SavingThrows {
-  strength: boolean;
-  dexterity: boolean;
-  constitution: boolean;
-  intelligence: boolean;
-  wisdom: boolean;
-  charisma: boolean;
+  strength: boolean = false;
+  dexterity: boolean = false;
+  constitution: boolean = false;
+  intelligence: boolean = false;
+  wisdom: boolean = false;
+  charisma: boolean = false;
 }
