@@ -9,7 +9,7 @@ import { MultiCharacterGetHelper } from '../Classes/multi-character-get-helper'
 })
 export class ServerRequestService {
 
-  baseURL: string = "http://172.30.225.114:8080"
+  baseURL: string = "http://localhost:8080"
   headers = { 'Content-Type': 'application/json' };
   constructor(private http: HttpClient) { }
 

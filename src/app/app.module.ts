@@ -20,6 +20,7 @@ import { CreateCampaignComponent } from './Components/create-campaign/create-cam
 import { ActiveCampaignService } from './Services/active-campaign.service';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { EditCampaignComponent } from './Components/edit-campaign/edit-campaign.component';
+import { CharacterViewComponent } from './Components/character-view/character-view.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { EditCampaignComponent } from './Components/edit-campaign/edit-campaign.
     UpdateUserComponent,
     CampaignIconComponent,
     CreateCampaignComponent,
-    EditCampaignComponent
+    EditCampaignComponent,
+    CharacterViewComponent
   ],
   imports: [
     BrowserModule,

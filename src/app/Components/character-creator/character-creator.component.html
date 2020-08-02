@@ -1,4 +1,6 @@
 <form (ngSubmit)="addCharacter()">
+  <h3>Basic info</h3>
+  <mat-divider></mat-divider>
   <div id="basicInfo">
     <mat-form-field>
       <mat-label>Character Name</mat-label>
@@ -115,90 +117,105 @@
       <mat-label>Armor Class</mat-label>
       <input matInput type="number" [(ngModel)]="character.hp.armorClass" name="AC">
     </mat-form-field>
+    <mat-form-field>
+      <mat-label>Max HP</mat-label>
+      <input matInput type="number" [(ngModel)]="character.hp.maxHP" name="MaxHP">
+    </mat-form-field>
   </div>
-  <div id="stats">
-    <p>Stats</p>
-    <mat-form-field>
-      <mat-label>Strength</mat-label>
-      <input [(ngModel)]="character.stats.strength"
-        (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'strength'" name="strength"
-        matInput type="number">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Dexterity</mat-label>
-      <input [(ngModel)]="character.stats.dexterity"
-        (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'dexterity'" name="dexterity"
-        matInput type="number">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Constitution</mat-label>
-      <input [(ngModel)]="character.stats.constitution"
-        (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'constitution'"
-        name="constitution" matInput type="number">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Intelligence</mat-label>
-      <input [(ngModel)]="character.stats.intelligence"
-        (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'intelligence'"
-        name="intelligence" matInput type="number">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Wisdom</mat-label>
-      <input [(ngModel)]="character.stats.wisdom"
-        (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'wisdom'" name="wisdom"
-        matInput type="number">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Charisma</mat-label>
-      <input [(ngModel)]="character.stats.charisma"
-        (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'charisma'" name="charisma"
-        matInput type="number">
-    </mat-form-field>
-    <div>
-      <p *ngIf="currentStatBonus != null && curentStatName">{{formatBonusPrint(curentStatName, currentStatBonus)}}</p>
+  <div id="headerWrapper">
+    <h3>Stats</h3>
+    <h3>Saving Throws</h3>
+    <h3>Skills</h3>
+  </div>
+
+  <mat-divider></mat-divider>
+  <div id="container">
+    <div id="stats">
+      <mat-form-field>
+        <mat-label>Strength</mat-label>
+        <input [(ngModel)]="character.stats.strength"
+          (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'strength'" name="strength"
+          matInput type="number">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Dexterity</mat-label>
+        <input [(ngModel)]="character.stats.dexterity"
+          (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'dexterity'"
+          name="dexterity" matInput type="number">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Constitution</mat-label>
+        <input [(ngModel)]="character.stats.constitution"
+          (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'constitution'"
+          name="constitution" matInput type="number">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Intelligence</mat-label>
+        <input [(ngModel)]="character.stats.intelligence"
+          (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'intelligence'"
+          name="intelligence" matInput type="number">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Wisdom</mat-label>
+        <input [(ngModel)]="character.stats.wisdom"
+          (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'wisdom'" name="wisdom"
+          matInput type="number">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Charisma</mat-label>
+        <input [(ngModel)]="character.stats.charisma"
+          (change)="currentStatBonus = calculateBonus($event.target.value); curentStatName = 'charisma'" name="charisma"
+          matInput type="number">
+      </mat-form-field>
+      <div>
+        <p *ngIf="currentStatBonus != null && curentStatName">{{formatBonusPrint(curentStatName, currentStatBonus)}}</p>
+      </div>
+    </div>
+    <div id="savingThrows">
+      <mat-checkbox [(ngModel)]="character.savingThrows.strength" disabled="true" name="savingStrength">Strength
+      </mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.savingThrows.dexterity" disabled="true" name="savingDex">Dexterity
+      </mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.savingThrows.constitution" disabled="true" name="savingConst">Constitution
+      </mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.savingThrows.intelligence" disabled="true" name="savingInt">Intelligence
+      </mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.savingThrows.wisdom" disabled="true" name="savingWis">Wisdom</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.savingThrows.charisma" disabled="true" name="savingChar">Charisma
+      </mat-checkbox>
+    </div>
+    <div id="skills">
+      <mat-checkbox [(ngModel)]="character.skills.acrobatics" name="acrobatics">Acrobatics</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.skills.animalHandling" name="animalHandling">Animal Handling
+      </mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.skills.arcana" name="arcana">Arcana</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.skills.athletics" name="athletics">Athletics</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.skills.deception" name="deception">Deception</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.skills.history" name="history">History</mat-checkbox>
+
+      <mat-checkbox [(ngModel)]="character.skills.insight" name="insight">Insight</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.skills.intimidation" name="intimidation">Intimidation</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.skills.investigation" name="investigation">Investigation</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.skills.medicine" name="medicine">Medicine</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.skills.nature" name="nature">Nature</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.skills.perception" name="perception">Perception</mat-checkbox>
+
+      <mat-checkbox [(ngModel)]="character.skills.performance" name="performance">Performance</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.skills.persuasion" name="persuasion">Persuasion</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.skills.religion" name="religion">Religion</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.skills.slightOfHand" name="sleightOfHand">Sleight of Hand
+      </mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.skills.stealth" name="stealth">Stealth</mat-checkbox>
+      <mat-checkbox [(ngModel)]="character.skills.survival" name="survival">Survival</mat-checkbox>
+
     </div>
   </div>
-  <div id="savuingThrows">
-    <p>Saving Throws</p>
-    <mat-checkbox [(ngModel)]="character.savingThrows.strength" disabled="true" name="savingStrength">Strength
-    </mat-checkbox>
-    <mat-checkbox [(ngModel)]="character.savingThrows.dexterity" disabled="true" name="savingDex">Dexterity
-    </mat-checkbox>
-    <mat-checkbox [(ngModel)]="character.savingThrows.constitution" disabled="true" name="savingConst">Constitution
-    </mat-checkbox>
-    <mat-checkbox [(ngModel)]="character.savingThrows.intelligence" disabled="true" name="savingInt">Intelligence
-    </mat-checkbox>
-    <mat-checkbox [(ngModel)]="character.savingThrows.wisdom" disabled="true" name="savingWis">Wisdom</mat-checkbox>
-    <mat-checkbox [(ngModel)]="character.savingThrows.charisma" disabled="true" name="savingChar">Charisma
-    </mat-checkbox>
-  </div>
-  <div id="skills">
-    <p>Skills</p>
 
-    <mat-checkbox [(ngModel)]="character.skills.acrobatics" name="acrobatics">Acrobatics</mat-checkbox>
-    <mat-checkbox [(ngModel)]="character.skills.animalHandling" name="animalHandling">Animal Handling
-    </mat-checkbox>
-    <mat-checkbox [(ngModel)]="character.skills.arcana" name="arcana">Arcana</mat-checkbox>
-    <mat-checkbox [(ngModel)]="character.skills.athletics" name="athletics">Athletics</mat-checkbox>
-    <mat-checkbox [(ngModel)]="character.skills.deception" name="deception">Deception</mat-checkbox>
-    <mat-checkbox [(ngModel)]="character.skills.history" name="history">History</mat-checkbox>
 
-    <mat-checkbox [(ngModel)]="character.skills.insight" name="insight">Insight</mat-checkbox>
-    <mat-checkbox [(ngModel)]="character.skills.intimidation" name="intimidation">Intimidation</mat-checkbox>
-    <mat-checkbox [(ngModel)]="character.skills.investigation" name="investigation">Investigation</mat-checkbox>
-    <mat-checkbox [(ngModel)]="character.skills.medicine" name="medicine">Medicine</mat-checkbox>
-    <mat-checkbox [(ngModel)]="character.skills.nature" name="nature">Nature</mat-checkbox>
-    <mat-checkbox [(ngModel)]="character.skills.perception" name="perception">Perception</mat-checkbox>
 
-    <mat-checkbox [(ngModel)]="character.skills.performance" name="performance">Performance</mat-checkbox>
-    <mat-checkbox [(ngModel)]="character.skills.persuasion" name="persuasion">Persuasion</mat-checkbox>
-    <mat-checkbox [(ngModel)]="character.skills.religion" name="religion">Religion</mat-checkbox>
-    <mat-checkbox [(ngModel)]="character.skills.slightOfHand" name="sleightOfHand">Sleight of Hand
-    </mat-checkbox>
-    <mat-checkbox [(ngModel)]="character.skills.stealth" name="stealth">Stealth</mat-checkbox>
-    <mat-checkbox [(ngModel)]="character.skills.survival" name="survival">Survival</mat-checkbox>
 
-  </div>
+
+
   <mat-expansion-panel>
     <mat-expansion-panel-header>
       <mat-panel-title>
@@ -239,4 +256,3 @@
   </mat-expansion-panel>
   <button type="submit" mat-raised-button color="primary">Add Character</button>
 </form>
-<p>{{character | json}}</p>

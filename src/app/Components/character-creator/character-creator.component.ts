@@ -35,7 +35,9 @@ export class CharacterCreatorComponent implements OnInit {
       && this.character.background != ""
       && this.character.race != ""
       && this.character.alignment != ""
-      && this.character.hp.armorClass != 0) {
+      && this.character.hp.armorClass != 0
+      && this.character.hp.maxHP != 0) {
+        this.character.hp.currHP = this.character.hp.maxHP;
       this.sr.addCharacter(this.character, this.ac.activeCampaign.Name).subscribe(res => {
         window.location.reload();
       });
