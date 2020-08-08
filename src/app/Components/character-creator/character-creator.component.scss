@@ -1,4 +1,39 @@
-@import '~@angular/material/theming';
+#basicInfo {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    mat-form-field{
+        margin: 5px;
+    }
+}
 
-@include mat-core();
+#container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
 
+#headerWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    h3 {
+        padding: 10px;
+    }
+}
+
+#stats {
+    padding: 20px;
+    display: grid;
+    mat-form-field {
+        width: 20%;
+    }
+}
+
+#savingThrows{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+#skills{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+}

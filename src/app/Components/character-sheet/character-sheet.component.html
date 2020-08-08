@@ -12,6 +12,10 @@
     <app-character-creator *ngIf="status === 'create'"></app-character-creator>
     <p *ngIf="status === 'dm'">dm</p>
     <div *ngIf="status === 'ok'">
+<<<<<<< HEAD
         <app-character-view></app-character-view>
+=======
+        <app-character-view [charcter]="ac.activeCharacter"></app-character-view>
+>>>>>>> a3b862ca45ba5983e019b897bf43ac368ceb00bd
     </div>
 </div>
