@@ -1,10 +1,15 @@
-import {Spell} from './spell';
+import { Spell } from './spell';
+import { IlevelSpell } from '../Interfaces/ilevel-spell';
 
 export class LevelSpells {
   spells: Array<Spell> = [];
 
   spellSlotTotal: number;
   spellSlotExpended = 0;
+
+  constructor(data?: IlevelSpell) {
+    Object.assign(this, data);
+  }
 
   addSpell(spell: Spell) {
     this.spells.push(spell);

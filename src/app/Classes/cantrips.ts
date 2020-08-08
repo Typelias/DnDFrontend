@@ -1,4 +1,5 @@
-import {Spell} from './spell';
+import { Spell } from './spell';
+import { Icantrips } from '../Interfaces/icantrips';
 
 export class Cantrips {
   spellList: Array<Spell> = [];
@@ -9,6 +10,10 @@ export class Cantrips {
 
   removeSpell(spell: Spell) {
     delete this.spellList[this.spellList.indexOf(spell)];
+  }
+
+  constructor(data?: Icantrips) {
+    Object.assign(this, data);
   }
 
 }

@@ -1,3 +1,5 @@
+import { Icurrency } from '../Interfaces/icurrency';
+
 export class Currency {
   cp: number = 0;
   sp: number = 0;
@@ -133,6 +135,10 @@ export class Currency {
 
     return false;
 
+  }
+
+  constructor(data?: Icurrency) {
+    Object.assign(this, data);
   }
 
 }

@@ -12,6 +12,6 @@
     <app-character-creator *ngIf="status === 'create'"></app-character-creator>
     <p *ngIf="status === 'dm'">dm</p>
     <div *ngIf="status === 'ok'">
-        <p>{{ac.activeCharacter.characterName}}</p>
+        <app-character-view></app-character-view>
     </div>
 </div>

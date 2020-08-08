@@ -1,20 +1,36 @@
-import {Cantrips} from './cantrips';
-import {Spell} from './spell';
-import {LevelSpells} from './level-spells';
+import { Cantrips } from './cantrips';
+import { Spell } from './spell';
+import { LevelSpells } from './level-spells';
+import { IspellList } from '../Interfaces/ispell-list';
 
 export class SpellList {
   // Cantrips
-  cantrips = new Cantrips();
+  cantrips: Cantrips
 
-  lvl1Spells = new LevelSpells();
-  lvl2Spells = new LevelSpells();
-  lvl3Spells = new LevelSpells();
-  lvl4Spells = new LevelSpells();
-  lvl5Spells = new LevelSpells();
-  lvl6Spells = new LevelSpells();
-  lvl7Spells = new LevelSpells();
-  lvl8Spells = new LevelSpells();
-  lvl9Spells = new LevelSpells();
+  lvl1Spells: LevelSpells;
+  lvl2Spells: LevelSpells;
+  lvl3Spells: LevelSpells;
+  lvl4Spells: LevelSpells;
+  lvl5Spells: LevelSpells;
+  lvl6Spells: LevelSpells;
+  lvl7Spells: LevelSpells;
+  lvl8Spells: LevelSpells;
+  lvl9Spells: LevelSpells;
+
+
+  constructor(data?: IspellList) {
+    this.cantrips = new Cantrips(data.cantrips);
+    this.lvl1Spells = new LevelSpells(data.lvl1Spells);
+    this.lvl2Spells = new LevelSpells(data.lvl2Spells);
+    this.lvl3Spells = new LevelSpells(data.lvl3Spells);
+    this.lvl4Spells = new LevelSpells(data.lvl4Spells);
+    this.lvl5Spells = new LevelSpells(data.lvl5Spells);
+    this.lvl6Spells = new LevelSpells(data.lvl6Spells);
+    this.lvl7Spells = new LevelSpells(data.lvl7Spells);
+    this.lvl8Spells = new LevelSpells(data.lvl8Spells);
+    this.lvl9Spells = new LevelSpells(data.lvl9Spells);
+
+  }
 
 
   // Cantrips

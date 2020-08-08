@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Campain } from '../Classes/campain';
 import { Character } from '../Classes/character';
+import { Icharacter } from "../Interfaces/icharacter"
 import { MultiCharacterGetHelper } from '../Classes/multi-character-get-helper'
 
 @Injectable({
@@ -9,7 +10,7 @@ import { MultiCharacterGetHelper } from '../Classes/multi-character-get-helper'
 })
 export class ServerRequestService {
 
-  baseURL: string = "http://172.30.225.114:8080"
+  baseURL: string = "http://172.25.242.119:8080"
   headers = { 'Content-Type': 'application/json' };
   constructor(private http: HttpClient) { }
 
@@ -61,7 +62,7 @@ export class ServerRequestService {
   }
 
   getCharacter(id: string) {
-    return this.http.post<Character>(this.baseURL + "/getCharacter", { id: id }, { headers: this.headers, withCredentials: true });
+    return this.http.post<Icharacter>(this.baseURL + "/getCharacter", { id: id }, { headers: this.headers, withCredentials: true });
   }
 
   getMultiCharacter(ids: string[]) {

@@ -1,3 +1,5 @@
+import { Ihp } from '../Interfaces/ihp';
+
 export class HP {
   armorClass: number = 0;
   initiative: number = 0;
@@ -7,4 +9,9 @@ export class HP {
   tempHP: number = 0;
   hitDice: string = "";
   numberOfHutDice: number = 0;
+
+  constructor(obj?: Ihp) {
+    Object.assign(this, obj);
+  }
+
 }

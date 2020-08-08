@@ -1,0 +1,24 @@
+<mat-icon mat-dialog-close>close</mat-icon>
+
+<form (ngSubmit)="editEquipment()">
+    <h3>Add Equipment</h3>
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput name="name" [(ngModel)]="newItem.name">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput name="description" [(ngModel)]="newItem.description">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Amount</mat-label>
+        <input matInput type="number" name="amount" [(ngModel)]="newItem.amount">
+    </mat-form-field>
+
+    <diV>
+        <button mat-raised-button color="primary" type="submit">Add</button>
+        <button mat-raised-button color="warn">Delete Item</button>
+    </diV>
+
+
+</form>

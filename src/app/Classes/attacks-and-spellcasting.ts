@@ -1,4 +1,5 @@
-import {Weapon} from './weapon';
+import { Weapon } from './weapon';
+import { IattacksAndSpellcasting } from '../Interfaces/iattacks-and-spellcasting';
 
 export class AttacksAndSpellcasting {
   weapons: Array<Weapon> = [];
@@ -9,6 +10,10 @@ export class AttacksAndSpellcasting {
 
   removeWeapon(weapon: Weapon) {
     delete this.weapons[this.weapons.indexOf(weapon)];
+  }
+
+  constructor(data?: IattacksAndSpellcasting) {
+    Object.assign(this, data);
   }
 
 }

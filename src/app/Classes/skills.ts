@@ -1,3 +1,5 @@
+import { Iskills } from '../Interfaces/iskills';
+
 export class Skills {
   acrobatics = false
   acrobaticsBonus = 0;
@@ -35,4 +37,8 @@ export class Skills {
   stealthBonus = 0;
   survival = false;
   survivalBonus = 0;
+
+  constructor(obj?: Iskills) {
+    Object.assign(this, obj);
+  }
 }

@@ -65,7 +65,7 @@ export class ActiveCampaignService {
       console.log(res);
       if (res != null) {
         res.forEach(mulitCh => {
-          this.characters[mulitCh.id] = mulitCh.character
+          this.characters[mulitCh.id] = new Character(mulitCh.character);
         });
       }
       console.log(this.characters)

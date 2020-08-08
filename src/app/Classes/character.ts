@@ -8,6 +8,7 @@ import { Equipment } from './equipment';
 import { OtherProficienciesAndLanguages } from './other-proficiencies-and-languages';
 import { FeaturesAndTraits } from './features-and-traits';
 import { SpellList } from './spell-list';
+import { Icharacter } from '../Interfaces/icharacter';
 
 export class Character {
   characterName: string = "";
@@ -22,20 +23,35 @@ export class Character {
   stats = new Stats();
   inspiration: boolean = false;
   proficiencyBonus: number = 0;
-  savingThrows = new SavingThrows();
-  skills = new Skills();
-  hp = new HP();
-  personality = new Personality();
-  attacksAndSpellcasting = new AttacksAndSpellcasting();
+  savingThrows: SavingThrows;
+  skills: Skills
+  hp: HP
+  personality: Personality;
+  attacksAndSpellcasting: AttacksAndSpellcasting;
   passiveInvestigation: number = 0;
   passivePerception: number = 0;
   passiveInsight: number = 0;
-  otherProficienciesAndLanguages = new OtherProficienciesAndLanguages();
-  equipment = new Equipment();
-  featuresAndTraits = new FeaturesAndTraits();
+  otherProficienciesAndLanguages: OtherProficienciesAndLanguages;
+  equipment: Equipment;
+  featuresAndTraits: FeaturesAndTraits;
   spellcastingAbility: string = "";
   spellSaveDC: number = 0;
   spellAttackBonus: number = 0;
-  spellList = new SpellList();
+  spellList: SpellList
   classAttributes: Array<string> = [];
+
+
+  constructor(data?: Icharacter) {
+    Object.assign(this, data);
+    this.savingThrows = new SavingThrows(data.savingThrows);
+    this.skills = new Skills(data.skills);
+    this.hp = new HP(data.hp);
+    this.personality = new Personality(data.personality);
+    this.attacksAndSpellcasting = new AttacksAndSpellcasting(data.attacksAndSpellcasting);
+    this.otherProficienciesAndLanguages = new OtherProficienciesAndLanguages(data.otherProficienciesAndLanguages);
+    this.equipment = new Equipment(data.equipment);
+    this.featuresAndTraits = new FeaturesAndTraits();
+    this.spellList = new SpellList(data.spellList);
+  }
+
 }

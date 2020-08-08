@@ -1,5 +1,3 @@
-import { Character } from './character';
-
 export class Campain {
     Name: string;
     DM: string;
