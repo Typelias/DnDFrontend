@@ -19,16 +19,29 @@ export class SpellList {
 
 
   constructor(data?: IspellList) {
-    this.cantrips = new Cantrips(data.cantrips);
-    this.lvl1Spells = new LevelSpells(data.lvl1Spells);
-    this.lvl2Spells = new LevelSpells(data.lvl2Spells);
-    this.lvl3Spells = new LevelSpells(data.lvl3Spells);
-    this.lvl4Spells = new LevelSpells(data.lvl4Spells);
-    this.lvl5Spells = new LevelSpells(data.lvl5Spells);
-    this.lvl6Spells = new LevelSpells(data.lvl6Spells);
-    this.lvl7Spells = new LevelSpells(data.lvl7Spells);
-    this.lvl8Spells = new LevelSpells(data.lvl8Spells);
-    this.lvl9Spells = new LevelSpells(data.lvl9Spells);
+    if (data) {
+      this.cantrips = new Cantrips(data.cantrips);
+      this.lvl1Spells = new LevelSpells(data.lvl1Spells);
+      this.lvl2Spells = new LevelSpells(data.lvl2Spells);
+      this.lvl3Spells = new LevelSpells(data.lvl3Spells);
+      this.lvl4Spells = new LevelSpells(data.lvl4Spells);
+      this.lvl5Spells = new LevelSpells(data.lvl5Spells);
+      this.lvl6Spells = new LevelSpells(data.lvl6Spells);
+      this.lvl7Spells = new LevelSpells(data.lvl7Spells);
+      this.lvl8Spells = new LevelSpells(data.lvl8Spells);
+      this.lvl9Spells = new LevelSpells(data.lvl9Spells);
+    }
+    this.cantrips = new Cantrips();
+    this.lvl1Spells = new LevelSpells();
+    this.lvl2Spells = new LevelSpells();
+    this.lvl3Spells = new LevelSpells();
+    this.lvl4Spells = new LevelSpells();
+    this.lvl5Spells = new LevelSpells();
+    this.lvl6Spells = new LevelSpells();
+    this.lvl7Spells = new LevelSpells();
+    this.lvl8Spells = new LevelSpells();
+    this.lvl9Spells = new LevelSpells();
+
 
   }
 

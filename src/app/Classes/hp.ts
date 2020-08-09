@@ -10,8 +10,11 @@ export class HP {
   hitDice: string = "";
   numberOfHutDice: number = 0;
 
-  constructor(obj?: Ihp) {
-    Object.assign(this, obj);
+  constructor(data?: Ihp) {
+    if (data) {
+      Object.assign(this, data);
+    }
+
   }
 
 }

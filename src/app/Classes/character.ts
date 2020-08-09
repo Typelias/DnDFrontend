@@ -42,16 +42,30 @@ export class Character {
 
 
   constructor(data?: Icharacter) {
-    Object.assign(this, data);
-    this.savingThrows = new SavingThrows(data.savingThrows);
-    this.skills = new Skills(data.skills);
-    this.hp = new HP(data.hp);
-    this.personality = new Personality(data.personality);
-    this.attacksAndSpellcasting = new AttacksAndSpellcasting(data.attacksAndSpellcasting);
-    this.otherProficienciesAndLanguages = new OtherProficienciesAndLanguages(data.otherProficienciesAndLanguages);
-    this.equipment = new Equipment(data.equipment);
-    this.featuresAndTraits = new FeaturesAndTraits();
-    this.spellList = new SpellList(data.spellList);
+    if (data) {
+      Object.assign(this, data);
+      this.savingThrows = new SavingThrows(data.savingThrows);
+      this.skills = new Skills(data.skills);
+      this.hp = new HP(data.hp);
+      this.personality = new Personality(data.personality);
+      this.attacksAndSpellcasting = new AttacksAndSpellcasting(data.attacksAndSpellcasting);
+      this.otherProficienciesAndLanguages = new OtherProficienciesAndLanguages(data.otherProficienciesAndLanguages);
+      this.equipment = new Equipment(data.equipment);
+      this.featuresAndTraits = new FeaturesAndTraits();
+      this.spellList = new SpellList(data.spellList);
+    } else {
+      this.savingThrows = new SavingThrows();
+      this.skills = new Skills();
+      this.hp = new HP();
+      this.personality = new Personality();
+      this.attacksAndSpellcasting = new AttacksAndSpellcasting();
+      this.otherProficienciesAndLanguages = new OtherProficienciesAndLanguages();
+      this.equipment = new Equipment();
+      this.featuresAndTraits = new FeaturesAndTraits();
+      this.spellList = new SpellList();
+    }
+
+
   }
 
 }

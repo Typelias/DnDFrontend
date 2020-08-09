@@ -38,7 +38,10 @@ export class Skills {
   survival = false;
   survivalBonus = 0;
 
-  constructor(obj?: Iskills) {
-    Object.assign(this, obj);
+  constructor(data?: Iskills) {
+    if (data) {
+      Object.assign(this, data);
+    }
+
   }
 }

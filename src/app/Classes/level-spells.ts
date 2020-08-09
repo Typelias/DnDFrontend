@@ -8,7 +8,10 @@ export class LevelSpells {
   spellSlotExpended = 0;
 
   constructor(data?: IlevelSpell) {
-    Object.assign(this, data);
+    if (data) {
+      Object.assign(this, data);
+    }
+
   }
 
   addSpell(spell: Spell) {

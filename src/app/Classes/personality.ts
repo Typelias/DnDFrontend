@@ -8,6 +8,9 @@ export class Personality {
   backstory: string = "";
 
   constructor(data?: Ipersonality) {
-    Object.assign(this, data);
+    if (data) {
+      Object.assign(this, data);
+    }
+
   }
 }

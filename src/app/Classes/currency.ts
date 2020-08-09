@@ -138,7 +138,10 @@ export class Currency {
   }
 
   constructor(data?: Icurrency) {
-    Object.assign(this, data);
+    if (data) {
+      Object.assign(this, data);
+    }
+
   }
 
 }

@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
-  baseURL: string = "http://172.25.242.119:8080";
+  baseURL: string = "http://172.25.240.76:8081";
   helper: JwtHelperService;
   adminStatus: boolean = null;
 
@@ -17,7 +17,8 @@ export class AuthService {
 
   doLogin(u: string, p: string) {
     const headers = { 'Content-Type': 'application/json' };
-    return this.http.post(this.baseURL + '/signin', { username: u, password: p }, { headers, withCredentials: true });
+    const ret = this.http.post(this.baseURL + '/signin', { username: u, password: p }, { headers, withCredentials: true });
+    return ret;
   }
 
   isLoggedIn(): boolean {

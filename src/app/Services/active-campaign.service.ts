@@ -62,13 +62,13 @@ export class ActiveCampaignService {
 
   getCharacters() {
     this.sr.getMultiCharacter(this.activeCampaign.Characters).subscribe(res => {
-      console.log(res);
+
       if (res != null) {
         res.forEach(mulitCh => {
           this.characters[mulitCh.id] = new Character(mulitCh.character);
         });
       }
-      console.log(this.characters)
+
       this.done.next(true);
     });
 

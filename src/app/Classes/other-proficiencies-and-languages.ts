@@ -22,7 +22,10 @@ export class OtherProficienciesAndLanguages {
   }
 
   constructor(data?: IotherProficienciesAndLanguages) {
-    Object.assign(this, data);
+    if (data) {
+      Object.assign(this, data);
+    }
+
   }
 
 

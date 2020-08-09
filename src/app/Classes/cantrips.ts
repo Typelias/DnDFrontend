@@ -13,7 +13,10 @@ export class Cantrips {
   }
 
   constructor(data?: Icantrips) {
-    Object.assign(this, data);
+    if (data) {
+      Object.assign(this, data);
+    }
+
   }
 
 }

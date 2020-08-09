@@ -13,7 +13,10 @@ export class AttacksAndSpellcasting {
   }
 
   constructor(data?: IattacksAndSpellcasting) {
-    Object.assign(this, data);
+    if (data) {
+      Object.assign(this, data);
+    }
+
   }
 
 }

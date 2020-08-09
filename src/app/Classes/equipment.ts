@@ -30,8 +30,12 @@ export class Equipment {
   }
 
   constructor(data?: Iequipment) {
-    Object.assign(this, data);
-    this.currency = new Currency(data.currency);
+    if (data) {
+      Object.assign(this, data);
+      this.currency = new Currency(data.currency);
+    }
+    this.currency = new Currency();
+
   }
 
 }

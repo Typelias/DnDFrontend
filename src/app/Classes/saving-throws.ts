@@ -9,6 +9,9 @@ export class SavingThrows {
   charisma: boolean = false;
 
   constructor(data?: IsavingThrows) {
-    Object.assign(this, data);
+    if (data) {
+      Object.assign(this, data);
+    }
+
   }
 }

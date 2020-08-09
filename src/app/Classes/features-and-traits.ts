@@ -22,7 +22,9 @@ export class FeaturesAndTraits {
   }
 
   constructor(data?: IfeaturesAndTraits) {
-    Object.assign(this, data);
+    if (data) {
+      Object.assign(this, data);
+    }
   }
 
 }
