@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 import { ActiveCampaignService } from 'src/app/Services/active-campaign.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddEquipmentComponent } from '../add-equipment/add-equipment.component';
 import { EditEquipmentComponent } from '../edit-equipment/edit-equipment.component';
-=======
-import { Component, OnInit, Input } from '@angular/core';
-import { Character } from 'src/app/Classes/character';
->>>>>>> a3b862ca45ba5983e019b897bf43ac368ceb00bd
 
 @Component({
   selector: 'app-character-view',
@@ -16,7 +11,6 @@ import { Character } from 'src/app/Classes/character';
 })
 export class CharacterViewComponent implements OnInit {
 
-<<<<<<< HEAD
   constructor(public ac: ActiveCampaignService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -33,14 +27,16 @@ export class CharacterViewComponent implements OnInit {
 
     const dialogRef = this.dialog.open(EditEquipmentComponent, { width: "20%", hasBackdrop: true, data: index })
 
-=======
-  @Input()
-  charcter: Character
+  }
 
-  constructor() { }
+  decreaseAmount(index: number) {
+    this.ac.activeCharacter.equipment.decreaseAmount(index);
+    this.ac.save();
+  }
 
-  ngOnInit(): void {
->>>>>>> a3b862ca45ba5983e019b897bf43ac368ceb00bd
+  increseAmount(index: number) {
+    this.ac.activeCharacter.equipment.increaseAmount(index);
+    this.ac.save();
   }
 
 }

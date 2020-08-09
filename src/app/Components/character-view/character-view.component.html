@@ -1,18 +1,13 @@
-<<<<<<< HEAD
 <p>{{ac.activeCharacter.characterName}}</p>
 <div>
     <p>Equipment</p>
     <div *ngFor="let item of ac.activeCharacter.equipment.equipmentList; let i = index">
-        <p>{{item.name}}</p>
-        <p>{{item.description}}</p>
-        <mat-icon (click)="editEquipment(i)">edit</mat-icon>
+        <app-category-item-view (onEdit)="editEquipment(i)" (onIncrease)="increseAmount(i)"
+            (onDecrease)="decreaseAmount(i)" [item]="item">
+        </app-category-item-view>
     </div>
 </div>
 
 <div>
     <button mat-raised-button (click)="addEquipment()">Eddit Equipment</button>
 </div>
-=======
-<p>{{charcter.characterName}}</p>
-<p>{{charcter.hp.currHP}}</p>
->>>>>>> a3b862ca45ba5983e019b897bf43ac368ceb00bd

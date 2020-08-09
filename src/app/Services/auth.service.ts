@@ -7,11 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
-<<<<<<< HEAD
-  baseURL: string = "http://172.25.242.119:8080";
-=======
   baseURL: string = "http://localhost:8080";
->>>>>>> a3b862ca45ba5983e019b897bf43ac368ceb00bd
   helper: JwtHelperService;
   adminStatus: boolean = null;
 
