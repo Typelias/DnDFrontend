@@ -2,9 +2,9 @@
 <div>
     <p>Equipment</p>
     <div *ngFor="let item of ac.activeCharacter.equipment.equipmentList; let i = index">
-        <p>{{item.name}}</p>
-        <p>{{item.description}}</p>
-        <mat-icon (click)="editEquipment(i)">edit</mat-icon>
+        <app-category-item-view (onEdit)="editEquipment(i)" (onIncrease)="increseAmount(i)"
+            (onDecrease)="decreaseAmount(i)" [item]="item">
+        </app-category-item-view>
     </div>
 </div>
 

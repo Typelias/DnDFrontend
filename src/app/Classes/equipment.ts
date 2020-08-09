@@ -11,11 +11,22 @@ export class Equipment {
   }
 
   public removeEquipment(index: number): void {
-    delete this.equipmentList[index];
+    this.equipmentList.splice(index, 1);
   }
 
   public edditEquipment(newItem: CategoryItem, index: number) {
     this.equipmentList[index] = newItem;
+  }
+
+  public increaseAmount(index: number) {
+    this.equipmentList[index].amount += 1;
+  }
+
+  public decreaseAmount(index: number) {
+    this.equipmentList[index].amount -= 1;
+    if (this.equipmentList[index].amount <= 0) {
+      this.removeEquipment(index);
+    }
   }
 
   constructor(data?: Iequipment) {

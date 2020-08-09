@@ -29,4 +29,14 @@ export class CharacterViewComponent implements OnInit {
 
   }
 
+  decreaseAmount(index: number) {
+    this.ac.activeCharacter.equipment.decreaseAmount(index);
+    this.ac.save();
+  }
+
+  increseAmount(index: number) {
+    this.ac.activeCharacter.equipment.increaseAmount(index);
+    this.ac.save();
+  }
+
 }

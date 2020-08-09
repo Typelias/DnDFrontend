@@ -22,7 +22,12 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { EditCampaignComponent } from './Components/edit-campaign/edit-campaign.component';
 import { CharacterViewComponent } from './Components/character-view/character-view.component';
 import { AddEquipmentComponent } from './Components/add-equipment/add-equipment.component';
+<<<<<<< HEAD
 import { EditEquipmentComponent } from './Components/edit-equipment/edit-equipment.component';
+=======
+import { EditEquipmentComponent } from './Components/edit-equipment/edit-equipment.component';
+import { CategoryItemViewComponent } from './Components/category-item-view/category-item-view.component';
+>>>>>>> ecfe96a08ad99a2228dbc23f46e43d6ff1035bc1
 
 @NgModule({
   declarations: [
@@ -39,7 +44,12 @@ import { EditEquipmentComponent } from './Components/edit-equipment/edit-equipme
     EditCampaignComponent,
     CharacterViewComponent,
     AddEquipmentComponent,
+<<<<<<< HEAD
     EditEquipmentComponent
+=======
+    EditEquipmentComponent,
+    CategoryItemViewComponent
+>>>>>>> ecfe96a08ad99a2228dbc23f46e43d6ff1035bc1
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+<div>
+    <mat-icon matTooltip="Increase Amount" (click)="onIncrease.emit(null)">add</mat-icon>
+    <p>{{item.amount}}</p>
+    <mat-icon matTooltip="Decrease Amount" (click)="onDecrease.emit(null)">remove</mat-icon>
+    <p>{{item.name}}</p>
+    <p>{{item.description}}</p>
+    <mat-icon (click)="onEdit.emit(null)" matTooltip="Edit item">edit</mat-icon>
+    <mat-icon matTooltip="Remove item">clear</mat-icon>
+</div>
