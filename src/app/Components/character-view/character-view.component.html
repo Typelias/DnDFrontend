@@ -1,13 +1,15 @@
 <p>{{ac.activeCharacter.characterName}}</p>
-<div>
-    <p>Equipment</p>
-    <div *ngFor="let item of ac.activeCharacter.equipment.equipmentList; let i = index">
-        <app-category-item-view (onEdit)="editEquipment(i)" (onIncrease)="increseAmount(i)"
-            (onDecrease)="decreaseAmount(i)" [item]="item">
+<div id="equipment">
+    <div id="eqHeader">
+        <p>Equipment</p>
+        <mat-icon matTooltip="Add Equipment" (click)="addEquipment()">playlist_add</mat-icon>
+    </div>
+
+    <div id="eqList">
+        <app-category-item-view *ngFor="let item of ac.activeCharacter.equipment.equipmentList; let i = index"
+            (onEdit)="editEquipment(i)" (onIncrease)="increseAmount(i)" (onDecrease)="decreaseAmount(i)" [item]="item"
+            (onDelete)="deleteEquipment(i)">
         </app-category-item-view>
     </div>
-</div>
 
-<div>
-    <button mat-raised-button (click)="addEquipment()">Eddit Equipment</button>
 </div>

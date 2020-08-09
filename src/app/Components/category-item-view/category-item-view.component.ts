@@ -17,6 +17,8 @@ export class CategoryItemViewComponent implements OnInit {
   onDecrease: EventEmitter<any> = new EventEmitter();
   @Output()
   onIncrease: EventEmitter<any> = new EventEmitter();
+  @Output()
+  onDelete: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 

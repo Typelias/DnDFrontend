@@ -57,7 +57,7 @@ export class ActiveCampaignService {
   }
 
   save() {
-    this.sr.updateCharacter(this.activeCharacter, this.activeID).subscribe(res => console.log(res));
+    this.sr.updateCharacter(this.activeCharacter, this.activeID).subscribe();
   }
 
   getCharacters() {

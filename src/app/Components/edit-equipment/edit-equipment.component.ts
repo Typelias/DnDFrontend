@@ -11,16 +11,25 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class EditEquipmentComponent implements OnInit {
 
 
-  newItem: CategoryItem;
+  newItem: CategoryItem = new CategoryItem();
 
   constructor(private ac: ActiveCampaignService, private dialogRef: MatDialogRef<EditEquipmentComponent>, @Inject(MAT_DIALOG_DATA) private index: number) {
-    this.newItem = ac.activeCharacter.equipment.equipmentList[this.index];
+    this.newItem.name = this.ac.activeCharacter.equipment.equipmentList[this.index].name;
+    this.newItem.description = this.ac.activeCharacter.equipment.equipmentList[this.index].description;
+    this.newItem.amount = this.ac.activeCharacter.equipment.equipmentList[this.index].amount;
   }
 
   ngOnInit(): void {
   }
 
   editEquipment() {
+
+    if (this.newItem.name != "" && this.newItem.amount > 0) {
+      this.ac.activeCharacter.equipment.edditEquipment(this.newItem, this.index)
+      this.dialogRef.close()
+    }
+
+
 
   }
 

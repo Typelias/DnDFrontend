@@ -1,3 +1,19 @@
 mat-icon {
     cursor: pointer;
 }
+
+#equipment{
+    border: black 5px solid;
+    width: 20%;
+    margin: 50px;
+    #eqHeader {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+    }
+    #eqList {
+        padding: 20px;
+        padding-top: 0;
+    }
+}

@@ -17,15 +17,22 @@ export class CharacterViewComponent implements OnInit {
   }
 
   addEquipment() {
-    const dialogRef = this.dialog.open(AddEquipmentComponent, { width: "30%", hasBackdrop: true });
+    const dialogRef = this.dialog.open(AddEquipmentComponent, { width: "20%", hasBackdrop: true });
     dialogRef.afterClosed().subscribe(res => {
       this.ac.save();
     });
   }
 
+  deleteEquipment(index: number) {
+    this.ac.activeCharacter.equipment.removeEquipment(index)
+  }
+
   editEquipment(index: number) {
 
     const dialogRef = this.dialog.open(EditEquipmentComponent, { width: "20%", hasBackdrop: true, data: index })
+    dialogRef.afterClosed().subscribe(res => {
+      this.ac.save();
+    })
 
   }
 
