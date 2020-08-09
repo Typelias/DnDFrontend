@@ -18,17 +18,11 @@ import { UpdateUserComponent } from './Components/update-user/update-user.compon
 import { CampaignIconComponent } from './Components/campaign-icon/campaign-icon.component';
 import { CreateCampaignComponent } from './Components/create-campaign/create-campaign.component';
 import { ActiveCampaignService } from './Services/active-campaign.service';
-<<<<<<< HEAD
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { EditCampaignComponent } from './Components/edit-campaign/edit-campaign.component';
 import { CharacterViewComponent } from './Components/character-view/character-view.component';
 import { AddEquipmentComponent } from './Components/add-equipment/add-equipment.component';
 import { EditEquipmentComponent } from './Components/edit-equipment/edit-equipment.component';
-=======
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
-import { EditCampaignComponent } from './Components/edit-campaign/edit-campaign.component';
-import { CharacterViewComponent } from './Components/character-view/character-view.component';
->>>>>>> a3b862ca45ba5983e019b897bf43ac368ceb00bd
 
 @NgModule({
   declarations: [
@@ -43,13 +37,9 @@ import { CharacterViewComponent } from './Components/character-view/character-vi
     CampaignIconComponent,
     CreateCampaignComponent,
     EditCampaignComponent,
-<<<<<<< HEAD
     CharacterViewComponent,
     AddEquipmentComponent,
     EditEquipmentComponent
-=======
-    CharacterViewComponent
->>>>>>> a3b862ca45ba5983e019b897bf43ac368ceb00bd
   ],
   imports: [
     BrowserModule,
