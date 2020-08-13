@@ -1,0 +1,36 @@
+<div id="wrapper">
+    <div id="header">
+        <p>Other Proficiencies And Languages</p>
+        <mat-icon matTooltip="Add Category" (click)="addCategory()">playlist_add</mat-icon>
+    </div>
+    <mat-accordion>
+        <mat-expansion-panel
+            *ngFor="let category of ac.activeCharacter.otherProficienciesAndLanguages.categories; let catIndex = index">
+            <mat-expansion-panel-header>
+                <mat-panel-title>{{category.name}}</mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="catWrapper">
+                <div class="catHeader">
+                    <p>{{category.name}}</p>
+                    <mat-icon matTooltip="Add Item to Category" (click)="addItemToCategory(catIndex)">add</mat-icon>
+                    <mat-icon matTooltip="Remove Category" (click)="deleteCategory(catIndex)">delete</mat-icon>
+                </div>
+
+                <div id="eqList">
+                    <app-category-item-view *ngFor="let item of category.items; let itemIndex = index" [item]="item"
+                        (onIncrease)="increseAmount(catIndex, itemIndex)"
+                        (onDecrease)="decreaseAmount(catIndex, itemIndex)">
+
+                    </app-category-item-view>
+
+                </div>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>Test Title</mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Test</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

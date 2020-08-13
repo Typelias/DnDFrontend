@@ -3,28 +3,44 @@ import { CategoryItem } from './category-item';
 import { IfeaturesAndTraits } from '../Interfaces/ifeatures-and-traits';
 
 export class FeaturesAndTraits {
-  categories: Array<Category> = [];
+  categories: Array<Category>;
 
   addCategory(category: Category) {
     this.categories.push(category);
   }
 
-  removeCategory(category: Category) {
-    delete this.categories[this.categories.indexOf(category)];
+  editCategory(index: number, newCatagory: Category) {
+    this.categories[index] = newCatagory;
   }
 
-  addToCategory(category: Category, item: CategoryItem) {
-    this.categories[this.categories.indexOf(category)].addItem(item);
+  removeCategory(catIndex: number) {
+    this.categories.splice(catIndex, 1);
   }
 
-  removeFromCategory(category: Category, item: CategoryItem) {
-    this.categories[this.categories.indexOf(category)].removeItem(item);
+  addToCategory(catIndex: number, item: CategoryItem) {
+    this.categories[catIndex].addItem(item);
+  }
+
+  editItemInCat(catIndex: number, itemIndex: number, newItem: CategoryItem) {
+    this.categories[catIndex].edditItem(newItem, itemIndex);
+  }
+
+  removeFromCategory(catIndex: number, itemIndex: number) {
+    this.categories[catIndex].removeItem(itemIndex);
   }
 
   constructor(data?: IfeaturesAndTraits) {
     if (data) {
       Object.assign(this, data);
+      this.categories = [];
+      data.categories.forEach(cat => {
+        const temp = new Category(cat);
+        this.categories.push(temp);
+      });
+    } else {
+      this.categories = [];
     }
+
   }
 
 }

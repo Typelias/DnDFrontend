@@ -1,0 +1,20 @@
+<mat-icon mat-dialog-close>close</mat-icon>
+
+<form (ngSubmit)="addItem()">
+    <h3>Add To Category</h3>
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput name="name" [(ngModel)]="newItem.name">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput name="description" [(ngModel)]="newItem.description">
+    </mat-form-field>
+    <mat-checkbox name="showAmount" [(ngModel)]="newItem.showAmount">Has Amount</mat-checkbox>
+    <mat-form-field *ngIf="newItem.showAmount">
+        <mat-label>Amount</mat-label>
+        <input matInput type="number" name="amount" [(ngModel)]="newItem.amount">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Add</button>
+</form>

@@ -1,0 +1,12 @@
+<mat-icon mat-dialog-close>close</mat-icon>
+
+<form (ngSubmit)="addCategory()">
+    <h3>Add Category</h3>
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput name="Name" [(ngModel)]="newCategory.name">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Add</button>
+
+</form>

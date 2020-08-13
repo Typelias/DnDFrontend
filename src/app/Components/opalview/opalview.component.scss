@@ -2,18 +2,14 @@ mat-icon {
     cursor: pointer;
 }
 
-#equipment{
+#wrapper {
     background-color: #3D3D3D;
-    width: 100%;
-    min-height: 100%;
-    #eqHeader {
+    height: 100%;
+    padding: 5px;
+    #header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         padding: 10px;
-    }
-    #eqList {
-        padding: 20px;
-        padding-top: 0;
     }
 }

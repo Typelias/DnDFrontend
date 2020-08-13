@@ -28,6 +28,9 @@ import { EquipmentViewComponent } from './Components/equipment-view/equipment-vi
 import { BasicInfoViewComponent } from './Components/basic-info-view/basic-info-view.component';
 import { StatsViewComponent } from './Components/stats-view/stats-view.component';
 import { EditStatsComponent } from './Components/edit-stats/edit-stats.component';
+import { OPALViewComponent } from './Components/opalview/opalview.component';
+import { AddCategoryComponent } from './Components/add-category/add-category.component';
+import { AddCategoryItemComponent } from './Components/add-category-item/add-category-item.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,10 @@ import { EditStatsComponent } from './Components/edit-stats/edit-stats.component
     EquipmentViewComponent,
     BasicInfoViewComponent,
     StatsViewComponent,
-    EditStatsComponent
+    EditStatsComponent,
+    OPALViewComponent,
+    AddCategoryComponent,
+    AddCategoryItemComponent
   ],
   imports: [
     BrowserModule,

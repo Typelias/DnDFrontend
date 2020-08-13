@@ -1,5 +1,5 @@
 <div id="container">
-    <div id="amountWrapper">
+    <div id="amountWrapper" *ngIf="item.showAmount">
         <mat-icon matTooltip="Increase Amount" (click)="onIncrease.emit(null)">add</mat-icon>
         <p id="amount">{{item.amount}}</p>
         <mat-icon matTooltip="Decrease Amount" (click)="onDecrease.emit(null)">remove</mat-icon>
