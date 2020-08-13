@@ -1,0 +1,45 @@
+#wrapper {
+    padding: 5px ;
+    background-color: #3D3D3D;
+    height: 100%;
+    #editHeader {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 10&;
+        mat-icon {
+            cursor: pointer;
+            user-select: none;
+        }
+    }
+    #statList {
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        .statWindow {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 5px 0;
+            p {
+                margin: 2px;
+            }
+            .name {
+                text-decoration: underline;
+                
+            }
+            .bonus {
+                padding: 7px;
+                background-color: #333;
+            }
+            .stat {
+                font-size: small;
+            }
+        }
+    }
+}
+

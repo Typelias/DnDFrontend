@@ -1,19 +1,20 @@
-mat-icon {
-    cursor: pointer;
-}
-
-#equipment{
-    border: black 5px solid;
-    width: 20%;
-    margin: 50px;
-    #eqHeader {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 10px;
-    }
-    #eqList {
-        padding: 20px;
-        padding-top: 0;
+mat-grid-list {
+    width: 50%;
+    height: 100%;
+    mat-grid-tile {
+        width: 100%;
+        overflow-y: auto!important;
+        app-basic-info-view {
+            width: 100%;
+            height: 100%;
+        }
+        app-stats-view {
+            width: 100%;
+            height: 100%;
+        }
+        app-equipment-view {
+            width: 100%;
+            height: 100%;
+        }
     }
 }

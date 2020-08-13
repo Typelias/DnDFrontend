@@ -1,15 +1,13 @@
-<p>{{ac.activeCharacter.characterName}}</p>
-<div id="equipment">
-    <div id="eqHeader">
-        <p>Equipment</p>
-        <mat-icon matTooltip="Add Equipment" (click)="addEquipment()">playlist_add</mat-icon>
-    </div>
+<mat-grid-list cols="10" rowHeight="16:9" gutterSize="5px">
+    <mat-grid-tile colspan="10" rowspan="1">
+        <app-basic-info-view></app-basic-info-view>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="15">
+        <app-stats-view></app-stats-view>
+    </mat-grid-tile>
 
-    <div id="eqList">
-        <app-category-item-view *ngFor="let item of ac.activeCharacter.equipment.equipmentList; let i = index"
-            (onEdit)="editEquipment(i)" (onIncrease)="increseAmount(i)" (onDecrease)="decreaseAmount(i)" [item]="item"
-            (onDelete)="deleteEquipment(i)">
-        </app-category-item-view>
-    </div>
+    <mat-grid-tile colspan="4" rowspan="10">
+        <app-equipment-view></app-equipment-view>
+    </mat-grid-tile>
 
-</div>
+</mat-grid-list>

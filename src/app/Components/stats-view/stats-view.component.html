@@ -1,0 +1,38 @@
+<div id="wrapper">
+    <div id="editHeader">
+        <p>Stats</p>
+        <mat-icon matTooltip="Edit Stats">edit</mat-icon>
+    </div>
+    <div id="statList">
+        <div class="statWindow">
+            <p class="name">Strength</p>
+            <p class="bonus">+ {{ac.activeCharacter.stats.strengthModifier}}</p>
+            <p class="stat">{{ac.activeCharacter.stats.strength}}</p>
+        </div>
+        <div class="statWindow">
+            <p class="name">Dextarity</p>
+            <p class="bonus">+ {{ac.activeCharacter.stats.dexterityModifier}}</p>
+            <p class="stat">{{ac.activeCharacter.stats.dexterity}}</p>
+        </div>
+        <div class="statWindow">
+            <p class="name">Constitution</p>
+            <p class="bonus">+ {{ac.activeCharacter.stats.constitutionModifier}}</p>
+            <p class="stat">{{ac.activeCharacter.stats.constitution}}</p>
+        </div>
+        <div class="statWindow">
+            <p class="name">Intelligence</p>
+            <p class="bonus">+ {{ac.activeCharacter.stats.intelligenceModifier}}</p>
+            <p class="stat">{{ac.activeCharacter.stats.intelligence}}</p>
+        </div>
+        <div class="statWindow">
+            <p class="name">Wisdom</p>
+            <p class="bonus">+ {{ac.activeCharacter.stats.wisdomModifier}}</p>
+            <p class="stat">{{ac.activeCharacter.stats.wisdom}}</p>
+        </div>
+        <div class="statWindow">
+            <p class="name">Charisma</p>
+            <p class="bonus">+ {{ac.activeCharacter.stats.charismaModifier}}</p>
+            <p class="stat">{{ac.activeCharacter.stats.charisma}}</p>
+        </div>
+    </div>
+</div>

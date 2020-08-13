@@ -16,34 +16,6 @@ export class CharacterViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addEquipment() {
-    const dialogRef = this.dialog.open(AddEquipmentComponent, { width: "20%", hasBackdrop: true });
-    dialogRef.afterClosed().subscribe(res => {
-      this.ac.save();
-    });
-  }
 
-  deleteEquipment(index: number) {
-    this.ac.activeCharacter.equipment.removeEquipment(index)
-  }
-
-  editEquipment(index: number) {
-
-    const dialogRef = this.dialog.open(EditEquipmentComponent, { width: "20%", hasBackdrop: true, data: index })
-    dialogRef.afterClosed().subscribe(res => {
-      this.ac.save();
-    })
-
-  }
-
-  decreaseAmount(index: number) {
-    this.ac.activeCharacter.equipment.decreaseAmount(index);
-    this.ac.save();
-  }
-
-  increseAmount(index: number) {
-    this.ac.activeCharacter.equipment.increaseAmount(index);
-    this.ac.save();
-  }
 
 }

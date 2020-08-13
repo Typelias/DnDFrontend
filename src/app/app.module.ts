@@ -24,6 +24,10 @@ import { CharacterViewComponent } from './Components/character-view/character-vi
 import { AddEquipmentComponent } from './Components/add-equipment/add-equipment.component';
 import { EditEquipmentComponent } from './Components/edit-equipment/edit-equipment.component';
 import { CategoryItemViewComponent } from './Components/category-item-view/category-item-view.component';
+import { EquipmentViewComponent } from './Components/equipment-view/equipment-view.component';
+import { BasicInfoViewComponent } from './Components/basic-info-view/basic-info-view.component';
+import { StatsViewComponent } from './Components/stats-view/stats-view.component';
+import { EditStatsComponent } from './Components/edit-stats/edit-stats.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +45,11 @@ import { CategoryItemViewComponent } from './Components/category-item-view/categ
     CharacterViewComponent,
     AddEquipmentComponent,
     EditEquipmentComponent,
-    CategoryItemViewComponent
+    CategoryItemViewComponent,
+    EquipmentViewComponent,
+    BasicInfoViewComponent,
+    StatsViewComponent,
+    EditStatsComponent
   ],
   imports: [
     BrowserModule,
