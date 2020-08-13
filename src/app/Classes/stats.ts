@@ -1,3 +1,5 @@
+import { Istats } from '../Interfaces/istats';
+
 export class Stats {
   strength = 0;
   strengthModifier = 0;
@@ -11,4 +13,12 @@ export class Stats {
   wisdomModifier = 0;
   charisma = 0;
   charismaModifier = 0;
+
+  constructor(data?: Istats) {
+    if (data) {
+      Object.assign(this, data);
+    }
+  }
+
+
 }

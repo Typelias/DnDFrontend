@@ -1,7 +1,29 @@
 <mat-icon mat-dialog-close>close</mat-icon>
-<form>
+<form (ngSubmit)="editStats()">
+    <h3>Edit Stats</h3>
     <mat-form-field>
         <mat-label>Strength</mat-label>
-        <input matInput>
+        <input type="number" matInput name="strengh" [(ngModel)]="newStats.strength">
     </mat-form-field>
+    <mat-form-field>
+        <mat-label>Dextarity</mat-label>
+        <input type="number" matInput name="dextarity" [(ngModel)]="newStats.dexterity">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Constitution</mat-label>
+        <input type="number" matInput name="constitution" [(ngModel)]="newStats.constitution">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Intelligence</mat-label>
+        <input type="number" matInput name="intelligence" [(ngModel)]="newStats.intelligence">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Wisdom</mat-label>
+        <input type="number" matInput name="wisdom" [(ngModel)]="newStats.wisdom">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Charisma</mat-label>
+        <input type="number" matInput name="charisma" [(ngModel)]="newStats.charisma">
+    </mat-form-field>
+    <button mat-raised-button color="primary">Save</button>
 </form>

@@ -20,7 +20,7 @@ export class Character {
   alignment: string = "";
   playerName: string = "";
   expPoints: number = 0;
-  stats = new Stats();
+  stats: Stats;
   inspiration: boolean = false;
   proficiencyBonus: number = 0;
   savingThrows: SavingThrows;
@@ -53,6 +53,7 @@ export class Character {
       this.equipment = new Equipment(data.equipment);
       this.featuresAndTraits = new FeaturesAndTraits();
       this.spellList = new SpellList(data.spellList);
+      this.stats = new Stats(data.stats);
     } else {
       this.savingThrows = new SavingThrows();
       this.skills = new Skills();
@@ -63,6 +64,7 @@ export class Character {
       this.equipment = new Equipment();
       this.featuresAndTraits = new FeaturesAndTraits();
       this.spellList = new SpellList();
+      this.stats = new Stats();
     }
 
 
