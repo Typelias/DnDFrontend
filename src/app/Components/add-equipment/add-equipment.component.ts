@@ -23,7 +23,7 @@ export class AddEquipmentComponent implements OnInit {
 
     console.log(this.ac.activeCharacter);
 
-    if (this.name === "" && this.description === "" && this.amount === 0) {
+    if (this.name === "" || this.amount === 0) {
       alert("One or more fields where empty");
       return;
     }
