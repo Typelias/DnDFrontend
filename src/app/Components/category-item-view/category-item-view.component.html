@@ -1,15 +1,23 @@
 <div id="container">
     <div id="amountWrapper" *ngIf="item.showAmount">
-        <mat-icon matTooltip="Increase Amount" (click)="onIncrease.emit(null)">add</mat-icon>
+        <button matTooltip="Increase Amount" (click)="onIncrease.emit(null)">
+            <mat-icon>add</mat-icon>
+        </button>
         <p id="amount">{{item.amount}}</p>
-        <mat-icon matTooltip="Decrease Amount" (click)="onDecrease.emit(null)">remove</mat-icon>
+        <button matTooltip="Decrease Amount" (click)="onDecrease.emit(null)">
+            <mat-icon>remove</mat-icon>
+        </button>
     </div>
 
     <p id="name" [matTooltip]="item.name">{{item.name}}</p>
     <p id="description" [matTooltip]="item.description">{{item.description}}</p>
     <div id="options">
-        <mat-icon (click)=" onEdit.emit(null)" matTooltip="Edit item">edit</mat-icon>
-        <mat-icon (click)="onDelete.emit(null)" matTooltip="Remove item">clear</mat-icon>
+        <button (click)=" onEdit.emit(null)" matTooltip="Edit item">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button (click)="onDelete.emit(null)" matTooltip="Remove item">
+            <mat-icon>clear</mat-icon>
+        </button>
     </div>
 
 </div>
