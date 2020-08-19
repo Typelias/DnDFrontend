@@ -31,6 +31,11 @@ export class Category {
   constructor(data?: Icategory) {
     if (data) {
       Object.assign(this, data)
+      this.items = [];
+      data.items.forEach(item => {
+        const temp = new CategoryItem(item);
+        this.items.push(temp);
+      });
     } else {
       this.items = [];
     }

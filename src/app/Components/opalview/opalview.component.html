@@ -1,9 +1,9 @@
 <div id="wrapper">
     <div id="header">
-        <p>Other Proficiencies And Languages</p>
+        <p>{{title}}</p>
         <mat-icon matTooltip="Add Category" (click)="addCategory()">playlist_add</mat-icon>
     </div>
-    <mat-accordion>
+    <mat-accordion *ngIf="viewType === 'OPAL'">
         <mat-expansion-panel
             *ngFor="let category of ac.activeCharacter.otherProficienciesAndLanguages.categories; let catIndex = index">
             <mat-expansion-panel-header>
@@ -11,26 +11,52 @@
             </mat-expansion-panel-header>
             <div class="catWrapper">
                 <div class="catHeader">
-                    <p>{{category.name}}</p>
-                    <mat-icon matTooltip="Add Item to Category" (click)="addItemToCategory(catIndex)">add</mat-icon>
-                    <mat-icon matTooltip="Remove Category" (click)="deleteCategory(catIndex)">delete</mat-icon>
+                    <p>Options: </p>
+                    <div class="catHeaderIcons">
+                        <mat-icon matTooltip="Add Item to Category" (click)="addItemToCategory(catIndex)">add</mat-icon>
+                        <mat-icon matTooltip="Edit Category">edit</mat-icon>
+                        <mat-icon matTooltip="Remove Category" (click)="deleteCategory(catIndex)">delete</mat-icon>
+                    </div>
                 </div>
 
                 <div id="eqList">
                     <app-category-item-view *ngFor="let item of category.items; let itemIndex = index" [item]="item"
                         (onIncrease)="increseAmount(catIndex, itemIndex)"
-                        (onDecrease)="decreaseAmount(catIndex, itemIndex)">
+                        (onDecrease)="decreaseAmount(catIndex, itemIndex)" (onEdit)="edditCatItem(catIndex, itemIndex)"
+                        (onDelete)="removeItem(catIndex, itemIndex)">
 
                     </app-category-item-view>
 
                 </div>
             </div>
         </mat-expansion-panel>
-        <mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion *ngIf="viewType === 'FAT'">
+        <mat-expansion-panel
+            *ngFor="let category of ac.activeCharacter.featuresAndTraits.categories; let catIndex = index">
             <mat-expansion-panel-header>
-                <mat-panel-title>Test Title</mat-panel-title>
+                <mat-panel-title>{{category.name}}</mat-panel-title>
             </mat-expansion-panel-header>
-            <p>Test</p>
+            <div class="catWrapper">
+                <div class="catHeader">
+                    <p>Options: </p>
+                    <div class="catHeaderIcons">
+                        <mat-icon matTooltip="Add Item to Category" (click)="addItemToCategory(catIndex)">add</mat-icon>
+                        <mat-icon matTooltip="Edit Category">edit</mat-icon>
+                        <mat-icon matTooltip="Remove Category" (click)="deleteCategory(catIndex)">delete</mat-icon>
+                    </div>
+                </div>
+
+                <div id="eqList">
+                    <app-category-item-view *ngFor="let item of category.items; let itemIndex = index" [item]="item"
+                        (onIncrease)="increseAmount(catIndex, itemIndex)"
+                        (onDecrease)="decreaseAmount(catIndex, itemIndex)" (onEdit)="edditCatItem(catIndex, itemIndex)"
+                        (onDelete)="removeItem(catIndex, itemIndex)">
+
+                    </app-category-item-view>
+
+                </div>
+            </div>
         </mat-expansion-panel>
     </mat-accordion>
 </div>

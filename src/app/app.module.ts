@@ -31,6 +31,7 @@ import { EditStatsComponent } from './Components/edit-stats/edit-stats.component
 import { OPALViewComponent } from './Components/opalview/opalview.component';
 import { AddCategoryComponent } from './Components/add-category/add-category.component';
 import { AddCategoryItemComponent } from './Components/add-category-item/add-category-item.component';
+import { EditCategoryItemComponent } from './Components/edit-category-item/edit-category-item.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { AddCategoryItemComponent } from './Components/add-category-item/add-cat
     EditStatsComponent,
     OPALViewComponent,
     AddCategoryComponent,
-    AddCategoryItemComponent
+    AddCategoryItemComponent,
+    EditCategoryItemComponent
   ],
   imports: [
     BrowserModule,

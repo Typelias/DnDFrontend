@@ -22,15 +22,16 @@ export class AddCategoryItemComponent implements OnInit {
   }
 
   addItem() {
+    console.log(this.helper.catIndex)
     if (!this.newItem.showAmount) {
       this.newItem.amount = 1;
     }
     if (this.newItem.name != "" && this.newItem.amount > 0) {
       if (this.helper.name === "OPAL") {
-        this.ac.activeCharacter.otherProficienciesAndLanguages.addToCategory(this.helper.index, this.newItem);
+        this.ac.activeCharacter.otherProficienciesAndLanguages.addToCategory(this.helper.catIndex, this.newItem);
         this.dialogRef.close();
       } else if (this.helper.name === "FAT") {
-        this.ac.activeCharacter.featuresAndTraits.addToCategory(this.helper.index, this.newItem);
+        this.ac.activeCharacter.featuresAndTraits.addToCategory(this.helper.catIndex, this.newItem);
         this.dialogRef.close();
       }
     }

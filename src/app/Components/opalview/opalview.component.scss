@@ -12,4 +12,21 @@ mat-icon {
         justify-content: space-between;
         padding: 10px;
     }
+
+    .catWrapper{
+        .catHeader{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .catHeaderIcons {
+                display: flex;
+                justify-content: space-between;
+                width: 30%;
+            }
+        }
+
+    }
+
+    
 }

@@ -51,7 +51,7 @@ export class Character {
       this.attacksAndSpellcasting = new AttacksAndSpellcasting(data.attacksAndSpellcasting);
       this.otherProficienciesAndLanguages = new OtherProficienciesAndLanguages(data.otherProficienciesAndLanguages);
       this.equipment = new Equipment(data.equipment);
-      this.featuresAndTraits = new FeaturesAndTraits();
+      this.featuresAndTraits = new FeaturesAndTraits(data.featuresAndTraits);
       this.spellList = new SpellList(data.spellList);
       this.stats = new Stats(data.stats);
     } else {

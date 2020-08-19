@@ -1,9 +1,11 @@
 export class IndexHelper {
     name: string;
-    index: number;
+    catIndex: number;
+    itemIndex: number;
 
-    constructor(name: string, index: number) {
+    constructor(name: string, catIndex: number, itemIndex: number) {
         this.name = name;
-        this.index = index;
+        this.catIndex = catIndex;
+        this.itemIndex = itemIndex;
     }
 }
