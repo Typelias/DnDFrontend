@@ -1,6 +1,6 @@
 mat-grid-list {
     width: 65%;
-    height: 100vh;
+    height: 99%;
     mat-grid-tile {
         width: 100%;
         overflow-y: auto!important;
@@ -17,6 +17,10 @@ mat-grid-list {
             height: 100%;
         }
         app-opalview{
+            width: 100%;
+            height: 100%;
+        }
+        app-hpview{
             width: 100%;
             height: 100%;
         }

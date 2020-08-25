@@ -1,0 +1,47 @@
+<section>
+    <div id="bar">
+        <p>HP</p>
+        <mat-icon (click)="editHp()">edit</mat-icon>
+    </div>
+    <div id="wrapper">
+        <div class="row">
+            <div class="topItem">
+                <p class="name">Armor Class</p>
+                <p>{{ac.activeCharacter.hp.armorClass}}</p>
+            </div>
+            <div class="topItem">
+                <p class="name">Initiative</p>
+                <p>{{ac.activeCharacter.hp.initiative}}</p>
+            </div>
+            <div class="topItem">
+                <p class="name">Speed</p>
+                <p>{{ac.activeCharacter.hp.speed}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="midItem">
+                <p class="name">Max HP</p>
+                <p>{{ac.activeCharacter.hp.maxHP}}</p>
+            </div>
+            <div class="midItem">
+                <p class="name">Current HP</p>
+                <div id="midInner">
+                    <mat-icon (click)="removeHP()">remove</mat-icon>
+                    <p>{{ac.activeCharacter.hp.currHP}}</p>
+                    <mat-icon (click)="addHP()">add</mat-icon>
+                </div>
+
+            </div>
+            <div class="midItem">
+                <p class="name">Temp HP</p>
+                <p>{{ac.activeCharacter.hp.tempHP}}</p>
+            </div>
+
+        </div>
+        <div id="bottomRow">
+            <p>Hit Dice: {{ac.activeCharacter.hp.numberOfHutDice + " " + ac.activeCharacter.hp.hitDice}}</p>
+
+        </div>
+
+    </div>
+</section>

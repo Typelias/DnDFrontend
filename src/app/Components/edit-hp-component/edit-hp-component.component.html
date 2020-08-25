@@ -1,0 +1,22 @@
+<mat-icon mat-dialog-close>close</mat-icon>
+<form (ngSubmit)="edit()">
+    <h3>Edit HP</h3>
+    <mat-form-field>
+        <mat-label>Armor Class</mat-label>
+        <input type="number" matInput name="ac" [(ngModel)]="newHP.armorClass">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Speed</mat-label>
+        <input type="number" matInput name="speed" [(ngModel)]="newHP.speed">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Max HP</mat-label>
+        <input type="number" matInput name="maxHP" [(ngModel)]="newHP.maxHP">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Temp HP</mat-label>
+        <input type="number" matInput name="tempHP" [(ngModel)]="newHP.tempHP">
+    </mat-form-field>
+    <button mat-raised-button color="primary">Save</button>
+
+</form>

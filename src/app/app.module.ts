@@ -32,6 +32,8 @@ import { OPALViewComponent } from './Components/opalview/opalview.component';
 import { AddCategoryComponent } from './Components/add-category/add-category.component';
 import { AddCategoryItemComponent } from './Components/add-category-item/add-category-item.component';
 import { EditCategoryItemComponent } from './Components/edit-category-item/edit-category-item.component';
+import { HPViewComponent } from './Components/hpview/hpview.component';
+import { EditHpComponentComponent } from './Components/edit-hp-component/edit-hp-component.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { EditCategoryItemComponent } from './Components/edit-category-item/edit-
     OPALViewComponent,
     AddCategoryComponent,
     AddCategoryItemComponent,
-    EditCategoryItemComponent
+    EditCategoryItemComponent,
+    HPViewComponent,
+    EditHpComponentComponent
   ],
   imports: [
     BrowserModule,

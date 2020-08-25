@@ -1,17 +1,19 @@
-<nav>
-    <ul>
-        <li>
-            <div class="addButton" routerLink="">
-                <mat-icon>navigate_before</mat-icon>
-                <p>Campaign Select</p>
-            </div>
-        </li>
-    </ul>
-</nav>
-<div *ngIf="acServiceDone">
-    <app-character-creator *ngIf="status === 'create'"></app-character-creator>
-    <p *ngIf="status === 'dm'">dm</p>
-    <div *ngIf="status === 'ok'">
-        <app-character-view></app-character-view>
+<div id="wrapper">
+    <nav>
+        <ul>
+            <li>
+                <div class="addButton" routerLink="">
+                    <mat-icon>navigate_before</mat-icon>
+                    <p>Campaign Select</p>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div id="content" *ngIf="acServiceDone">
+        <app-character-creator *ngIf="status === 'create'"></app-character-creator>
+        <p *ngIf="status === 'dm'">dm</p>
+        <div style="height: 100%;" *ngIf="status === 'ok'">
+            <app-character-view></app-character-view>
+        </div>
     </div>
 </div>
