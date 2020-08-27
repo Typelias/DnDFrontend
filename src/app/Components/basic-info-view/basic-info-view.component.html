@@ -4,4 +4,7 @@
     <p><b>Background:</b> {{ac.activeCharacter.background}}</p>
     <p> <b>Alignment:</b> {{ac.activeCharacter.alignment}}</p>
     <p><b>Race:</b> {{ac.activeCharacter.race}}</p>
+    <mat-checkbox (change)="ac.save()" [(ngModel)]="ac.activeCharacter.inspiration" name="inspiration">
+        Inspiration
+    </mat-checkbox>
 </div>

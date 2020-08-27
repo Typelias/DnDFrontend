@@ -34,6 +34,7 @@ import { AddCategoryItemComponent } from './Components/add-category-item/add-cat
 import { EditCategoryItemComponent } from './Components/edit-category-item/edit-category-item.component';
 import { HPViewComponent } from './Components/hpview/hpview.component';
 import { EditHpComponentComponent } from './Components/edit-hp-component/edit-hp-component.component';
+import { SavingSkillViewComponent } from './Components/saving-skill-view/saving-skill-view.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { EditHpComponentComponent } from './Components/edit-hp-component/edit-hp
     AddCategoryItemComponent,
     EditCategoryItemComponent,
     HPViewComponent,
-    EditHpComponentComponent
+    EditHpComponentComponent,
+    SavingSkillViewComponent
   ],
   imports: [
     BrowserModule,

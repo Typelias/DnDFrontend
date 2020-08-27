@@ -1,0 +1,80 @@
+<section id="wrapper">
+    <section id="savingWrapper">
+        <p>Saving Throws</p>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.savingThrows.strength" disabled="true" name="savingStrength">
+            Strength
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.savingThrows.dexterity" disabled="true" name="savingDex">Dexterity
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.savingThrows.constitution" disabled="true" name="savingConst">
+            Constitution
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.savingThrows.intelligence" disabled="true" name="savingInt">
+            Intelligence
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.savingThrows.wisdom" disabled="true" name="savingWis">Wisdom
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.savingThrows.charisma" disabled="true" name="savingChar">Charisma
+        </mat-checkbox>
+
+    </section>
+
+    <section id="skillWrapper">
+        <div id="skillhead">
+            <p>Skills</p>
+            <mat-icon (click)="edit()">{{editMode? 'done' : 'edit'}}</mat-icon>
+
+        </div>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.skills.acrobatics" [disabled]="!editMode" name="acrobatics">
+            Acrobatics
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.skills.animalHandling" [disabled]="!editMode"
+            name="animalHandling">
+            Animal Handling
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.skills.arcana" [disabled]="!editMode" name="arcana">Arcana
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.skills.athletics" [disabled]="!editMode" name="athletics">
+            Athletics
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.skills.deception" [disabled]="!editMode" name="deception">
+            Deception
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.skills.history" [disabled]="!editMode" name="history">History
+        </mat-checkbox>
+
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.skills.insight" [disabled]="!editMode" name="insight">Insight
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.skills.intimidation" [disabled]="!editMode" name="intimidation">
+            Intimidation
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.skills.investigation" [disabled]="!editMode" name="investigation">
+            Investigation
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.skills.medicine" [disabled]="!editMode" name="medicine">Medicine
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.skills.nature" [disabled]="!editMode" name="nature">Nature
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.skills.perception" [disabled]="!editMode" name="perception">
+            Perception
+        </mat-checkbox>
+
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.skills.performance" [disabled]="!editMode" name="performance">
+            Performance
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.skills.persuasion" [disabled]="!editMode" name="persuasion">
+            Persuasion
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.skills.religion" [disabled]="!editMode" name="religion">Religion
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.skills.slightOfHand" [disabled]="!editMode" name="sleightOfHand">
+            Sleight
+            of Hand
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.skills.stealth" [disabled]="!editMode" name="stealth">Stealth
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="ac.activeCharacter.skills.survival" [disabled]="!editMode" name="survival">Survival
+        </mat-checkbox>
+    </section>
+
+</section>
