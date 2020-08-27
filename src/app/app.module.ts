@@ -35,6 +35,8 @@ import { EditCategoryItemComponent } from './Components/edit-category-item/edit-
 import { HPViewComponent } from './Components/hpview/hpview.component';
 import { EditHpComponentComponent } from './Components/edit-hp-component/edit-hp-component.component';
 import { SavingSkillViewComponent } from './Components/saving-skill-view/saving-skill-view.component';
+import { WeaponSpellMagicItemViewComponent } from './Components/weapon-spell-magic-item-view/weapon-spell-magic-item-view.component';
+import { SpellsViewComponent } from './Components/spells-view/spells-view.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { SavingSkillViewComponent } from './Components/saving-skill-view/saving-
     EditCategoryItemComponent,
     HPViewComponent,
     EditHpComponentComponent,
-    SavingSkillViewComponent
+    SavingSkillViewComponent,
+    WeaponSpellMagicItemViewComponent,
+    SpellsViewComponent
   ],
   imports: [
     BrowserModule,

@@ -40,6 +40,8 @@ export class Character {
   spellList: SpellList
   classAttributes: Array<string> = [];
 
+  DMComments: string;
+
 
   constructor(data?: Icharacter) {
     if (data) {

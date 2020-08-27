@@ -1,29 +1,33 @@
-<mat-grid-list cols="50" rowHeight="fit" gutterSize="5px">
-    <mat-grid-tile colspan="50" rowspan="1">
-        <app-basic-info-view></app-basic-info-view>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="5" rowspan="16">
-        <app-stats-view></app-stats-view>
-    </mat-grid-tile>
+<section id="wrapper">
+    <mat-grid-list cols="50" rowHeight="fit" gutterSize="5px">
+        <mat-grid-tile colspan="50" rowspan="1">
+            <app-basic-info-view></app-basic-info-view>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="5" rowspan="16">
+            <app-stats-view></app-stats-view>
+        </mat-grid-tile>
 
-    <mat-grid-tile colspan="8" rowspan="16">
-        <app-saving-skill-view></app-saving-skill-view>
-    </mat-grid-tile>
+        <mat-grid-tile colspan="8" rowspan="16">
+            <app-saving-skill-view></app-saving-skill-view>
+        </mat-grid-tile>
 
-    <mat-grid-tile colspan="17" rowspan="6">
-        <app-hpview></app-hpview>
-    </mat-grid-tile>
+        <mat-grid-tile colspan="17" rowspan="6">
+            <app-hpview></app-hpview>
+        </mat-grid-tile>
 
-    <mat-grid-tile colspan="20" rowspan="8">
-        <app-opalview [viewType]="'OPAL'"></app-opalview>
-    </mat-grid-tile>
+        <mat-grid-tile colspan="20" rowspan="8">
+            <app-opalview [viewType]="'OPAL'"></app-opalview>
+        </mat-grid-tile>
 
-    <mat-grid-tile colspan="17" rowspan="10">
-        <app-equipment-view></app-equipment-view>
-    </mat-grid-tile>
+        <mat-grid-tile colspan="17" rowspan="10">
+            <app-equipment-view></app-equipment-view>
+        </mat-grid-tile>
 
-    <mat-grid-tile colspan="20" rowspan="8">
-        <app-opalview [viewType]="'FAT'"></app-opalview>
-    </mat-grid-tile>
+        <mat-grid-tile colspan="20" rowspan="8">
+            <app-opalview [viewType]="'FAT'"></app-opalview>
+        </mat-grid-tile>
 
-</mat-grid-list>
+    </mat-grid-list>
+
+    <app-weapon-spell-magic-item-view></app-weapon-spell-magic-item-view>
+</section>
