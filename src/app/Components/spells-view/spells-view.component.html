@@ -1,14 +1,29 @@
 <section>
-    <mat-accordion>
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                <mat-panel-title>Cantrips</mat-panel-title>
-            </mat-expansion-panel-header>
-            <div class="catHeader">
-                <p>Add Spell: </p>
-                <mat-icon matTooltip="Add Item to Category">add</mat-icon>
+    <div id="head">
+        <p>Spells</p>
+        <div id="headOptions">
+            <p>Options: </p>
+            <mat-icon matTooltip="Add Spell" (click)="addSpell()">add</mat-icon>
+            <mat-icon matTooltip="Reset Spellslots">replay</mat-icon>
+        </div>
+    </div>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Cantrips</mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="spellWrapper" *ngFor="let spell of ac.activeCharacter.spellList.spellList; let i = index">
+            <app-spell-item-view (onDelete)="deleteSpell(i)" *ngIf="spell.level === 'c'" [spell]="spell">
+            </app-spell-item-view>
+        </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Level 1 Spells</mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="catHeader">
+            <p>Add Spell: </p>
+            <mat-icon matTooltip="Add Item to Category">add</mat-icon>
 
-            </div>
-        </mat-expansion-panel>
-    </mat-accordion>
+        </div>
+    </mat-expansion-panel>
 </section>

@@ -1,4 +1,21 @@
+mat-icon {
+    cursor: pointer;
+    user-select: none;
+}
+
 section {
     width: 100%;
     height: 100%;
+    padding: 10px;
+
+    #head {
+        display: flex;
+        justify-content: space-between;
+        #headOptions {
+            display: flex;
+            p {
+                margin-right: 10px;
+            }
+        }
+    }
 }

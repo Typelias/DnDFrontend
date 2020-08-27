@@ -1,0 +1,23 @@
+<div id="wrapper">
+    <div id="info">
+        <p><strong>Name:</strong> {{spell.name}}</p>
+        <p><strong>Description: </strong>{{spell.description}}</p>
+        <p><strong>Dice: </strong>{{spell.dice}}</p>
+        <p><strong>Damage Type: </strong>{{spell.damageType}}</p>
+        <p><strong>Range: </strong>{{spell.spellRange}}</p>
+        <p><strong>Component/s: </strong>{{spell.component}}</p>
+        <p><strong>Duration: </strong>{{spell.duration}}</p>
+        <p><strong>Casting Time: </strong>{{spell.castingTime}}</p>
+        <p><strong>Conditions: </strong>{{spell.conditions}}</p>
+        <mat-checkbox name="conc" [ngModel]="spell.concentration" disabled="true">Concentration</mat-checkbox>
+
+
+
+    </div>
+    <div id="options">
+        <mat-icon *ngIf="spell.level != 'c'">play_arrow</mat-icon>
+        <mat-icon>edit</mat-icon>
+        <mat-icon (click)="onDelete.emit(null)">clear</mat-icon>
+
+    </div>
+</div>

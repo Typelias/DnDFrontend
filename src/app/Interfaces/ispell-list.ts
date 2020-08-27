@@ -1,15 +1,25 @@
-import { IlevelSpell } from "./ilevel-spell";
-import { Icantrips } from "./icantrips";
+import { Ispell } from './ispell';
 
 export interface IspellList {
-    cantrips: Icantrips
-    lvl1Spells: IlevelSpell;
-    lvl2Spells: IlevelSpell;
-    lvl3Spells: IlevelSpell;
-    lvl4Spells: IlevelSpell;
-    lvl5Spells: IlevelSpell;
-    lvl6Spells: IlevelSpell;
-    lvl7Spells: IlevelSpell;
-    lvl8Spells: IlevelSpell;
-    lvl9Spells: IlevelSpell;
+    spellList: Array<Ispell>;
+
+    lvl1SpellSlots: number;
+    lvl2SpellSlots: number;
+    lvl3SpellSlots: number;
+    lvl4SpellSlots: number;
+    lvl5SpellSlots: number;
+    lvl6SpellSlots: number;
+    lvl7SpellSlots: number;
+    lvl8SpellSlots: number;
+    lvl9SpellSlots: number;
+
+    lvl1SpellSlutsUsed: number;
+    lvl2SpellSlutsUsed: number;
+    lvl3SpellSlutsUsed: number;
+    lvl4SpellSlutsUsed: number;
+    lvl5SpellSlutsUsed: number;
+    lvl6SpellSlutsUsed: number;
+    lvl7SpellSlutsUsed: number;
+    lvl8SpellSlutsUsed: number;
+    lvl9SpellSlutsUsed: number;
 }

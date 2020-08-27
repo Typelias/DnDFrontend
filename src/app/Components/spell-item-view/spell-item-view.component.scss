@@ -1,0 +1,26 @@
+mat-icon {
+    cursor: pointer;
+    user-select: none;
+}
+p {
+    white-space: nowrap;
+    overflow: hidden;
+}
+#wrapper {
+    background-color: #333;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    #info {
+        width: 80%;
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    #options {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}

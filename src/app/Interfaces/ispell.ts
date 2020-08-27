@@ -9,4 +9,5 @@ export interface Ispell {
     castingTime: string;
     concentration: boolean;
     conditions: string;
+    level: string;
 }

@@ -37,6 +37,8 @@ import { EditHpComponentComponent } from './Components/edit-hp-component/edit-hp
 import { SavingSkillViewComponent } from './Components/saving-skill-view/saving-skill-view.component';
 import { WeaponSpellMagicItemViewComponent } from './Components/weapon-spell-magic-item-view/weapon-spell-magic-item-view.component';
 import { SpellsViewComponent } from './Components/spells-view/spells-view.component';
+import { AddSpellComponent } from './Components/add-spell/add-spell.component';
+import { SpellItemViewComponent } from './Components/spell-item-view/spell-item-view.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,9 @@ import { SpellsViewComponent } from './Components/spells-view/spells-view.compon
     EditHpComponentComponent,
     SavingSkillViewComponent,
     WeaponSpellMagicItemViewComponent,
-    SpellsViewComponent
+    SpellsViewComponent,
+    AddSpellComponent,
+    SpellItemViewComponent
   ],
   imports: [
     BrowserModule,
