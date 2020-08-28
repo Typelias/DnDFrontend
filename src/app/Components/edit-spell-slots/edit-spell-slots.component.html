@@ -1,0 +1,51 @@
+<mat-icon mat-dialog-close>close</mat-icon>
+<form (ngSubmit)="edit()">
+    <mat-form-field>
+        <mat-label>Level 1 Spell Slots</mat-label>
+        <input matInput name="level" [(ngModel)]="newSpellList.lvl1SpellSlots" type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Level 2 Spell Slots</mat-label>
+        <input matInput name="level2" [(ngModel)]="newSpellList.lvl2SpellSlots" type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Level 3 Spell Slots</mat-label>
+        <input matInput name="level3" [(ngModel)]="newSpellList.lvl3SpellSlots" type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Level 4 Spell Slots</mat-label>
+        <input matInput name="level4" [(ngModel)]="newSpellList.lvl4SpellSlots" type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Level 5 Spell Slots</mat-label>
+        <input matInput name="level5" [(ngModel)]="newSpellList.lvl5SpellSlots" type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Level 6 Spell Slots</mat-label>
+        <input matInput name="level6" [(ngModel)]="newSpellList.lvl6SpellSlots" type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Level 7 Spell Slots</mat-label>
+        <input matInput name="level7" [(ngModel)]="newSpellList.lvl7SpellSlots" type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Level 8 Spell Slots</mat-label>
+        <input matInput name="level8" [(ngModel)]="newSpellList.lvl8SpellSlots" type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Level 9 Spell Slots</mat-label>
+        <input matInput name="level9" [(ngModel)]="newSpellList.lvl9SpellSlots" type="number">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Edit</button>
+
+
+</form>

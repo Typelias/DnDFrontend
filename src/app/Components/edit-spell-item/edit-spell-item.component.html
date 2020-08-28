@@ -1,0 +1,60 @@
+<mat-icon mat-dialog-close>close</mat-icon>
+
+<div id="wrapper">
+    <h3>Edit Spell</h3>
+    <form (ngSubmit)="editSpell()">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput name="name" [(ngModel)]="newSpell.name">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <input matInput name="description" [(ngModel)]="newSpell.description">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Dice</mat-label>
+            <input matInput name="dice" [(ngModel)]="newSpell.dice">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Damage Type</mat-label>
+            <input matInput name="damage" [(ngModel)]="newSpell.damageType">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Range</mat-label>
+            <input matInput name="Range" [(ngModel)]="newSpell.spellRange">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Component/s</mat-label>
+            <input matInput name="components" [(ngModel)]="newSpell.component">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Duration</mat-label>
+            <input matInput name="duration" [(ngModel)]="newSpell.duration">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Casting Time</mat-label>
+            <input matInput name="castingTime" [(ngModel)]="newSpell.castingTime">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Type</mat-label>
+            <mat-select name="level" [(ngModel)]="newSpell.level">
+                <mat-option value="c">Cantrip</mat-option>
+                <mat-option value="1">Level 1</mat-option>
+                <mat-option value="2">Level 2</mat-option>
+                <mat-option value="3">Level 3</mat-option>
+                <mat-option value="4">Level 4</mat-option>
+                <mat-option value="5">Level 5</mat-option>
+                <mat-option value="6">Level 6</mat-option>
+                <mat-option value="7">Level 7</mat-option>
+                <mat-option value="8">Level 8</mat-option>
+                <mat-option value="9">Level 9</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Conditions</mat-label>
+            <input matInput name="conditions" [(ngModel)]="newSpell.conditions">
+        </mat-form-field>
+        <mat-checkbox name="concentration" [(ngModel)]="newSpell.concentration">Concentration</mat-checkbox>
+        <button mat-raised-button color="primary" type="submit">Edit Spell</button>
+    </form>
+</div>

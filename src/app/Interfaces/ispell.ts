@@ -3,7 +3,7 @@ export interface Ispell {
     description: string;
     dice: string;
     damageType: string;
-    spellRange: number;
+    spellRange: string;
     component: string;
     duration: string;
     castingTime: string;

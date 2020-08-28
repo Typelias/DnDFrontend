@@ -8,8 +8,12 @@ export class AttacksAndSpellcasting {
     this.weapons.push(weapon);
   }
 
-  removeWeapon(weapon: Weapon) {
-    delete this.weapons[this.weapons.indexOf(weapon)];
+  removeWeapon(index: number) {
+    this.weapons.splice(index, 1);
+  }
+
+  editWeapon(index: number, newWeapon: Weapon) {
+    this.weapons[index] = newWeapon;
   }
 
   constructor(data?: IattacksAndSpellcasting) {

@@ -39,6 +39,9 @@ import { WeaponSpellMagicItemViewComponent } from './Components/weapon-spell-mag
 import { SpellsViewComponent } from './Components/spells-view/spells-view.component';
 import { AddSpellComponent } from './Components/add-spell/add-spell.component';
 import { SpellItemViewComponent } from './Components/spell-item-view/spell-item-view.component';
+import { EditSpellSlotsComponent } from './Components/edit-spell-slots/edit-spell-slots.component';
+import { EditSpellItemComponent } from './Components/edit-spell-item/edit-spell-item.component';
+import { EditSpellInfoComponent } from './Components/edit-spell-info/edit-spell-info.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +74,10 @@ import { SpellItemViewComponent } from './Components/spell-item-view/spell-item-
     WeaponSpellMagicItemViewComponent,
     SpellsViewComponent,
     AddSpellComponent,
-    SpellItemViewComponent
+    SpellItemViewComponent,
+    EditSpellSlotsComponent,
+    EditSpellItemComponent,
+    EditSpellInfoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,29 +1,229 @@
 <section>
+
+    <div id="info">
+        <div id="infoHead">
+            <p><strong>Spell Info</strong></p>
+            <mat-icon matTooltip="Edit Spell Infong" (click)="editInfo()">edit</mat-icon>
+        </div>
+        <div id="infoText">
+            <p><strong>Spellcasting Ability: </strong>{{ac.activeCharacter.spellcastingAbility}}</p>
+            <p><strong>Spell Save DC: </strong>{{ac.activeCharacter.spellSaveDC}}</p>
+            <p><strong>Spell Attack Bonus: </strong> {{ac.activeCharacter.spellAttackBonus}}</p>
+        </div>
+
+    </div>
+    <mat-divider></mat-divider>
     <div id="head">
-        <p>Spells</p>
+        <p><strong>Spells</strong></p>
         <div id="headOptions">
             <p>Options: </p>
             <mat-icon matTooltip="Add Spell" (click)="addSpell()">add</mat-icon>
-            <mat-icon matTooltip="Reset Spellslots">replay</mat-icon>
+            <mat-icon matTooltip="Reset Spellslots" (click)="resetSpellSlots()">replay</mat-icon>
+            <mat-icon matTooltip="Edit Spellslots" (click)="editSpellSlots()">edit</mat-icon>
         </div>
     </div>
+
+
+
     <mat-expansion-panel>
         <mat-expansion-panel-header>
             <mat-panel-title>Cantrips</mat-panel-title>
         </mat-expansion-panel-header>
+
         <div class="spellWrapper" *ngFor="let spell of ac.activeCharacter.spellList.spellList; let i = index">
-            <app-spell-item-view (onDelete)="deleteSpell(i)" *ngIf="spell.level === 'c'" [spell]="spell">
+            <app-spell-item-view (onDelete)="deleteSpell(i)" (onEdit)="editSpell(i)" *ngIf="spell.level === 'c'"
+                [spell]="spell">
             </app-spell-item-view>
         </div>
     </mat-expansion-panel>
+
+
     <mat-expansion-panel>
+
         <mat-expansion-panel-header>
             <mat-panel-title>Level 1 Spells</mat-panel-title>
+            <mat-panel-description>
+                {{ac.activeCharacter.spellList.lvl1SpellSlutsUsed + "/" + ac.activeCharacter.spellList.lvl1SpellSlots}}
+            </mat-panel-description>
         </mat-expansion-panel-header>
-        <div class="catHeader">
-            <p>Add Spell: </p>
-            <mat-icon matTooltip="Add Item to Category">add</mat-icon>
 
+        <div class="catHeader">
+            <p>Options: </p>
+            <mat-icon matTooltip="Use Spellslit" (click)="useSpellSlot(1)">add</mat-icon>
+        </div>
+
+        <div class="spellWrapper" *ngFor="let spell of ac.activeCharacter.spellList.spellList; let i = index">
+            <app-spell-item-view (onDelete)="deleteSpell(i)" (onUse)="useSpellSlot(1)" (onEdit)="editSpell(i)"
+                *ngIf="spell.level === '1'" [spell]="spell">
+            </app-spell-item-view>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+
+        <mat-expansion-panel-header>
+            <mat-panel-title>Level 2 Spells</mat-panel-title>
+            <mat-panel-description>
+                {{ac.activeCharacter.spellList.lvl2SpellSlutsUsed + "/" + ac.activeCharacter.spellList.lvl2SpellSlots}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <div class="catHeader">
+            <p>Options: </p>
+            <mat-icon matTooltip="Use Spellslit" (click)="useSpellSlot(2)">add</mat-icon>
+        </div>
+
+        <div class="spellWrapper" *ngFor="let spell of ac.activeCharacter.spellList.spellList; let i = index">
+            <app-spell-item-view (onDelete)="deleteSpell(i)" (onUse)="useSpellSlot(2)" (onEdit)="editSpell(i)"
+                *ngIf="spell.level === '2'" [spell]="spell">
+            </app-spell-item-view>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+
+        <mat-expansion-panel-header>
+            <mat-panel-title>Level 3 Spells</mat-panel-title>
+            <mat-panel-description>
+                {{ac.activeCharacter.spellList.lvl3SpellSlutsUsed + "/" + ac.activeCharacter.spellList.lvl3SpellSlots}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <div class="catHeader">
+            <p>Options: </p>
+            <mat-icon matTooltip="Use Spellslit" (click)="useSpellSlot(3)">add</mat-icon>
+        </div>
+
+        <div class="spellWrapper" *ngFor="let spell of ac.activeCharacter.spellList.spellList; let i = index">
+            <app-spell-item-view (onDelete)="deleteSpell(i)" (onUse)="useSpellSlot(3)" (onEdit)="editSpell(i)"
+                *ngIf="spell.level === '3'" [spell]="spell">
+            </app-spell-item-view>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+
+        <mat-expansion-panel-header>
+            <mat-panel-title>Level 4 Spells</mat-panel-title>
+            <mat-panel-description>
+                {{ac.activeCharacter.spellList.lvl4SpellSlutsUsed + "/" + ac.activeCharacter.spellList.lvl4SpellSlots}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <div class="catHeader">
+            <p>Options: </p>
+            <mat-icon matTooltip="Use Spellslit" (click)="useSpellSlot(4)">add</mat-icon>
+        </div>
+
+        <div class="spellWrapper" *ngFor="let spell of ac.activeCharacter.spellList.spellList; let i = index">
+            <app-spell-item-view (onDelete)="deleteSpell(i)" (onUse)="useSpellSlot(4)" (onEdit)="editSpell(i)"
+                *ngIf="spell.level === '4'" [spell]="spell">
+            </app-spell-item-view>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+
+        <mat-expansion-panel-header>
+            <mat-panel-title>Level 5 Spells</mat-panel-title>
+            <mat-panel-description>
+                {{ac.activeCharacter.spellList.lvl5SpellSlutsUsed + "/" + ac.activeCharacter.spellList.lvl5SpellSlots}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <div class="catHeader">
+            <p>Options: </p>
+            <mat-icon matTooltip="Use Spellslit" (click)="useSpellSlot(5)">add</mat-icon>
+        </div>
+
+        <div class="spellWrapper" *ngFor="let spell of ac.activeCharacter.spellList.spellList; let i = index">
+            <app-spell-item-view (onDelete)="deleteSpell(i)" (onUse)="useSpellSlot(5)" (onEdit)="editSpell(i)"
+                *ngIf="spell.level === '5'" [spell]="spell">
+            </app-spell-item-view>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+
+        <mat-expansion-panel-header>
+            <mat-panel-title>Level 6 Spells</mat-panel-title>
+            <mat-panel-description>
+                {{ac.activeCharacter.spellList.lvl6SpellSlutsUsed + "/" + ac.activeCharacter.spellList.lvl6SpellSlots}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <div class="catHeader">
+            <p>Options: </p>
+            <mat-icon matTooltip="Use Spellslit" (click)="useSpellSlot(6)">add</mat-icon>
+        </div>
+
+        <div class="spellWrapper" *ngFor="let spell of ac.activeCharacter.spellList.spellList; let i = index">
+            <app-spell-item-view (onDelete)="deleteSpell(i)" (onUse)="useSpellSlot(6)" (onEdit)="editSpell(i)"
+                *ngIf="spell.level === '6'" [spell]="spell">
+            </app-spell-item-view>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+
+        <mat-expansion-panel-header>
+            <mat-panel-title>Level 7 Spells</mat-panel-title>
+            <mat-panel-description>
+                {{ac.activeCharacter.spellList.lvl7SpellSlutsUsed + "/" + ac.activeCharacter.spellList.lvl7SpellSlots}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <div class="catHeader">
+            <p>Options: </p>
+            <mat-icon matTooltip="Use Spellslit" (click)="useSpellSlot(7)">add</mat-icon>
+        </div>
+
+        <div class="spellWrapper" *ngFor="let spell of ac.activeCharacter.spellList.spellList; let i = index">
+            <app-spell-item-view (onDelete)="deleteSpell(i)" (onUse)="useSpellSlot(7)" (onEdit)="editSpell(i)"
+                *ngIf="spell.level === '7'" [spell]="spell">
+            </app-spell-item-view>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+
+        <mat-expansion-panel-header>
+            <mat-panel-title>Level 8 Spells</mat-panel-title>
+            <mat-panel-description>
+                {{ac.activeCharacter.spellList.lvl8SpellSlutsUsed + "/" + ac.activeCharacter.spellList.lvl8SpellSlots}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <div class="catHeader">
+            <p>Options: </p>
+            <mat-icon matTooltip="Use Spellslit" (click)="useSpellSlot(8)">add</mat-icon>
+        </div>
+
+        <div class="spellWrapper" *ngFor="let spell of ac.activeCharacter.spellList.spellList; let i = index">
+            <app-spell-item-view (onDelete)="deleteSpell(i)" (onUse)="useSpellSlot(8)" (onEdit)="editSpell(i)"
+                *ngIf="spell.level === '8'" [spell]="spell">
+            </app-spell-item-view>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+
+        <mat-expansion-panel-header>
+            <mat-panel-title>Level 9 Spells</mat-panel-title>
+            <mat-panel-description>
+                {{ac.activeCharacter.spellList.lvl9SpellSlutsUsed + "/" + ac.activeCharacter.spellList.lvl9SpellSlots}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <div class="catHeader">
+            <p>Options: </p>
+            <mat-icon matTooltip="Use Spellslit" (click)="useSpellSlot(9)">add</mat-icon>
+        </div>
+
+        <div class="spellWrapper" *ngFor="let spell of ac.activeCharacter.spellList.spellList; let i = index">
+            <app-spell-item-view (onDelete)="deleteSpell(i)" (onUse)="useSpellSlot(9)" (onEdit)="editSpell(i)"
+                *ngIf="spell.level === '9'" [spell]="spell">
+            </app-spell-item-view>
         </div>
     </mat-expansion-panel>
 </section>

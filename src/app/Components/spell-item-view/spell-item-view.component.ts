@@ -15,6 +15,8 @@ export class SpellItemViewComponent implements OnInit {
   onEdit: EventEmitter<any> = new EventEmitter();
   @Output()
   onDelete: EventEmitter<any> = new EventEmitter();
+  @Output()
+  onUse: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 

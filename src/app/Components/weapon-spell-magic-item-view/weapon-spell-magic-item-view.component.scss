@@ -5,5 +5,9 @@ mat-tab-group {
         width: 100%;
         height: 100%;
         background-color: #3D3D3D;
+
+        app-spells-view {
+            height: 100%;
+        }
     }
 }

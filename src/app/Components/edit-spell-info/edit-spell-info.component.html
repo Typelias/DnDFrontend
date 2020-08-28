@@ -1,0 +1,12 @@
+<mat-icon mat-dialog-close>close</mat-icon>
+<form (ngSubmit)="edit()">
+    <mat-form-field>
+        <mat-label>Spell Save DC</mat-label>
+        <input matInput name="SpellSave" [(ngModel)]="spellSave" type="number">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Spell Attack Bonus</mat-label>
+        <input matInput name="SpellAttack" [(ngModel)]="spellAttack" type="number">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Edit</button>
+</form>
