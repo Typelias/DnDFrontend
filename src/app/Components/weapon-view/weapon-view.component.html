@@ -1,0 +1,9 @@
+<section>
+  <div class="options">
+    <mat-icon (click)="addWeapon()">add</mat-icon>
+    <mat-icon>edit</mat-icon>
+  </div>
+  <div class="itemView">
+    <app-weapon-item-view *ngFor="let weapon of ac.activeCharacter.attacksAndSpellcasting.weapons"></app-weapon-item-view>
+  </div>
+</section>

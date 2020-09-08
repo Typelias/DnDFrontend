@@ -5,4 +5,5 @@ export class Weapon {
   damageType: string;
   description: string;
   condition: string;
+  amount: number;
 }

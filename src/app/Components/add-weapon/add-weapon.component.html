@@ -1,0 +1,49 @@
+<mat-icon mat-dialog-close>close</mat-icon>
+<form (ngSubmit)="addWeapon()">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput name="name" [(ngModel)]="newWeapon.name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Damage</mat-label>
+    <input matInput name="damage" [(ngModel)]="newWeapon.damage">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Attack Bonus</mat-label>
+    <input matInput name="atkBon" [(ngModel)]="newWeapon.atkBonus">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Damage Type</mat-label>
+    <input matInput name="type" [(ngModel)]="newWeapon.damageType">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <input matInput name="desc" [(ngModel)]="newWeapon.description">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Condition</mat-label>
+    <input matInput name="condition" [(ngModel)]="newWeapon.condition">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Amount</mat-label>
+    <input matInput name="amount" [(ngModel)]="newWeapon.amount">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary">Add Weapon</button>
+
+</form>
+
+<!--
+name: string;
+  damage: string;
+  atkBonus: string;
+  damageType: string;
+  description: string;
+  condition: string;
+-->

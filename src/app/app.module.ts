@@ -42,6 +42,9 @@ import { SpellItemViewComponent } from './Components/spell-item-view/spell-item-
 import { EditSpellSlotsComponent } from './Components/edit-spell-slots/edit-spell-slots.component';
 import { EditSpellItemComponent } from './Components/edit-spell-item/edit-spell-item.component';
 import { EditSpellInfoComponent } from './Components/edit-spell-info/edit-spell-info.component';
+import { WeaponViewComponent } from './Components/weapon-view/weapon-view.component';
+import { WeaponItemViewComponent } from './Components/weapon-item-view/weapon-item-view.component';
+import { AddWeaponComponent } from './Components/add-weapon/add-weapon.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +80,10 @@ import { EditSpellInfoComponent } from './Components/edit-spell-info/edit-spell-
     SpellItemViewComponent,
     EditSpellSlotsComponent,
     EditSpellItemComponent,
-    EditSpellInfoComponent
+    EditSpellInfoComponent,
+    WeaponViewComponent,
+    WeaponItemViewComponent,
+    AddWeaponComponent
   ],
   imports: [
     BrowserModule,
