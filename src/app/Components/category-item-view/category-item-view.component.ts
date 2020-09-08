@@ -9,7 +9,7 @@ import { CategoryItem } from 'src/app/Classes/category-item';
 export class CategoryItemViewComponent implements OnInit {
 
   @Input()
-  item: CategoryItem
+  item: CategoryItem;
 
   @Output()
   onEdit: EventEmitter<any> = new EventEmitter();

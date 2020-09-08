@@ -1,12 +1,12 @@
-import { IcategoryItem } from '../Interfaces/icategory-item';
+import { ICategoryItem } from '../Interfaces/i-category-item';
 
 export class CategoryItem {
-  name: string = "";
-  description: string = "";
+  name: string = '';
+  description: string = '';
   amount: number = 0;
   showAmount: boolean = true;
 
-  constructor(data?: IcategoryItem) {
+  constructor(data?: ICategoryItem) {
     if (data) {
       Object.assign(this, data);
     }

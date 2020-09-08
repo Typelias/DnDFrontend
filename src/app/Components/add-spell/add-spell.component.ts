@@ -16,13 +16,13 @@ export class AddSpellComponent implements OnInit {
 
   ngOnInit(): void {
     this.newSpell = new Spell();
-    this.newSpell.name = "";
-    this.newSpell.level = "";
+    this.newSpell.name = '';
+    this.newSpell.level = '';
   }
 
   addSpell() {
-    if (this.newSpell.name === "" || this.newSpell.level === "") {
-      alert("Name or Type was not defined");
+    if (this.newSpell.name === '' || this.newSpell.level === '') {
+      alert('Name or Type was not defined');
       return;
     }
 

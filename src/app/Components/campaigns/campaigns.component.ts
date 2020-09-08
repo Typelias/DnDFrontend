@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
-import { Campain } from 'src/app/Classes/campain';
+import { Campaign } from 'src/app/Classes/campaign';
 import { ServerRequestService } from 'src/app/Services/server-request.service';
 import { AuthService } from 'src/app/Services/auth.service';
 
@@ -10,7 +9,7 @@ import { AuthService } from 'src/app/Services/auth.service';
   styleUrls: ['./campaigns.component.scss']
 })
 export class CampaignsComponent implements OnInit {
-  campaignList: Campain[];
+  campaignList: Campaign[];
 
   constructor(private sr: ServerRequestService, private auth: AuthService) {
 

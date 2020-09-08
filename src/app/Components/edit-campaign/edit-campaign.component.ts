@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Campain } from 'src/app/Classes/campain';
+import { Campaign } from 'src/app/Classes/campaign';
 import { FormControl } from '@angular/forms';
 import { ServerRequestService } from 'src/app/Services/server-request.service';
 import { MatDialogRef } from '@angular/material/dialog';
@@ -12,9 +12,9 @@ import { AuthService } from 'src/app/Services/auth.service';
 })
 export class EditCampaignComponent implements OnInit {
 
-  campaigns: Campain[] = [];
-  campaignToEdit: Campain;
-  newImage: string = "";
+  campaigns: Campaign[] = [];
+  campaignToEdit: Campaign;
+  newImage: string = '';
   newPlayers = new FormControl();
   playerList: string[] = [];
 
@@ -36,12 +36,12 @@ export class EditCampaignComponent implements OnInit {
     reader.readAsDataURL(file);
     reader.onload = () => {
       this.newImage = reader.result.toString();
-    }
+    };
   }
 
   updateCampaign() {
     this.campaignToEdit.Players = this.newPlayers.value;
-    if (this.newImage != "") {
+    if (this.newImage !== '') {
       this.campaignToEdit.Image = this.newImage;
     }
 

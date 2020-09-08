@@ -1,4 +1,4 @@
-import { Icurrency } from '../Interfaces/icurrency';
+import { ICurrency } from '../Interfaces/ICurrency';
 
 export class Currency {
   cp: number = 0;
@@ -137,7 +137,7 @@ export class Currency {
 
   }
 
-  constructor(data?: Icurrency) {
+  constructor(data?: ICurrency) {
     if (data) {
       Object.assign(this, data);
     }

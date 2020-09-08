@@ -14,56 +14,56 @@ import { EditCampaignComponent } from '../edit-campaign/edit-campaign.component'
 })
 export class NavComponent implements OnInit {
 
-  constructor(private authServicer: AuthService, private router: Router, public dialog: MatDialog) { }
+  constructor(private authService: AuthService, private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
   isLoggedIn(): boolean {
-    return this.authServicer.isLoggedIn();
+    return this.authService.isLoggedIn();
   }
 
   isAdmin(): boolean {
-    return this.authServicer.isAdmin();
+    return this.authService.isAdmin();
   }
 
 
   openCreateCampain() {
-    const dialogRef = this.dialog.open(CreateCampaignComponent, { width: "20%", hasBackdrop: true });
+    const dialogRef = this.dialog.open(CreateCampaignComponent, { width: '20%', hasBackdrop: true });
 
     dialogRef.afterClosed().subscribe(res => {
-      console.log("closed");
+      console.log('closed');
       window.location.reload();
-    })
+    });
   }
 
   openUpdateUser() {
-    const dialogRef = this.dialog.open(UpdateUserComponent, { width: "20%", hasBackdrop: true });
+    const dialogRef = this.dialog.open(UpdateUserComponent, { width: '20%', hasBackdrop: true });
 
     dialogRef.afterClosed().subscribe(res => {
-      console.log("closed");
-    })
+      console.log('closed');
+    });
   }
 
   openCreateUser() {
-    const dialogRef = this.dialog.open(CreateUserComponent, { width: "20%", hasBackdrop: true });
+    const dialogRef = this.dialog.open(CreateUserComponent, { width: '20%', hasBackdrop: true });
 
     dialogRef.afterClosed().subscribe(res => {
-      console.log("closed");
-    })
+      console.log('closed');
+    });
   }
 
   openEditCampaign() {
-    const dialogRef = this.dialog.open(EditCampaignComponent, { width: "20%", hasBackdrop: true });
+    const dialogRef = this.dialog.open(EditCampaignComponent, { width: '20%', hasBackdrop: true });
 
     dialogRef.afterClosed().subscribe(res => {
       window.location.reload();
-    })
+    });
   }
 
   loggOut() {
-    this.authServicer.loggOut();
-    this.router.navigate([''])
+    this.authService.loggOut();
+    this.router.navigate(['']);
   }
 
 }

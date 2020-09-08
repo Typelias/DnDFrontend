@@ -17,7 +17,7 @@ export class EquipmentViewComponent implements OnInit {
   }
 
   addEquipment() {
-    const dialogRef = this.dialog.open(AddEquipmentComponent, { width: "20%", hasBackdrop: true });
+    const dialogRef = this.dialog.open(AddEquipmentComponent, { width: '20%', hasBackdrop: true });
     dialogRef.afterClosed().subscribe(res => {
       this.ac.save();
     });
@@ -30,10 +30,10 @@ export class EquipmentViewComponent implements OnInit {
 
   editEquipment(index: number) {
 
-    const dialogRef = this.dialog.open(EditEquipmentComponent, { width: "20%", hasBackdrop: true, data: index })
+    const dialogRef = this.dialog.open(EditEquipmentComponent, { width: '20%', hasBackdrop: true, data: index });
     dialogRef.afterClosed().subscribe(res => {
       this.ac.save();
-    })
+    });
 
   }
 

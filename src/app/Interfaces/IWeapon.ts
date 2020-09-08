@@ -1,4 +1,4 @@
-export interface Iweapon {
+export interface IWeapon {
     name: string;
     damage: string;
     atkBonus: string;

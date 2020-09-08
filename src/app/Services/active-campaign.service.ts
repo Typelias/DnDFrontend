@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Campain } from '../Classes/campain';
+import { Campaign } from '../Classes/campaign';
 import { Character } from '../Classes/character';
 import { AuthService } from './auth.service';
 import { ServerRequestService } from './server-request.service';
@@ -11,9 +11,9 @@ import { Router } from '@angular/router';
 })
 export class ActiveCampaignService {
 
-  public activeCampaign: Campain;
+  public activeCampaign: Campaign;
   private characters: Record<string, Character> = {};
-  public activeID: string = "";
+  public activeID: string = '';
   public activeCharacter: Character;
   public done: BehaviorSubject<boolean>;
 
@@ -23,15 +23,15 @@ export class ActiveCampaignService {
   }
 
   setActiveCharacter(): boolean {
-    this.activeID = "";
-    for (let key in this.characters) {
+    this.activeID = '';
+    for (const key in this.characters) {
       if (this.characters[key].playerName === this.auth.getUsername()) {
         this.activeCharacter = this.characters[key];
         this.activeID = key;
         break;
       }
     }
-    if (this.activeID === "") {
+    if (this.activeID === '') {
       return false;
     }
     return true;
@@ -42,17 +42,17 @@ export class ActiveCampaignService {
     if (activeCampaignString == null) {
       this.done.next(false);
       this.router.navigate(['']);
-      return
+      return;
     }
     this.sr.getCampaignByName(activeCampaignString).subscribe(res => {
       this.activeCampaign = res;
       this.getCharacters();
-    })
+    });
 
   }
 
   ready(): Observable<boolean> {
-    return this.done.asObservable()
+    return this.done.asObservable();
 
   }
 
@@ -74,7 +74,7 @@ export class ActiveCampaignService {
 
   }
 
-  setActiveCampaign(campain: Campain) {
+  setActiveCampaign(campain: Campaign) {
     this.done.next(false);
     this.activeCampaign = campain;
     localStorage.setItem('activeCampaign', campain.Name);

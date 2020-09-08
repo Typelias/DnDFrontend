@@ -10,8 +10,8 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class AddEquipmentComponent implements OnInit {
 
-  name: string = "";
-  description: string = "";
+  name: string = '';
+  description: string = '';
   amount: number = 0;
 
   constructor(private ac: ActiveCampaignService, private dialogRef: MatDialogRef<AddEquipmentComponent>) { }
@@ -23,12 +23,12 @@ export class AddEquipmentComponent implements OnInit {
 
     console.log(this.ac.activeCharacter);
 
-    if (this.name === "" || this.amount === 0) {
-      alert("One or more fields where empty");
+    if (this.name === '' || this.amount === 0) {
+      alert('One or more fields where empty');
       return;
     }
 
-    let newItem: CategoryItem = new CategoryItem();
+    const newItem: CategoryItem = new CategoryItem();
 
     newItem.name = this.name;
     newItem.description = this.description;

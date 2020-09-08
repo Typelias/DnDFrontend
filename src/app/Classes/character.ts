@@ -8,24 +8,24 @@ import { Equipment } from './equipment';
 import { OtherProficienciesAndLanguages } from './other-proficiencies-and-languages';
 import { FeaturesAndTraits } from './features-and-traits';
 import { SpellList } from './spell-list';
-import { Icharacter } from '../Interfaces/icharacter';
+import { ICharacter } from '../Interfaces/ICharacter';
 
 export class Character {
-  characterName: string = "";
-  characterClass: string = "";
+  characterName: string = '';
+  characterClass: string = '';
   level: number = 0;
   exp: number = 0;
-  background: string = "";
-  race: string = "";
-  alignment: string = "";
-  playerName: string = "";
+  background: string = '';
+  race: string = '';
+  alignment: string = '';
+  playerName: string = '';
   expPoints: number = 0;
   stats: Stats;
   inspiration: boolean = false;
   proficiencyBonus: number = 0;
   savingThrows: SavingThrows;
-  skills: Skills
-  hp: HP
+  skills: Skills;
+  hp: HP;
   personality: Personality;
   attacksAndSpellcasting: AttacksAndSpellcasting;
   passiveInvestigation: number = 0;
@@ -34,16 +34,16 @@ export class Character {
   otherProficienciesAndLanguages: OtherProficienciesAndLanguages;
   equipment: Equipment;
   featuresAndTraits: FeaturesAndTraits;
-  spellcastingAbility: string = "";
+  spellcastingAbility: string = '';
   spellSaveDC: number = 0;
   spellAttackBonus: number = 0;
-  spellList: SpellList
+  spellList: SpellList;
   classAttributes: Array<string> = [];
 
   DMComments: string;
 
 
-  constructor(data?: Icharacter) {
+  constructor(data?: ICharacter) {
     if (data) {
       Object.assign(this, data);
       this.savingThrows = new SavingThrows(data.savingThrows);

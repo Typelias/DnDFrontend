@@ -9,7 +9,7 @@ import { Spell } from 'src/app/Classes/spell';
 export class SpellItemViewComponent implements OnInit {
 
   @Input()
-  spell: Spell
+  spell: Spell;
 
   @Output()
   onEdit: EventEmitter<any> = new EventEmitter();

@@ -1,5 +1,5 @@
 import { Spell } from './spell';
-import { IspellList } from '../Interfaces/ispell-list';
+import { ISpellList } from '../Interfaces/i-spell-list';
 
 export class SpellList {
 
@@ -42,7 +42,7 @@ export class SpellList {
   }
 
 
-  constructor(data?: IspellList) {
+  constructor(data?: ISpellList) {
     if (data) {
       Object.assign(this, data);
       this.spellList = [];

@@ -16,7 +16,7 @@ export class StatsViewComponent implements OnInit {
   }
 
   edditStats() {
-    const dialogRef = this.dialog.open(EditStatsComponent, { width: "20%", hasBackdrop: true })
+    const dialogRef = this.dialog.open(EditStatsComponent, { width: '20%', hasBackdrop: true });
     dialogRef.afterClosed().subscribe(res => {
       this.ac.activeCharacter.hp.initiative = this.ac.activeCharacter.stats.dexterityModifier;
       this.ac.save();

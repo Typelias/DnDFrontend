@@ -9,7 +9,7 @@ import { ActiveCampaignService } from 'src/app/Services/active-campaign.service'
 })
 export class CharacterSheetComponent implements OnInit {
 
-  status: string = ""
+  status: string = '';
   acServiceDone: boolean = false;
 
   constructor(private auth: AuthService, public ac: ActiveCampaignService) { }
@@ -18,11 +18,11 @@ export class CharacterSheetComponent implements OnInit {
     this.ac.ready().subscribe(res => {
       if (res) {
         if (this.ac.activeCampaign.DM === this.auth.getUsername()) {
-          this.status = "dm";
+          this.status = 'dm';
         } else if (this.ac.setActiveCharacter()) {
-          this.status = "ok";
+          this.status = 'ok';
         } else {
-          this.status = "create";
+          this.status = 'create';
         }
         this.acServiceDone = res;
       }

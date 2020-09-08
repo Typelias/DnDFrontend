@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-import { JwtHelperService } from '@auth0/angular-jwt'
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  baseURL: string = "http://localhost:8081";
+  baseURL: string = 'http://localhost:8081';
   helper: JwtHelperService;
   adminStatus: boolean = null;
 
@@ -38,7 +38,7 @@ export class AuthService {
       return;
     }
     const token = this.cookieService.get('token');
-    return this.helper.decodeToken(token)['username']
+    return this.helper.decodeToken(token).username;
   }
 
   isAdmin(): boolean {
@@ -46,12 +46,12 @@ export class AuthService {
     if (this.cookieService.check('token')) {
       const token = this.cookieService.get('token');
       // console.log(this.helper.decodeToken(token));
-      if (this.helper.decodeToken(token)['Type'] === 'Admin') {
+      if (this.helper.decodeToken(token).Type === 'Admin') {
         this.adminStatus = true;
         return true;
       }
     }
 
-    return false
+    return false;
   }
 }

@@ -1,4 +1,4 @@
-export interface Ihp {
+export interface IHP {
     armorClass: number;
     initiative: number;
     speed: number;

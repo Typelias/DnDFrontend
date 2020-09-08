@@ -1,4 +1,4 @@
-export interface Ipersonality {
+export interface IPersonality {
     personalityTraits: string;
     ideals: string;
     bonds: string;

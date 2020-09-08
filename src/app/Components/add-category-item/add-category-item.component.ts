@@ -11,9 +11,11 @@ import { CategoryItem } from 'src/app/Classes/category-item';
 })
 export class AddCategoryItemComponent implements OnInit {
 
-  newItem: CategoryItem = new CategoryItem;
+  newItem: CategoryItem = new CategoryItem();
 
-  constructor(private ac: ActiveCampaignService, private dialogRef: MatDialogRef<AddCategoryItemComponent>, @Inject(MAT_DIALOG_DATA) private helper: IndexHelper) {
+  constructor(private ac: ActiveCampaignService,
+              private dialogRef: MatDialogRef<AddCategoryItemComponent>,
+              @Inject(MAT_DIALOG_DATA) private helper: IndexHelper) {
     this.newItem.showAmount = false;
   }
 

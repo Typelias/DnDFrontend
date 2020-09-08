@@ -13,7 +13,8 @@ export class EditEquipmentComponent implements OnInit {
 
   newItem: CategoryItem = new CategoryItem();
 
-  constructor(private ac: ActiveCampaignService, private dialogRef: MatDialogRef<EditEquipmentComponent>, @Inject(MAT_DIALOG_DATA) private index: number) {
+  constructor(private ac: ActiveCampaignService, private dialogRef: MatDialogRef<EditEquipmentComponent>,
+              @Inject(MAT_DIALOG_DATA) private index: number) {
     this.newItem.name = this.ac.activeCharacter.equipment.equipmentList[this.index].name;
     this.newItem.description = this.ac.activeCharacter.equipment.equipmentList[this.index].description;
     this.newItem.amount = this.ac.activeCharacter.equipment.equipmentList[this.index].amount;
@@ -24,9 +25,9 @@ export class EditEquipmentComponent implements OnInit {
 
   editEquipment() {
 
-    if (this.newItem.name != "" && this.newItem.amount > 0) {
-      this.ac.activeCharacter.equipment.edditEquipment(this.newItem, this.index)
-      this.dialogRef.close()
+    if (this.newItem.name !== '' && this.newItem.amount > 0) {
+      this.ac.activeCharacter.equipment.editEquipment(this.newItem, this.index)
+      this.dialogRef.close();
     }
 
 

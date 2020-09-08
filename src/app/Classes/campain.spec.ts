@@ -1,7 +1,7 @@
-import { Campain } from './campain';
+import { Campaign } from './campaign';
 
 describe('Campain', () => {
   it('should create an instance', () => {
-    expect(new Campain()).toBeTruthy();
+    expect(new Campaign()).toBeTruthy();
   });
 });

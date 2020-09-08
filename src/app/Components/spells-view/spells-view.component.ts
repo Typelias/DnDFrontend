@@ -20,14 +20,14 @@ export class SpellsViewComponent implements OnInit {
   }
 
   addSpell() {
-    const dialogRef = this.dialog.open(AddSpellComponent, { width: "30%", hasBackdrop: true });
+    const dialogRef = this.dialog.open(AddSpellComponent, { width: '30%', hasBackdrop: true });
     dialogRef.afterClosed().subscribe(resp => {
       this.ac.save();
     });
   }
 
   editSpellSlots() {
-    const dialogRef = this.dialog.open(EditSpellSlotsComponent, { width: "20%", hasBackdrop: true })
+    const dialogRef = this.dialog.open(EditSpellSlotsComponent, { width: '20%', hasBackdrop: true });
     dialogRef.afterClosed().subscribe(resp => {
       this.ac.save();
     });
@@ -39,14 +39,14 @@ export class SpellsViewComponent implements OnInit {
   }
 
   editSpell(index: number) {
-    const dialogRef = this.dialog.open(EditSpellItemComponent, { width: "30%", hasBackdrop: true, data: index })
+    const dialogRef = this.dialog.open(EditSpellItemComponent, { width: '30%', hasBackdrop: true, data: index });
     dialogRef.afterClosed().subscribe(resp => {
       this.ac.save();
     });
   }
 
   editInfo() {
-    const dialogRef = this.dialog.open(EditSpellInfoComponent, { width: "20%", hasBackdrop: true });
+    const dialogRef = this.dialog.open(EditSpellInfoComponent, { width: '20%', hasBackdrop: true });
     dialogRef.afterClosed().subscribe(resp => {
       this.ac.save();
     });
@@ -68,23 +68,23 @@ export class SpellsViewComponent implements OnInit {
   useSpellSlot(index: number) {
     switch (index) {
       case 1: this.ac.activeCharacter.spellList.lvl1SpellSlutsUsed++;
-        break;
+              break;
       case 2: this.ac.activeCharacter.spellList.lvl2SpellSlutsUsed++;
-        break;
+              break;
       case 3: this.ac.activeCharacter.spellList.lvl3SpellSlutsUsed++;
-        break;
+              break;
       case 4: this.ac.activeCharacter.spellList.lvl4SpellSlutsUsed++;
-        break;
+              break;
       case 5: this.ac.activeCharacter.spellList.lvl5SpellSlutsUsed++;
-        break;
+              break;
       case 6: this.ac.activeCharacter.spellList.lvl6SpellSlutsUsed++;
-        break;
+              break;
       case 7: this.ac.activeCharacter.spellList.lvl7SpellSlutsUsed++;
-        break;
+              break;
       case 8: this.ac.activeCharacter.spellList.lvl8SpellSlutsUsed++;
-        break;
+              break;
       case 9: this.ac.activeCharacter.spellList.lvl9SpellSlutsUsed++;
-        break;
+              break;
     }
     this.ac.save();
   }

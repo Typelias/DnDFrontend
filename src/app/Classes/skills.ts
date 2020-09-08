@@ -1,4 +1,4 @@
-import { Iskills } from '../Interfaces/iskills';
+import { ISkills } from '../Interfaces/ISkills';
 
 export class Skills {
   acrobatics = false
@@ -38,7 +38,7 @@ export class Skills {
   survival = false;
   survivalBonus = 0;
 
-  constructor(data?: Iskills) {
+  constructor(data?: ISkills) {
     if (data) {
       Object.assign(this, data);
     }

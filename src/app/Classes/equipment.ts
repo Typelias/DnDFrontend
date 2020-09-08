@@ -1,6 +1,6 @@
 import { CategoryItem } from './category-item';
 import { Currency } from './currency';
-import { Iequipment } from '../Interfaces/iequipment';
+import { IEquipment } from '../Interfaces/IEquipment';
 
 export class Equipment {
   public equipmentList: Array<CategoryItem> = [];
@@ -14,7 +14,7 @@ export class Equipment {
     this.equipmentList.splice(index, 1);
   }
 
-  public edditEquipment(newItem: CategoryItem, index: number) {
+  public editEquipment(newItem: CategoryItem, index: number) {
     this.equipmentList[index] = newItem;
   }
 
@@ -29,7 +29,7 @@ export class Equipment {
     }
   }
 
-  constructor(data?: Iequipment) {
+  constructor(data?: IEquipment) {
     if (data) {
       Object.assign(this, data);
       this.currency = new Currency(data.currency);

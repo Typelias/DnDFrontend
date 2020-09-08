@@ -1,8 +1,8 @@
 import { CategoryItem } from './category-item';
-import { Icategory } from '../Interfaces/icategory';
+import { ICategory } from '../Interfaces/ICategory';
 
 export class Category {
-  name: string = "";
+  name: string = '';
   items: Array<CategoryItem>;
 
   addItem(item: CategoryItem) {
@@ -28,9 +28,9 @@ export class Category {
     this.items[index].amount -= 1;
   }
 
-  constructor(data?: Icategory) {
+  constructor(data?: ICategory) {
     if (data) {
-      Object.assign(this, data)
+      Object.assign(this, data);
       this.items = [];
       data.items.forEach(item => {
         const temp = new CategoryItem(item);

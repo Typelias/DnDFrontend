@@ -1,6 +1,6 @@
 import { Category } from './category';
 import { CategoryItem } from './category-item';
-import { IotherProficienciesAndLanguages } from '../Interfaces/iother-proficiencies-and-languages';
+import { IOtherProficienciesAndLanguages } from '../Interfaces/i-other-proficiencies-and-languages';
 
 export class OtherProficienciesAndLanguages {
   categories: Array<Category>;
@@ -29,7 +29,7 @@ export class OtherProficienciesAndLanguages {
     this.categories[catIndex].removeItem(itemIndex);
   }
 
-  constructor(data?: IotherProficienciesAndLanguages) {
+  constructor(data?: IOtherProficienciesAndLanguages) {
     if (data) {
       Object.assign(this, data);
       this.categories = [];

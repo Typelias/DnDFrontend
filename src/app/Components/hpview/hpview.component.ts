@@ -16,11 +16,11 @@ export class HPViewComponent implements OnInit {
   }
 
   editHp() {
-    const dialogRef = this.dialog.open(EditHpComponentComponent, { width: "20%", hasBackdrop: true })
+    const dialogRef = this.dialog.open(EditHpComponentComponent, { width: '20%', hasBackdrop: true });
 
     dialogRef.afterClosed().subscribe(resp => {
       this.ac.save();
-    })
+    });
   }
 
   addHP() {

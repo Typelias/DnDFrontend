@@ -1,6 +1,6 @@
 import { Category } from './category';
 import { CategoryItem } from './category-item';
-import { IfeaturesAndTraits } from '../Interfaces/ifeatures-and-traits';
+import { IFeaturesAndTraits } from '../Interfaces/i-features-and-traits';
 
 export class FeaturesAndTraits {
   categories: Array<Category>;
@@ -9,8 +9,8 @@ export class FeaturesAndTraits {
     this.categories.push(category);
   }
 
-  editCategory(index: number, newCatagory: Category) {
-    this.categories[index] = newCatagory;
+  editCategory(index: number, newCategory: Category) {
+    this.categories[index] = newCategory;
   }
 
   removeCategory(catIndex: number) {
@@ -29,7 +29,7 @@ export class FeaturesAndTraits {
     this.categories[catIndex].removeItem(itemIndex);
   }
 
-  constructor(data?: IfeaturesAndTraits) {
+  constructor(data?: IFeaturesAndTraits) {
     if (data) {
       Object.assign(this, data);
       this.categories = [];

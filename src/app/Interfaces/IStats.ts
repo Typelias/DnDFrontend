@@ -1,4 +1,4 @@
-export interface Istats {
+export interface IStats {
     strength: number;
     strengthModifier: number;
     dexterity: number;

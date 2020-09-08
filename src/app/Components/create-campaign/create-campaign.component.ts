@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ServerRequestService } from 'src/app/Services/server-request.service';
-import { Campain } from 'src/app/Classes/campain';
+import { Campaign } from 'src/app/Classes/campaign';
 import { AuthService } from 'src/app/Services/auth.service';
 import { MatDialogRef } from '@angular/material/dialog';
 
@@ -14,9 +14,9 @@ export class CreateCampaignComponent implements OnInit {
 
   players = new FormControl();
   playerList: string[];
-  newCampaign: Campain = new Campain;
+  newCampaign: Campaign = new Campaign();
   nameList: string[] = [];
-  errorText: string = "";
+  errorText: string = '';
   nameMatch: boolean = false;
 
   constructor(private sr: ServerRequestService, private auth: AuthService, private dialogRef: MatDialogRef<CreateCampaignComponent>) { }
@@ -32,11 +32,11 @@ export class CreateCampaignComponent implements OnInit {
   }
 
   checkName() {
-    this.errorText = "";
+    this.errorText = '';
     const temp = this.nameList.find(x => x === this.newCampaign.Name);
     if (temp) {
       this.nameMatch = true;
-      this.errorText = "Name already in use";
+      this.errorText = 'Name already in use';
     } else {
       this.nameMatch = false;
     }
@@ -50,7 +50,7 @@ export class CreateCampaignComponent implements OnInit {
     reader.readAsDataURL(file);
     reader.onload = () => {
       this.newCampaign.Image = reader.result.toString();
-    }
+    };
 
   }
 
@@ -59,35 +59,35 @@ export class CreateCampaignComponent implements OnInit {
   }
 
   createCampaign() {
-    this.errorText = "";
+    this.errorText = '';
     if (this.nameMatch) {
-      this.errorText = "Name already in use";
+      this.errorText = 'Name already in use';
       return;
     }
     this.newCampaign.DM = this.auth.getUsername();
     if (!this.newCampaign.Name) {
-      this.errorText = "No name was entered"
+      this.errorText = 'No name was entered';
       return;
     }
     if (!this.newCampaign.Image) {
-      this.errorText = "No image was upploaded"
+      this.errorText = 'No image was upploaded';
       return;
     }
     if (!this.players.value) {
-      this.errorText = "No players where selected"
+      this.errorText = 'No players where selected';
       return;
     }
 
     this.newCampaign.Players = this.players.value;
 
-    const temp = this.newCampaign.Players.find(x => x === this.auth.getUsername())
+    const temp = this.newCampaign.Players.find(x => x === this.auth.getUsername());
     if (!temp) {
       this.newCampaign.Players.push(this.auth.getUsername());
     }
 
     console.log(this.newCampaign);
 
-    this.sr.addCampaign(this.newCampaign).subscribe(res => { console.log(res); this.dialogRef.close() });
+    this.sr.addCampaign(this.newCampaign).subscribe(res => { console.log(res); this.dialogRef.close(); });
 
 
   }

@@ -1,7 +1,7 @@
-import { Ispell } from './ispell';
+import { ISpell } from './ISpell';
 
-export interface IspellList {
-    spellList: Array<Ispell>;
+export interface ISpellList {
+    spellList: Array<ISpell>;
 
     lvl1SpellSlots: number;
     lvl2SpellSlots: number;

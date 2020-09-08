@@ -1,4 +1,4 @@
-export interface IsavingThrows {
+export interface ISavingThrows {
     strength: boolean;
     dexterity: boolean;
     constitution: boolean;

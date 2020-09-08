@@ -22,7 +22,7 @@ export class EditSpellInfoComponent implements OnInit {
   edit() {
 
     if (this.spellSave === 0 || this.spellAttack === 0) {
-      alert("Fields are empty");
+      alert('Fields are empty');
       return;
     }
 

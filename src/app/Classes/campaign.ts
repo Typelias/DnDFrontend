@@ -1,4 +1,4 @@
-export class Campain {
+export class Campaign {
     Name: string;
     DM: string;
     Players: string[];

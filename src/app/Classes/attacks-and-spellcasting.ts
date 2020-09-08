@@ -1,5 +1,5 @@
 import { Weapon } from './weapon';
-import { IattacksAndSpellcasting } from '../Interfaces/iattacks-and-spellcasting';
+import { IAttacksAndSpellcasting } from '../Interfaces/i-attacks-and-spellcasting';
 
 export class AttacksAndSpellcasting {
   weapons: Array<Weapon> = [];
@@ -16,7 +16,7 @@ export class AttacksAndSpellcasting {
     this.weapons[index] = newWeapon;
   }
 
-  constructor(data?: IattacksAndSpellcasting) {
+  constructor(data?: IAttacksAndSpellcasting) {
     if (data) {
       Object.assign(this, data);
     }

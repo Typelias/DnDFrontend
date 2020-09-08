@@ -1,4 +1,4 @@
-export interface Ispell {
+export interface ISpell {
     name: string;
     description: string;
     dice: string;

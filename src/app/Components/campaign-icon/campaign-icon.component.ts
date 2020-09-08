@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Campain } from 'src/app/Classes/campain';
+import { Campaign } from 'src/app/Classes/campaign';
 import { AuthService } from 'src/app/Services/auth.service';
 import { ActiveCampaignService } from 'src/app/Services/active-campaign.service';
 import { ServerRequestService } from 'src/app/Services/server-request.service';
@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class CampaignIconComponent implements OnInit {
   @Input()
-  campain: Campain
+  campaign: Campaign;
 
   constructor(private auth: AuthService, private campaignService: ActiveCampaignService, private router: Router) { }
 
@@ -21,15 +21,15 @@ export class CampaignIconComponent implements OnInit {
   }
 
   setActiveCampaign() {
-    this.campaignService.setActiveCampaign(this.campain);
-    this.router.navigate(['/gameScreen'])
+    this.campaignService.setActiveCampaign(this.campaign);
+    this.router.navigate(['/gameScreen']);
 
   }
 
 
 
   isDM(): boolean {
-    if (this.campain.DM === this.auth.getUsername()) {
+    if (this.campaign.DM === this.auth.getUsername()) {
       return true;
     }
 

@@ -1,4 +1,4 @@
-import { IsavingThrows } from '../Interfaces/isaving-throws';
+import { ISavingThrows } from '../Interfaces/i-saving-throws';
 
 export class SavingThrows {
   strength: boolean = false;
@@ -8,7 +8,7 @@ export class SavingThrows {
   wisdom: boolean = false;
   charisma: boolean = false;
 
-  constructor(data?: IsavingThrows) {
+  constructor(data?: ISavingThrows) {
     if (data) {
       Object.assign(this, data);
     }

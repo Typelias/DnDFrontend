@@ -14,14 +14,14 @@ export class CharacterCreatorComponent implements OnInit {
   character: Character;
   customCharacter = false;
   currentStatBonus: number;
-  curentStatName: string;
+  currentStatName: string;
 
   constructor(private authService: AuthService, private ac: ActiveCampaignService, private sr: ServerRequestService) {
   }
 
   ngOnInit(): void {
     this.character = new Character();
-    this.character.playerName = this.authService.getUsername()
+    this.character.playerName = this.authService.getUsername();
   }
 
   addCharacter() {
@@ -30,13 +30,14 @@ export class CharacterCreatorComponent implements OnInit {
     this.classAutoFill(this.character.characterClass);
     console.log(this.character);
 
-    if (this.character.characterName != ""
-      && this.character.characterClass != ""
-      && this.character.background != ""
-      && this.character.race != ""
-      && this.character.alignment != ""
-      && this.character.hp.armorClass != 0
-      && this.character.hp.maxHP != 0) {
+
+    if (this.character.characterName !== ''
+      && this.character.characterClass !== ''
+      && this.character.background !== ''
+      && this.character.race !== ''
+      && this.character.alignment !== ''
+      && this.character.hp.armorClass !== 0
+      && this.character.hp.maxHP !== 0) {
       this.character.hp.currHP = this.character.hp.maxHP;
       this.sr.addCharacter(this.character, this.ac.activeCampaign.Name).subscribe(res => {
         window.location.reload();

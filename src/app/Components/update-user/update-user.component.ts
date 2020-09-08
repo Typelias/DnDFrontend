@@ -12,10 +12,10 @@ export class UpdateUserComponent implements OnInit {
 
   users: string[] = null;
   userToEdit: string = null;
-  role: string = "";
+  role: string = '';
   username: string;
-  password: string = "";
-  errorText: string = "";
+  password: string = '';
+  errorText: string = '';
 
   constructor(private sr: ServerRequestService, private dialogRef: MatDialogRef<UpdateUserComponent>, private auth: AuthService) { }
 
@@ -25,14 +25,14 @@ export class UpdateUserComponent implements OnInit {
 
   updateUser() {
     this.username = this.auth.getUsername();
-    if ((this.username != null && this.password != null && this.role != null) || (this.username != "" && this.password != "" && this.role != "")) {
+    if ((this.username != null && this.password != null && this.role != null) || (this.username != '' && this.password != '' && this.role != '')) {
       this.sr.updateUser(this.userToEdit, this.username, this.password, this.role).subscribe(res => {
         this.dialogRef.close();
 
       });
 
     } else {
-      this.errorText = "One or more of the fields was empty"
+      this.errorText = 'One or more of the fields was empty';
     }
 
   }
@@ -40,7 +40,7 @@ export class UpdateUserComponent implements OnInit {
   deleteUser() {
     this.sr.deleteUser(this.userToEdit).subscribe(res => {
       this.dialogRef.close();
-    })
+    });
 
   }
 

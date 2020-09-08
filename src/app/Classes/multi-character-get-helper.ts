@@ -1,6 +1,6 @@
-import { Icharacter } from '../Interfaces/icharacter'
+import { ICharacter } from '../Interfaces/ICharacter';
 
 export class MultiCharacterGetHelper {
-    id: string
-    character: Icharacter
+    id: string;
+    character: ICharacter;
 }

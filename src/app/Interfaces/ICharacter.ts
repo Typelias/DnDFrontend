@@ -1,0 +1,41 @@
+import { IStats } from './IStats';
+import { ISavingThrows } from './i-saving-throws';
+import { ISkills } from './ISkills';
+import { IHP } from './IHP';
+import { IPersonality } from './IPersonality';
+import { IAttacksAndSpellcasting } from './i-attacks-and-spellcasting';
+import { IOtherProficienciesAndLanguages } from './i-other-proficiencies-and-languages';
+import { IEquipment } from './IEquipment';
+import { IFeaturesAndTraits } from './i-features-and-traits';
+import { ISpellList } from './i-spell-list';
+
+export interface ICharacter {
+    characterName: string;
+    characterClass: string;
+    level: number;
+    exp: number;
+    background: string;
+    race: string;
+    alignment: string;
+    playerName: string;
+    expPoints: number;
+    stats: IStats;
+    inspiration: boolean;
+    proficiencyBonus: number;
+    savingThrows: ISavingThrows;
+    skills: ISkills;
+    hp: IHP;
+    personality: IPersonality;
+    attacksAndSpellcasting: IAttacksAndSpellcasting;
+    passiveInvestigation: number;
+    passivePerception: number;
+    passiveInsight: number;
+    otherProficienciesAndLanguages: IOtherProficienciesAndLanguages;
+    equipment: IEquipment;
+    featuresAndTraits: IFeaturesAndTraits;
+    spellcastingAbility: string;
+    spellSaveDC: number;
+    spellAttackBonus: number;
+    spellList: ISpellList;
+    classAttributes: Array<string>;
+}

@@ -1,11 +1,11 @@
-export interface Iskills {
+export interface ISkills {
     acrobatics: boolean;
     acrobaticsBonus: number;
     animalHandling: boolean;
-    animalHandlingBonus: number
+    animalHandlingBonus: number;
     arcana: boolean;
-    arcanaBonus: number
-    athletics: boolean
+    arcanaBonus: number;
+    athletics: boolean;
     athleticsBonus: number;
     deception: boolean;
     deceptionBonus: number;

@@ -1,4 +1,4 @@
-import { Ispell } from '../Interfaces/ispell';
+import { ISpell } from '../Interfaces/ISpell';
 
 export class Spell {
     name: string;
@@ -13,9 +13,9 @@ export class Spell {
     conditions: string;
     level: string;
 
-    constructor(data?: Ispell) {
+    constructor(data?: ISpell) {
         if (data) {
-            Object.assign(this, data)
+            Object.assign(this, data);
         }
 
     }
